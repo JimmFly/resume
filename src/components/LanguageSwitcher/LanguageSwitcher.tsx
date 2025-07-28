@@ -22,7 +22,26 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = '' }) =
   const { i18n, t } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
 
-  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0]
+  // Find current language, handle language codes like 'zh-CN' by checking prefix
+  const getCurrentLanguage = () => {
+    // First try exact match
+    let current = languages.find(lang => lang.code === i18n.language)
+
+    // If no exact match, try prefix match (e.g., 'zh-CN' -> 'zh')
+    if (!current) {
+      const languagePrefix = i18n.language.split('-')[0]
+      current = languages.find(lang => lang.code === languagePrefix)
+    }
+
+    // If still no match, use fallback language from i18n config
+    if (!current) {
+      current = languages.find(lang => lang.code === 'zh') // fallback to zh as configured in i18n
+    }
+
+    return current || languages[0] // final fallback
+  }
+
+  const currentLanguage = getCurrentLanguage()
 
   const handleLanguageChange = (languageCode: string) => {
     i18n.changeLanguage(languageCode)
