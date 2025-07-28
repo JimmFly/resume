@@ -30,11 +30,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'yarn'
-          cache-dependency-path: 'yarn.lock'
 
-      - name: Clear Yarn cache
-        run: yarn cache clean
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install Yarn via Corepack
+        run: corepack prepare yarn@stable --activate
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
