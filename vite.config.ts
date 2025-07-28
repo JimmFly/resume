@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   // Set base path for GitHub Pages deployment
   const base =
     mode === 'production' && process.env.GITHUB_ACTIONS
-      ? `/${process.env.VITE_BASE_URL || 'resume-portfolio-optimized'}/`
+      ? `/${process.env.VITE_BASE_URL || 'resume'}/`
       : '/'
 
   return {
