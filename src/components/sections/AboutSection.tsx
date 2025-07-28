@@ -1,17 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ABOUT_CONTENT } from '../../constants';
+import { ABOUT_CONTENT, PARALLAX_CONFIG } from '../../constants';
 import { useAnimation } from '../../hooks/useAnimation';
+import { useParallax, useInView } from '../../hooks/useParallax';
 
 const AboutSection = React.memo(() => {
   const { fadeInUp, staggerContainer, viewport } = useAnimation();
+  const parallaxY = useParallax(PARALLAX_CONFIG.elements.subtle);
+  const [sectionRef, inView] = useInView(PARALLAX_CONFIG.thresholds.inView);
   return (
-    <section id="about" className="section-container">
+    <section 
+      id="about" 
+      ref={sectionRef}
+      className="section-container relative overflow-hidden"
+    >
+      {/* 背景装饰元素 - 视差效果 */}
+      <div 
+        className="absolute top-10 right-10 w-64 h-64 bg-blue-500/5 rounded-full blur-2xl"
+        style={{ transform: `translateY(${Number(parallaxY || 0) * 0.5}px)` }}
+      />
+      <div 
+        className="absolute bottom-10 left-10 w-48 h-48 bg-cyan-500/5 rounded-full blur-2xl"
+        style={{ transform: `translateY(${Number(parallaxY || 0) * 0.3}px)` }}
+      />
       <motion.div
-        className="max-w-4xl mx-auto"
+        className="max-w-4xl mx-auto relative z-10"
         variants={staggerContainer}
         initial="hidden"
-        whileInView="show"
+        animate={inView ? "show" : "hidden"}
         viewport={viewport}
       >
         <motion.h2 

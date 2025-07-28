@@ -8,23 +8,26 @@ import ProjectsSection from './components/sections/ProjectsSection';
 import ContactSection from './components/sections/ContactSection';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import ParallaxContainer from './components/common/ParallaxContainer';
 
 
 function App() {
 
   return (
-    <div className="min-h-screen bg-background text-text">
-      <Navbar />
-      {/* 主要内容 */}
-      <main className="relative z-10">
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <ParallaxContainer>
+      <div className="min-h-screen bg-background text-text">
+        <Navbar />
+        {/* 主要内容 */}
+        <main className="relative z-10">
+          <HeroSection />
+          <AboutSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </ParallaxContainer>
   );
 }
 

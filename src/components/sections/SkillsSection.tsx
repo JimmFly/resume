@@ -1,11 +1,14 @@
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { SKILLS_DATA, ANIMATION_CONFIG } from '../../constants';
+import { SKILLS_DATA, ANIMATION_CONFIG, PARALLAX_CONFIG } from '../../constants';
 import { useAnimation } from '../../hooks/useAnimation';
+import { useParallax, useInView } from '../../hooks/useParallax';
 import type { SkillBarProps } from '../../types';
 
 const SkillsSection: React.FC = React.memo(() => {
   const { fadeInUp, staggerContainer, viewport } = useAnimation();
+  const parallaxY = useParallax(PARALLAX_CONFIG.elements.normal);
+  const [sectionRef, inView] = useInView(PARALLAX_CONFIG.thresholds.inView);
   
   const skillCategories = useMemo(() => ({
     frontend: SKILLS_DATA.filter(skill => skill.category === 'frontend'),
@@ -14,13 +17,26 @@ const SkillsSection: React.FC = React.memo(() => {
   }), []);
 
   return (
-    <section id="skills" className="section-container bg-accent/10">
-      <div className="max-w-4xl mx-auto">
+    <section 
+      id="skills" 
+      ref={sectionRef}
+      className="section-container bg-accent/10 relative overflow-hidden"
+    >
+      {/* 背景装饰元素 - 视差效果 */}
+      <div 
+        className="absolute top-20 left-1/4 w-32 h-32 bg-cyan-500/10 rounded-full blur-xl"
+        style={{ transform: `translateY(${Number(parallaxY || 0) * 0.4}px)` }}
+      />
+      <div 
+        className="absolute bottom-20 right-1/4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"
+        style={{ transform: `translateY(${Number(parallaxY || 0) * 0.6}px)` }}
+      />
+      <div className="max-w-4xl mx-auto relative z-10">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold mb-12 text-center font-heading"
           variants={fadeInUp}
           initial="hidden"
-          whileInView="show"
+          animate={inView ? "show" : "hidden"}
           viewport={viewport}
         >
           <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">技能专长</span>

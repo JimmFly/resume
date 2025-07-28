@@ -89,6 +89,43 @@ export const HERO_CONTENT = {
    ]
  } as const;
 
+// 视差效果配置
+export const PARALLAX_CONFIG = {
+  // 背景层视差速度
+  background: {
+    slow: 0.2,
+    medium: 0.4,
+    fast: 0.6
+  },
+  
+  // 元素视差速度
+  elements: {
+    subtle: 0.1,
+    normal: 0.3,
+    strong: 0.5
+  },
+  
+  // 滚动阈值
+  thresholds: {
+    inView: 0.1,
+    halfView: 0.5,
+    fullView: 0.9
+  },
+  
+  // 视差层配置
+  layers: {
+    hero: [
+      { speed: 0.2, offset: 0 },    // 背景最慢
+      { speed: 0.4, offset: 0 },    // 中景
+      { speed: 0.6, offset: 0 }     // 前景最快
+    ],
+    sections: [
+      { speed: 0.1, offset: 0 },    // 背景装饰
+      { speed: 0.3, offset: 0 }     // 内容元素
+    ]
+  }
+} as const;
+
 // About区域内容
 export const ABOUT_CONTENT = {
   title: '关于我',

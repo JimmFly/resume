@@ -3,18 +3,30 @@ import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import RealisticGlobe from "../three/RealisticGlobe";
-import { HERO_CONTENT, GLOBE_CONFIG } from '../../constants';
+import { HERO_CONTENT, GLOBE_CONFIG, PARALLAX_CONFIG } from '../../constants';
 import { useAnimation } from '../../hooks/useAnimation';
+import { useMultiLayerParallax } from '../../hooks/useParallax';
 
 const HeroSection = React.memo(() => {
   const { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } = useAnimation();
+  const { getLayerStyle } = useMultiLayerParallax([...PARALLAX_CONFIG.layers.hero]);
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* 背景效果 */}
+      {/* 背景效果 - 添加视差效果 */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/20 to-gray-900" />
-      <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+      <div 
+        className="absolute top-20 left-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl"
+        style={getLayerStyle(0)}
+      />
+      <div 
+        className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
+        style={getLayerStyle(1)}
+      />
+      <div 
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-3xl"
+        style={getLayerStyle(2)}
+      />
 
       <div className="container mx-auto px-6 text-center relative z-20">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
@@ -70,7 +82,7 @@ const HeroSection = React.memo(() => {
 
           {/* 右侧3D地球 */}
           <motion.div
-            className="flex-1 flex justify-center items-center"
+            className="flex-1 flex justify-center items-center relative"
             variants={fadeInRight}
             initial="hidden"
             animate="show">
