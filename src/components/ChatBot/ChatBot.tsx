@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { ChatOpenAI } from '@langchain/openai'
 import { HumanMessage, AIMessage } from '@langchain/core/messages'
 import { MessageCircle, Send, X, Bot, User } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 interface Message {
   id: string
@@ -26,10 +27,12 @@ const ChatBot: React.FC<ChatBotProps> = ({
   maxSessionDuration = 30,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const { t } = useTranslation()
+
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: '你好！我是 AI 助手，有什么可以帮助你的吗？',
+      content: t('chatbot.welcome'),
       type: 'ai',
       timestamp: new Date(),
     },
@@ -69,19 +72,25 @@ const ChatBot: React.FC<ChatBotProps> = ({
     // 检查会话时长
     const sessionDuration = (Date.now() - sessionStartTime) / (1000 * 60)
     if (sessionDuration > maxSessionDuration) {
-      return { allowed: false, reason: `会话时间已超过 ${maxSessionDuration} 分钟限制` }
+      return {
+        allowed: false,
+        reason: t('chatbot.errors.sessionTimeout', { minutes: maxSessionDuration }),
+      }
     }
 
     // 检查消息数量
     if (messageCount >= maxMessagesPerSession) {
-      return { allowed: false, reason: `已达到单次会话 ${maxMessagesPerSession} 条消息限制` }
+      return {
+        allowed: false,
+        reason: t('chatbot.errors.messageLimit', { count: maxMessagesPerSession }),
+      }
     }
 
     // 检查请求频率
     const now = Date.now()
     if (now - lastRequestTime < rateLimitMs) {
       const waitTime = Math.ceil((rateLimitMs - (now - lastRequestTime)) / 1000)
-      return { allowed: false, reason: `请等待 ${waitTime} 秒后再发送` }
+      return { allowed: false, reason: t('chatbot.errors.rateLimit', { seconds: waitTime }) }
     }
 
     return { allowed: true }
@@ -119,7 +128,7 @@ const ChatBot: React.FC<ChatBotProps> = ({
 
     try {
       if (!chatRef.current) {
-        throw new Error('请先配置 OpenAI API Key')
+        throw new Error(t('chatbot.errors.noApiKey'))
       }
 
       // 构建消息历史
@@ -157,7 +166,7 @@ const ChatBot: React.FC<ChatBotProps> = ({
       if (messageCount + 1 >= maxMessagesPerSession - 2) {
         const warningMessage: Message = {
           id: (Date.now() + 2).toString(),
-          content: `💡 提示：您还可以发送 ${maxMessagesPerSession - messageCount - 1} 条消息。这是为了防止 API 滥用的保护措施。`,
+          content: t('chatbot.warning', { remaining: maxMessagesPerSession - messageCount - 1 }),
           type: 'ai',
           timestamp: new Date(),
         }
@@ -167,18 +176,18 @@ const ChatBot: React.FC<ChatBotProps> = ({
       }
     } catch (error) {
       console.error('Chat error:', error)
-      let errorContent = '抱歉，发生了错误'
+      let errorContent = t('chatbot.errors.general')
 
       if (error instanceof Error) {
         if (error.message.includes('rate_limit')) {
-          errorContent = '⚠️ API 请求频率过高，请稍后再试'
+          errorContent = t('chatbot.errors.apiRateLimit')
           setIsBlocked(true)
           setTimeout(() => setIsBlocked(false), 60000) // 1分钟后解除阻止
         } else if (error.message.includes('quota')) {
-          errorContent = '⚠️ API 配额已用完，请联系网站管理员'
+          errorContent = t('chatbot.errors.quotaExceeded')
           setIsBlocked(true)
         } else {
-          errorContent = `抱歉，发生了错误：${error.message}`
+          errorContent = t('chatbot.errors.specific', { message: error.message })
         }
       }
 
@@ -217,7 +226,7 @@ const ChatBot: React.FC<ChatBotProps> = ({
         <button
           onClick={() => setIsOpen(true)}
           className='bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110'
-          aria-label='打开聊天'
+          aria-label={t('chatbot.openChat')}
         >
           <MessageCircle size={24} />
         </button>
@@ -230,12 +239,12 @@ const ChatBot: React.FC<ChatBotProps> = ({
           <div className='bg-blue-600 text-white p-4 rounded-t-lg flex items-center justify-between'>
             <div className='flex items-center space-x-2'>
               <Bot size={20} />
-              <span className='font-medium'>AI 助手</span>
+              <span className='font-medium'>{t('chatbot.title')}</span>
             </div>
             <button
               onClick={() => setIsOpen(false)}
               className='hover:bg-blue-700 p-1 rounded transition-colors'
-              aria-label='关闭聊天'
+              aria-label={t('chatbot.closeChat')}
             >
               <X size={18} />
             </button>
@@ -297,7 +306,7 @@ const ChatBot: React.FC<ChatBotProps> = ({
                 value={inputValue}
                 onChange={e => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder='输入消息...'
+                placeholder={t('chatbot.placeholder')}
                 className='flex-1 border-2 border-gray-400 rounded-lg px-3 py-2 text-sm bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm'
                 disabled={isLoading}
               />
@@ -305,23 +314,23 @@ const ChatBot: React.FC<ChatBotProps> = ({
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim() || isLoading || isBlocked}
                 className='bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 text-white p-2 rounded-lg transition-colors'
-                aria-label='发送消息'
+                aria-label={t('chatbot.sendMessage')}
               >
                 <Send size={16} />
               </button>
             </div>
-            {!apiKey && (
-              <p className='text-xs text-red-500 mt-2'>请在环境变量中配置 VITE_OPENAI_API_KEY</p>
-            )}
+            {!apiKey && <p className='text-xs text-red-500 mt-2'>{t('chatbot.configureApiKey')}</p>}
             <div className='flex justify-between text-xs text-gray-500 mt-1'>
               <span>
-                消息: {messageCount}/{maxMessagesPerSession}
+                {t('chatbot.messageCount', { current: messageCount, max: maxMessagesPerSession })}
               </span>
-              <span>会话时长: {Math.floor((Date.now() - sessionStartTime) / (1000 * 60))}分钟</span>
+              <span>
+                {t('chatbot.sessionDuration', {
+                  minutes: Math.floor((Date.now() - sessionStartTime) / (1000 * 60)),
+                })}
+              </span>
             </div>
-            {isBlocked && (
-              <p className='text-xs text-red-500 mt-1'>⚠️ 暂时被限制使用，请稍后再试</p>
-            )}
+            {isBlocked && <p className='text-xs text-red-500 mt-1'>{t('chatbot.blocked')}</p>}
           </div>
         </div>
       )}

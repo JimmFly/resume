@@ -32,12 +32,12 @@
   }
 }
 
-/* 滚动过渡效果 */
+/* Scroll transition effects */
 html {
   scroll-behavior: smooth;
 }
 
-/* 滚动条样式 */
+/* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
 }

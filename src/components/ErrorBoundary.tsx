@@ -9,7 +9,7 @@ interface ErrorBoundaryProps {
 }
 
 /**
- * 错误边界组件 - 捕获子组件中的JavaScript错误
+ * Error boundary component - Catch JavaScript errors in child components
  */
 class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
@@ -18,7 +18,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   }
 
   static getDerivedStateFromError(error: Error): ErrorBoundaryState {
-    // 更新 state 使下一次渲染能够显示降级后的 UI
+    // Update state to show fallback UI on next render
     return {
       hasError: true,
       error,
@@ -26,16 +26,16 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    // 记录错误信息
+    // Log error information
     console.error('ErrorBoundary caught an error:', error, errorInfo)
 
-    // 更新状态
+    // Update state
     this.setState({
       error,
       errorInfo,
     })
 
-    // 调用错误回调
+    // Call error callback
     if (this.props.onError) {
       this.props.onError(error, errorInfo)
     }
@@ -47,12 +47,12 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   render() {
     if (this.state.hasError) {
-      // 如果提供了自定义fallback，使用它
+      // Use custom fallback if provided
       if (this.props.fallback) {
         return this.props.fallback
       }
 
-      // 默认错误UI
+      // Default error UI
       return (
         <motion.div
           className='min-h-screen flex items-center justify-center bg-background text-text p-8'
@@ -68,8 +68,10 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
               transition={{ delay: 0.2 }}
             >
               <div className='text-6xl mb-4'>⚠️</div>
-              <h1 className='text-2xl font-bold text-primary mb-2'>出现了一些问题</h1>
-              <p className='text-secondary'>页面遇到了意外错误，请尝试刷新页面</p>
+              <h1 className='text-2xl font-bold text-primary mb-2'>Something went wrong</h1>
+              <p className='text-secondary'>
+                The page encountered an unexpected error, please try refreshing
+              </p>
             </motion.div>
 
             <motion.div
@@ -82,18 +84,18 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
                 onClick={this.handleRetry}
                 className='bg-primary text-background px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200'
               >
-                重试
+                Retry
               </button>
 
               <button
                 onClick={() => window.location.reload()}
                 className='block w-full text-secondary hover:text-primary transition-colors duration-200'
               >
-                刷新页面
+                Refresh Page
               </button>
             </motion.div>
 
-            {/* 开发环境下显示错误详情 */}
+            {/* Show error details in development environment */}
             {import.meta.env.DEV && this.state.error && (
               <motion.details
                 className='mt-8 text-left bg-accent/20 p-4 rounded-lg'
@@ -102,24 +104,24 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
                 transition={{ delay: 0.6 }}
               >
                 <summary className='cursor-pointer text-primary font-medium mb-2'>
-                  错误详情 (开发模式)
+                  Error Details (Development Mode)
                 </summary>
                 <div className='text-sm text-secondary space-y-2'>
                   <div>
-                    <strong>错误信息:</strong>
+                    <strong>Error Message:</strong>
                     <pre className='mt-1 p-2 bg-background/50 rounded text-xs overflow-auto'>
                       {this.state.error.message}
                     </pre>
                   </div>
                   <div>
-                    <strong>错误堆栈:</strong>
+                    <strong>Error Stack:</strong>
                     <pre className='mt-1 p-2 bg-background/50 rounded text-xs overflow-auto max-h-32'>
                       {this.state.error.stack}
                     </pre>
                   </div>
                   {this.state.errorInfo && (
                     <div>
-                      <strong>组件堆栈:</strong>
+                      <strong>Component Stack:</strong>
                       <pre className='mt-1 p-2 bg-background/50 rounded text-xs overflow-auto max-h-32'>
                         {this.state.errorInfo.componentStack}
                       </pre>

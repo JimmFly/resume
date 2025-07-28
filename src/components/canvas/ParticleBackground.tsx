@@ -15,12 +15,12 @@ export const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ count = 
     const colors = new Float32Array(count * 3)
 
     for (let i = 0; i < count; i++) {
-      // 随机位置
+      // Random position
       positions[i * 3] = (Math.random() - 0.5) * 20
       positions[i * 3 + 1] = (Math.random() - 0.5) * 20
       positions[i * 3 + 2] = (Math.random() - 0.5) * 20
 
-      // 随机颜色（蓝色调）
+      // Random color (blue tones)
       const color = new THREE.Color()
       color.setHSL(0.6 + Math.random() * 0.1, 0.8, 0.5 + Math.random() * 0.3)
       colors[i * 3] = color.r

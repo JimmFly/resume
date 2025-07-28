@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { useParallax, useInView } from '../../hooks/useParallax'
 import { PARALLAX_CONFIG } from '../../constants'
 
@@ -13,47 +14,46 @@ interface Project {
   github: string
 }
 
-const projects: Project[] = [
-  {
-    id: 1,
-    title: 'AFFiNE',
-    description:
-      '一个出海开源项目，可自部署的本地优先多人协同知识库。核心功能包括文本编辑器、画布页面、页面管理、AI生成文档、文档历史与权限管理等。我主导了前端架构设计、国际化实现和admin panel开发。',
-    technologies: ['React', 'TypeScript', 'GraphQL', 'Tailwind CSS', 'shadcn-ui'],
-    image: '📚', // 使用emoji代替图片
-    link: 'https://affine.pro',
-    github: 'https://github.com/toeverything/AFFiNE',
-  },
-  {
-    id: 2,
-    title: 'Admin Panel 管理系统',
-    description:
-      '为AFFiNE项目开发的后台管理平台，使用React + TypeScript + GraphQL技术栈，配合shadcn-ui与Tailwind CSS。实现了用户管理、权限控制、数据统计等核心功能。',
-    technologies: ['React', 'TypeScript', 'GraphQL', 'shadcn-ui', 'Tailwind CSS'],
-    image: '⚙️', // 使用emoji代替图片
-    link: '#',
-    github: 'https://github.com/toeverything/AFFiNE',
-  },
-  {
-    id: 3,
-    title: '国际化多语言系统',
-    description:
-      '主导设计并实现了AFFiNE项目的国际化支持，支持多语言切换与区域适配。构建了高复用的响应式组件，统一了UI风格与交互体验，提升了全球用户的使用体验。',
-    technologies: ['React', 'TypeScript', 'i18next', 'React-i18next'],
-    image: '🌍', // 使用emoji代替图片
-    link: '#',
-    github: 'https://github.com/toeverything/AFFiNE',
-  },
-]
-
 const ProjectsSection = () => {
+  const { t } = useTranslation()
+
+  const projects: Project[] = [
+    {
+      id: 1,
+      title: t('projects.affine.title'),
+      description: t('projects.affine.description'),
+      technologies: ['React', 'TypeScript', 'GraphQL', 'Tailwind CSS', 'shadcn-ui'],
+      image: '📚', // 使用emoji代替图片
+      link: 'https://affine.pro',
+      github: 'https://github.com/toeverything/AFFiNE',
+    },
+    {
+      id: 2,
+      title: t('projects.adminPanel.title'),
+      description: t('projects.adminPanel.description'),
+      technologies: ['React', 'TypeScript', 'GraphQL', 'shadcn-ui', 'Tailwind CSS'],
+      image: '⚙️', // 使用emoji代替图片
+      link: '#',
+      github: 'https://github.com/toeverything/AFFiNE',
+    },
+    {
+      id: 3,
+      title: t('projects.i18n.title'),
+      description: t('projects.i18n.description'),
+      technologies: ['React', 'TypeScript', 'i18next', 'React-i18next'],
+      image: '🌍', // 使用emoji代替图片
+      link: '#',
+      github: 'https://github.com/toeverything/AFFiNE',
+    },
+  ]
+
   const [activeProject, setActiveProject] = useState<Project | null>(null)
   const parallaxY = useParallax(PARALLAX_CONFIG.elements.normal)
   const [sectionRef, inView] = useInView(PARALLAX_CONFIG.thresholds.inView)
 
   return (
     <section id='projects' ref={sectionRef} className='section-container relative overflow-hidden'>
-      {/* 背景装饰元素 - 视差效果 */}
+      {/* Background decorative elements - Parallax effect */}
       <div
         className='absolute top-16 right-16 w-40 h-40 bg-purple-500/8 rounded-full blur-2xl'
         style={{ transform: `translateY(${Number(parallaxY || 0) * 0.3}px)` }}
@@ -75,7 +75,7 @@ const ProjectsSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
         >
-          <span className='heading-gradient'>项目作品</span>
+          <span className='heading-gradient'>{t('projects.title')}</span>
         </motion.h2>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
@@ -106,7 +106,9 @@ const ProjectsSection = () => {
                   ))}
                 </div>
                 <div className='flex justify-end'>
-                  <button className='text-primary text-sm hover:underline'>查看详情</button>
+                  <button className='text-primary text-sm hover:underline'>
+                    {t('projects.viewDetails')}
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -114,7 +116,7 @@ const ProjectsSection = () => {
         </div>
       </div>
 
-      {/* 项目详情模态框 */}
+      {/* Project details modal */}
       <AnimatePresence>
         {activeProject && (
           <motion.div
@@ -160,7 +162,9 @@ const ProjectsSection = () => {
                 <p className='text-secondary mb-6'>{activeProject.description}</p>
 
                 <div className='mb-6'>
-                  <h4 className='text-lg font-medium text-primary mb-2'>使用技术</h4>
+                  <h4 className='text-lg font-medium text-primary mb-2'>
+                    {t('projects.technologies')}
+                  </h4>
                   <div className='flex flex-wrap gap-2'>
                     {activeProject.technologies.map(tech => (
                       <span
@@ -180,7 +184,7 @@ const ProjectsSection = () => {
                     rel='noopener noreferrer'
                     className='px-4 py-2 bg-primary text-background font-medium rounded-md hover:bg-primary/90 transition-colors'
                   >
-                    访问项目
+                    {t('projects.viewProject')}
                   </a>
                   <a
                     href={activeProject.github}
@@ -188,7 +192,7 @@ const ProjectsSection = () => {
                     rel='noopener noreferrer'
                     className='px-4 py-2 border border-primary text-primary font-medium rounded-md hover:bg-primary/10 transition-colors'
                   >
-                    查看代码
+                    {t('projects.viewCode')}
                   </a>
                 </div>
               </div>

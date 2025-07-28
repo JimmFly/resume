@@ -1,9 +1,9 @@
 import { useEffect, useState, useCallback } from 'react'
 
 /**
- * 视差滚动效果 Hook
- * @param speed 视差速度，0-1之间，数值越小移动越慢
- * @param offset 初始偏移量
+ * Parallax scrolling effect Hook
+ * @param speed Parallax speed, between 0-1, smaller values move slower
+ * @param offset Initial offset
  */
 export const useParallax = (speed: number = 0.5, offset: number = 0) => {
   const [scrollY, setScrollY] = useState(0)
@@ -32,8 +32,8 @@ export const useParallax = (speed: number = 0.5, offset: number = 0) => {
 }
 
 /**
- * 滚动进度 Hook
- * 返回当前页面滚动的百分比进度
+ * Scroll progress Hook
+ * Returns the percentage progress of current page scroll
  */
 export const useScrollProgress = () => {
   const [progress, setProgress] = useState(0)
@@ -47,7 +47,7 @@ export const useScrollProgress = () => {
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll() // 初始化
+    handleScroll() // Initialize
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -56,8 +56,8 @@ export const useScrollProgress = () => {
 }
 
 /**
- * 元素可见性检测 Hook
- * @param threshold 可见性阈值，0-1之间
+ * Element visibility detection Hook
+ * @param threshold Visibility threshold, between 0-1
  */
 export const useInView = (threshold: number = 0.1) => {
   const [isInView, setIsInView] = useState(false)
@@ -81,8 +81,8 @@ export const useInView = (threshold: number = 0.1) => {
 }
 
 /**
- * 多层视差效果 Hook
- * 用于创建多个不同速度的视差层
+ * Multi-layer parallax effect Hook
+ * Used to create multiple parallax layers with different speeds
  */
 export const useMultiLayerParallax = (layers: { speed: number; offset?: number }[]) => {
   const [scrollY, setScrollY] = useState(0)
@@ -109,7 +109,7 @@ export const useMultiLayerParallax = (layers: { speed: number; offset?: number }
     scrollY,
     layerOffsets,
     getLayerStyle: (index: number) => {
-      // 安全的数组访问，防止对象注入攻击
+      // Safe array access to prevent object injection attacks
       const offset = layerOffsets.at(Math.max(0, Math.min(index, layerOffsets.length - 1))) ?? 0
       return {
         transform: `translateY(${offset}px)`,

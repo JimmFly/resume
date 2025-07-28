@@ -4,7 +4,7 @@ import type { ViewportConfig } from '../types'
 import type { Variants } from 'framer-motion'
 
 /**
- * 自定义hook：生成标准化的动画配置
+ * Custom hook: Generate standardized animation configurations
  */
 export const useAnimation = () => {
   const fadeInUp = useMemo(
@@ -116,7 +116,7 @@ export const useAnimation = () => {
 }
 
 /**
- * 自定义hook：创建带延迟的动画配置
+ * Custom hook: Create animation configurations with delay
  */
 export const useDelayedAnimation = (delay: number = 0) => {
   return useMemo(() => {

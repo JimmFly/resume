@@ -50,7 +50,7 @@ const Footer = () => {
   )
 }
 
-// 简单的社交图标组件
+// Simple social icon component
 const SocialIcon = ({ icon }: { icon: string }) => {
   switch (icon) {
     case 'github':

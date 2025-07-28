@@ -1,0 +1,167 @@
+{
+  "nav": {
+    "about": "关于我",
+    "experience": "工作经历",
+    "resume": "简历",
+    "projects": "项目作品",
+    "contact": "联系我",
+    "language": "语言"
+  },
+  "hero": {
+    "greeting": "你好，我是",
+    "name": "杨晋飞",
+    "title": "前端开发工程师 · 3年经验 · 万有理论科技",
+    "subtitle": "热衷于AI技术探索与创新应用",
+    "description": "专注于React技术栈的前端开发工程师，拥有3年丰富经验。熟练掌握TypeScript、GraphQL、Tailwind CSS等现代前端技术，参与AFFiNE开源项目开发。擅长构建高质量、可复用的组件库，致力于打造优秀的用户体验。",
+    "cta": "查看我的作品",
+    "contactMe": "联系我",
+    "github": "GitHub"
+  },
+  "about": {
+    "title": "关于我",
+    "description1": "我是杨晋飞，一名拥有3年丰富经验的前端开发工程师，目前就职于万有理论科技（杭州）有限责任公司。专注于React技术栈，熟练掌握TypeScript、GraphQL、Tailwind CSS等现代前端技术。",
+    "description2": "在职业生涯中，我主导参与了AFFiNE开源项目的开发，这是一个可自部署的本地优先多人协同知识库。负责前端架构设计、国际化实现、admin panel开发等核心功能模块。",
+    "description3": "我热衷于探索前沿技术，50% vibe coding，对AI应用开发方向保持高度兴趣。致力于构建高质量、可复用的组件库，追求优秀的用户体验和产品创新。",
+    "skills": {
+      "title": "技能专长",
+      "frontend": "前端开发",
+      "backend": "后端开发",
+      "tools": "工具与方法"
+    },
+    "cards": {
+      "experience": {
+        "title": "工作经历",
+        "company": "万有理论科技（杭州）有限责任公司",
+        "position": "前端开发工程师 | 2022.06 - 2025.06"
+      },
+      "projects": {
+        "title": "核心项目",
+        "affine": "AFFiNE - 开源知识库",
+        "stack": "React + TypeScript + GraphQL"
+      },
+      "contact": {
+        "title": "联系方式",
+        "phone": "📞 13008857268",
+        "email": "✉️ yangjinfei001@gmail.com"
+      }
+    },
+    "advantages": {
+      "title": "个人优势",
+      "technical": "扎实的技术基础，拥有3年以上React生态系统开发经验",
+      "experience": "丰富的项目经验，涵盖开源项目和企业级应用开发",
+      "learning": "持续学习能力强，紧跟前端技术发展趋势",
+      "teamwork": "优秀的团队协作和跨部门沟通能力",
+      "innovation": "创新驱动思维，热衷于探索和应用新技术"
+    }
+  },
+  "experience": {
+    "title": "工作经历",
+    "present": "至今",
+    "achievements": "主要成就",
+    "technologies": "使用技术",
+    "toeverything": {
+      "company": "万有理论科技（杭州）有限责任公司",
+      "position": "前端开发工程师",
+      "period": "2022.06 - 2025.06",
+      "location": "杭州，中国",
+      "description": "负责AFFiNE开源项目的前端开发工作，这是一个可自部署的本地优先多人协同知识库。主导前端架构设计、国际化实现和admin panel开发。",
+      "achievements": {
+        "architecture": "主导前端架构设计，建立团队开发规范和标准",
+        "i18n": "实现完整的国际化系统，支持多语言和地区适配",
+        "admin": "开发admin panel管理系统，实现用户管理和权限控制",
+        "components": "构建高质量可复用组件库，提升开发效率"
+      }
+    }
+  },
+  "projects": {
+    "title": "项目经历",
+    "viewProject": "查看项目",
+    "viewCode": "查看代码",
+    "viewDetails": "查看详情",
+    "technologies": "使用技术",
+    "affine": {
+      "title": "AFFiNE - 开源知识库",
+      "description": "一个出海开源项目，可自部署的本地优先多人协同知识库。核心功能包括文本编辑器、画布页面、页面管理、AI生成文档、文档历史与权限管理等。我主导了前端架构设计、国际化实现和admin panel开发。"
+    },
+    "adminPanel": {
+      "title": "Admin Panel 管理系统",
+      "description": "为AFFiNE项目开发的后台管理平台，使用React + TypeScript + GraphQL技术栈，配合shadcn-ui与Tailwind CSS。实现了用户管理、权限控制、数据统计等核心功能。"
+    },
+    "i18n": {
+      "title": "国际化多语言系统",
+      "description": "主导设计并实现了AFFiNE项目的国际化支持，支持多语言切换与区域适配。构建了高复用的响应式组件，统一了UI风格与交互体验，提升了全球用户的使用体验。"
+    }
+  },
+  "contact": {
+    "title": "联系我",
+    "subtitle": "我随时欢迎讨论新的机会和有趣的项目。",
+    "email": "邮箱",
+    "phone": "电话",
+    "location": "位置",
+    "locationValue": "中国，深圳",
+    "info": "联系方式",
+    "social": "社交媒体",
+    "form": {
+      "title": "发送消息",
+      "name": "姓名",
+      "email": "邮箱",
+      "message": "消息",
+      "send": "发送消息",
+      "sending": "发送中...",
+      "success": "邮件客户端已打开",
+      "successMessage": "请在您的邮件客户端中发送邮件，我会尽快回复您！",
+      "error": "发送失败，请重试。",
+      "emailSubject": "来自",
+      "sentAt": "发送时间"
+    }
+  },
+  "chatbot": {
+    "title": "AI 助手",
+    "placeholder": "输入消息...",
+    "send": "发送",
+    "welcome": "你好！我是 AI 助手，有什么可以帮助你的吗？",
+    "openChat": "打开聊天",
+    "closeChat": "关闭聊天",
+    "sendMessage": "发送消息",
+    "configureApiKey": "请在环境变量中配置 VITE_OPENAI_API_KEY",
+    "messageCount": "消息: {{current}}/{{max}}",
+    "sessionDuration": "会话时长: {{minutes}}分钟",
+    "blocked": "⚠️ 暂时被限制使用，请稍后再试",
+    "warning": "💡 提示：您还可以发送 {{remaining}} 条消息。这是为了防止 API 滥用的保护措施。",
+    "errors": {
+      "sessionTimeout": "会话时间已超过 {{minutes}} 分钟限制",
+      "messageLimit": "已达到单次会话 {{count}} 条消息限制",
+      "rateLimit": "请等待 {{seconds}} 秒后再发送",
+      "noApiKey": "请先配置 OpenAI API Key",
+      "general": "抱歉，发生了错误",
+      "apiRateLimit": "⚠️ API 请求频率过高，请稍后再试",
+      "quotaExceeded": "⚠️ API 配额已用完，请联系网站管理员",
+      "specific": "抱歉，发生了错误：{{message}}"
+    }
+  },
+  "footer": {
+    "rights": "版权所有",
+    "builtWith": "构建于"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "retry": "重试",
+    "close": "关闭",
+    "open": "打开",
+    "save": "保存",
+    "cancel": "取消",
+    "confirm": "确认",
+    "delete": "删除",
+    "edit": "编辑",
+    "add": "添加",
+    "search": "搜索",
+    "filter": "筛选",
+    "sort": "排序",
+    "next": "下一页",
+    "previous": "上一页",
+    "submit": "提交",
+    "reset": "重置",
+    "scrollDown": "向下滚动"
+  }
+}

@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from '../LanguageSwitcher'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  // 监听滚动事件，改变导航栏背景
+  // Listen to scroll events to change navbar background
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
@@ -14,12 +16,13 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const { t } = useTranslation()
+
   const navLinks = [
-    { name: '首页', href: '#hero' },
-    { name: '关于', href: '#about' },
-    { name: '技能', href: '#skills' },
-    { name: '项目', href: '#projects' },
-    { name: '联系', href: '#contact' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.experience'), href: '#experience' },
+    { name: t('nav.projects'), href: '#projects' },
+    { name: t('nav.contact'), href: '#contact' },
   ]
 
   return (
@@ -35,28 +38,32 @@ const Navbar = () => {
         <div className='flex justify-between items-center py-4'>
           {/* Logo */}
           <motion.div className='text-2xl font-bold font-heading' whileHover={{ scale: 1.05 }}>
-            <span className='text-primary'>Resume</span>
+            <span className='text-primary'>{t('nav.resume')}</span>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className='hidden md:flex space-x-8'>
-            {navLinks.map((link, index) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                className='text-text hover:text-primary transition-colors'
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -3 }}
-              >
-                {link.name}
-              </motion.a>
-            ))}
-          </nav>
+          <div className='hidden md:flex items-center space-x-8'>
+            <nav className='flex space-x-8'>
+              {navLinks.map((link, index) => (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  className='text-text hover:text-primary transition-colors'
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -3 }}
+                >
+                  {link.name}
+                </motion.a>
+              ))}
+            </nav>
+            <LanguageSwitcher />
+          </div>
 
-          {/* Mobile Menu Button */}
-          <div className='md:hidden'>
+          {/* Mobile Menu Button and Language Switcher */}
+          <div className='md:hidden flex items-center space-x-4'>
+            <LanguageSwitcher />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className='text-text focus:outline-none'

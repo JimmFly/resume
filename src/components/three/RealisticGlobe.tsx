@@ -21,16 +21,16 @@ const RealisticGlobe: React.FC<RealisticGlobeProps> = ({
   const meshRef = useRef<THREE.Mesh>(null!)
   const atmosphereRef = useRef<THREE.Mesh>(null!)
 
-  // 加载地球纹理
+  // Load earth texture
   const earthTexture = useLoader(TextureLoader, '/textures/earth_daymap.jpg')
 
-  // 深圳坐标 (纬度, 经度)
+  // Shenzhen coordinates (latitude, longitude)
   const shenzhenCoords = {
     lat: GLOBE_CONFIG.shenzhen.latitude,
     lng: GLOBE_CONFIG.shenzhen.longitude,
   }
 
-  // 将经纬度转换为3D坐标
+  // Convert lat/lng to 3D coordinates
   const latLngToVector3 = useMemo(() => {
     return (lat: number, lng: number, radius: number = 1) => {
       const phi = (90 - lat) * (Math.PI / 180)
@@ -44,17 +44,17 @@ const RealisticGlobe: React.FC<RealisticGlobeProps> = ({
     }
   }, [])
 
-  // 深圳标记位置
+  // Shenzhen marker position
   const shenzhenPosition = useMemo(() => {
     return latLngToVector3(shenzhenCoords.lat, shenzhenCoords.lng, 1.02)
   }, [latLngToVector3, shenzhenCoords.lat, shenzhenCoords.lng])
 
-  // 深圳标签位置
+  // Shenzhen label position
   const shenzhenLabelPosition = useMemo(() => {
     return latLngToVector3(shenzhenCoords.lat, shenzhenCoords.lng, 1.15)
   }, [latLngToVector3, shenzhenCoords.lat, shenzhenCoords.lng])
 
-  // 动画循环
+  // Animation loop
   useFrame((_, delta) => {
     if (autoRotate && meshRef.current) {
       meshRef.current.rotation.y += delta * rotationSpeed * 0.1
@@ -64,10 +64,10 @@ const RealisticGlobe: React.FC<RealisticGlobeProps> = ({
     }
   })
 
-  // 设置地球初始旋转，让深圳面向屏幕
+  // Set initial earth rotation to face Shenzhen towards screen
   const initialRotation = useMemo(() => {
-    // 深圳位于东经114.0579度，需要调整旋转让其面向前方
-    // 通过实验调整角度，让深圳朝向屏幕
+    // Shenzhen is at 114.0579° E, adjust rotation to face forward
+    // Experimentally adjust angle to face Shenzhen towards screen
     const shenzhenLongitude = GLOBE_CONFIG.shenzhen.longitude
     const shenzhenLatitude = GLOBE_CONFIG.shenzhen.latitude
     const rotationX = -(shenzhenLatitude * Math.PI) / 180 + Math.PI / 6 + Math.PI / 6
@@ -77,7 +77,7 @@ const RealisticGlobe: React.FC<RealisticGlobeProps> = ({
 
   return (
     <group position={position} scale={scale}>
-      {/* 地球主体 */}
+      {/* Earth main body */}
       <mesh ref={meshRef} rotation={initialRotation}>
         <sphereGeometry args={[1, 64, 64]} />
         <meshPhongMaterial
@@ -86,13 +86,13 @@ const RealisticGlobe: React.FC<RealisticGlobeProps> = ({
           specular={new THREE.Color(GLOBE_CONFIG.material.specular)}
         />
 
-        {/* 深圳标记点 - 放在地球内部跟随旋转 */}
+        {/* Shenzhen marker point - Inside earth to follow rotation */}
         <mesh position={[shenzhenPosition.x, shenzhenPosition.y, shenzhenPosition.z]}>
           <sphereGeometry args={[GLOBE_CONFIG.marker.size, 16, 16]} />
           <meshBasicMaterial color={GLOBE_CONFIG.marker.color} />
         </mesh>
 
-        {/* 深圳标记发光效果 */}
+        {/* Shenzhen marker glow effect */}
         <mesh position={[shenzhenPosition.x, shenzhenPosition.y, shenzhenPosition.z]}>
           <sphereGeometry args={[GLOBE_CONFIG.marker.size * 1.67, 16, 16]} />
           <meshBasicMaterial
@@ -102,7 +102,7 @@ const RealisticGlobe: React.FC<RealisticGlobeProps> = ({
           />
         </mesh>
 
-        {/* 深圳标签 - 修复镜面反转并跟随旋转 */}
+        {/* Shenzhen label - Fix mirror inversion and follow rotation */}
         <Text
           position={[shenzhenLabelPosition.x, shenzhenLabelPosition.y, shenzhenLabelPosition.z]}
           fontSize={0.08}
@@ -113,17 +113,17 @@ const RealisticGlobe: React.FC<RealisticGlobeProps> = ({
           outlineColor='#000000'
           rotation={[0, Math.PI, 0]}
         >
-          深圳
+          Shenzhen
         </Text>
       </mesh>
 
-      {/* 大气层 */}
+      {/* Atmosphere */}
       <mesh ref={atmosphereRef}>
         <sphereGeometry args={[1.05, 32, 32]} />
         <meshBasicMaterial color={0x69b7ff} transparent opacity={0.1} side={THREE.BackSide} />
       </mesh>
 
-      {/* 发光效果 */}
+      {/* Glow effect */}
       <mesh>
         <sphereGeometry args={[1.1, 32, 32]} />
         <meshBasicMaterial color={0x69b7ff} transparent opacity={0.05} side={THREE.BackSide} />

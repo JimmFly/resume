@@ -1,4 +1,4 @@
-// 基础类型定义
+// Basic type definitions
 export interface Skill {
   name: string
   level: number // 1-100
@@ -25,7 +25,7 @@ export interface ContactInfo {
   website?: string
 }
 
-// 动画相关类型
+// Animation related types
 export interface AnimationVariants {
   [key: string]: {
     opacity?: number
@@ -65,7 +65,7 @@ export interface ViewportConfig {
   margin?: string
 }
 
-// 地球组件相关类型
+// Globe component related types
 export interface GlobeProps {
   scale?: number
   autoRotate?: boolean
@@ -84,7 +84,7 @@ export interface MarkerProps {
   glowIntensity?: number
 }
 
-// 组件Props类型
+// Component Props types
 export interface SkillBarProps {
   skill: Skill
 }
@@ -95,7 +95,7 @@ export interface SectionProps {
   children: React.ReactNode
 }
 
-// 错误边界相关类型
+// Error boundary related types
 export interface ErrorInfo {
   componentStack: string
 }
@@ -106,14 +106,14 @@ export interface ErrorBoundaryState {
   errorInfo?: ErrorInfo
 }
 
-// 性能监控类型
+// Performance monitoring types
 export interface PerformanceMetrics {
   renderTime: number
   componentName: string
   timestamp: number
 }
 
-// 响应式相关类型
+// Responsive related types
 export type Breakpoint = 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 
 export interface ResponsiveValue<T> {
@@ -125,7 +125,7 @@ export interface ResponsiveValue<T> {
   '2xl'?: T
 }
 
-// 主题相关类型
+// Theme related types
 export interface ThemeColors {
   background: string
   text: string

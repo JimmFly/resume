@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react'
 import ErrorBoundary from '../components/ErrorBoundary'
 
 /**
- * 高阶组件：为组件添加错误边界
+ * Higher-order component: Add error boundary to component
  */
 export const withErrorBoundary = <P extends object>(
   Component: React.ComponentType<P>,

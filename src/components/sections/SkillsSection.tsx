@@ -1,11 +1,13 @@
 import React, { useMemo } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { SKILLS_DATA, ANIMATION_CONFIG, PARALLAX_CONFIG } from '../../constants'
 import { useAnimation } from '../../hooks/useAnimation'
 import { useParallax, useInView } from '../../hooks/useParallax'
 import type { SkillBarProps } from '../../types'
 
 const SkillsSection: React.FC = React.memo(() => {
+  const { t } = useTranslation()
   const { fadeInUp, staggerContainer, viewport } = useAnimation()
   const parallaxY = useParallax(PARALLAX_CONFIG.elements.normal)
   const [sectionRef, inView] = useInView(PARALLAX_CONFIG.thresholds.inView)
@@ -25,7 +27,7 @@ const SkillsSection: React.FC = React.memo(() => {
       ref={sectionRef}
       className='section-container bg-accent/10 relative overflow-hidden'
     >
-      {/* 背景装饰元素 - 视差效果 */}
+      {/* Background decorative elements - Parallax effect */}
       <div
         className='absolute top-20 left-1/4 w-32 h-32 bg-cyan-500/10 rounded-full blur-xl'
         style={{ transform: `translateY(${Number(parallaxY || 0) * 0.4}px)` }}
@@ -43,12 +45,12 @@ const SkillsSection: React.FC = React.memo(() => {
           viewport={viewport}
         >
           <span className='bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent'>
-            技能专长
+            {t('skills.title')}
           </span>
         </motion.h2>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-          {/* 前端技能 */}
+          {/* Frontend skills */}
           <motion.div
             className='glass-card p-6'
             variants={fadeInUp}
@@ -56,7 +58,7 @@ const SkillsSection: React.FC = React.memo(() => {
             whileInView='show'
             viewport={viewport}
           >
-            <h3 className='text-xl font-semibold mb-6 text-cyan-400'>前端开发</h3>
+            <h3 className='text-xl font-semibold mb-6 text-cyan-400'>{t('skills.frontend')}</h3>
             <motion.div
               className='space-y-4'
               variants={staggerContainer}
@@ -70,7 +72,7 @@ const SkillsSection: React.FC = React.memo(() => {
             </motion.div>
           </motion.div>
 
-          {/* 后端技能 */}
+          {/* Backend skills */}
           <motion.div
             className='glass-card p-6'
             variants={fadeInUp}
@@ -79,7 +81,7 @@ const SkillsSection: React.FC = React.memo(() => {
             viewport={viewport}
             transition={{ delay: ANIMATION_CONFIG.delay.medium }}
           >
-            <h3 className='text-xl font-semibold mb-6 text-cyan-400'>后端开发</h3>
+            <h3 className='text-xl font-semibold mb-6 text-cyan-400'>{t('skills.backend')}</h3>
             <motion.div
               className='space-y-4'
               variants={staggerContainer}
@@ -93,7 +95,7 @@ const SkillsSection: React.FC = React.memo(() => {
             </motion.div>
           </motion.div>
 
-          {/* 工具和其他 */}
+          {/* Tools and others */}
           <motion.div
             className='glass-card p-6 md:col-span-2 lg:col-span-1'
             variants={fadeInUp}
@@ -102,7 +104,7 @@ const SkillsSection: React.FC = React.memo(() => {
             viewport={viewport}
             transition={{ delay: ANIMATION_CONFIG.delay.long }}
           >
-            <h3 className='text-xl font-semibold mb-6 text-cyan-400'>工具与方法</h3>
+            <h3 className='text-xl font-semibold mb-6 text-cyan-400'>{t('skills.tools')}</h3>
             <motion.div
               className='space-y-4'
               variants={staggerContainer}

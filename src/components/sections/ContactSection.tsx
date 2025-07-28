@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { useParallax, useInView } from '../../hooks/useParallax'
 import { PARALLAX_CONFIG } from '../../constants'
 
 const ContactSection = () => {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,26 +28,26 @@ const ContactSection = () => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // 构建邮件内容
-    const subject = encodeURIComponent(`来自${formData.name}的联系`)
+    // Build email content
+    const subject = encodeURIComponent(`${t('contact.form.emailSubject')} ${formData.name}`)
     const body = encodeURIComponent(
-      `姓名: ${formData.name}\n` +
-        `邮箱: ${formData.email}\n\n` +
-        `消息内容:\n${formData.message}\n\n` +
-        `---\n发送时间: ${new Date().toLocaleString('zh-CN')}`
+      `${t('contact.form.name')}: ${formData.name}\n` +
+        `${t('contact.form.email')}: ${formData.email}\n\n` +
+        `${t('contact.form.message')}:\n${formData.message}\n\n` +
+        `---\n${t('contact.form.sentAt')}: ${new Date().toLocaleString()}`
     )
 
-    // 打开邮件客户端
+    // Open email client
     const mailtoLink = `mailto:yangjinfei001@gmail.com?subject=${subject}&body=${body}`
     window.open(mailtoLink, '_blank')
 
-    // 显示成功状态
+    // Show success status
     setTimeout(() => {
       setIsSubmitting(false)
       setIsSubmitted(true)
       setFormData({ name: '', email: '', message: '' })
 
-      // 重置提交状态，以便用户可以再次提交
+      // Reset submit status for user to submit again
       setTimeout(() => {
         setIsSubmitted(false)
       }, 5000)
@@ -58,7 +60,7 @@ const ContactSection = () => {
       ref={sectionRef}
       className='section-container bg-accent/10 relative overflow-hidden'
     >
-      {/* 背景装饰元素 - 视差效果 */}
+      {/* Background decorative elements - Parallax effect */}
       <div
         className='absolute top-20 right-20 w-36 h-36 bg-cyan-500/8 rounded-full blur-2xl'
         style={{ transform: `translateY(${Number(parallaxY || 0) * 0.4}px)` }}
@@ -79,7 +81,7 @@ const ContactSection = () => {
           transition={{ duration: 0.5 }}
         >
           <span className='bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent'>
-            联系我
+            {t('contact.title')}
           </span>
         </motion.h2>
         <motion.p
@@ -88,18 +90,17 @@ const ContactSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          我是杨晋飞，一名专注于React技术栈的前端开发工程师。
-          欢迎与我交流前端技术、开源项目或工作机会！
+          {t('contact.subtitle')}
         </motion.p>
 
         <div className='max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10'>
-          {/* 联系信息 */}
+          {/* Contact information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className='text-xl font-semibold mb-6 text-primary'>联系方式</h3>
+            <h3 className='text-xl font-semibold mb-6 text-primary'>{t('contact.info')}</h3>
 
             <div className='space-y-4 mb-8'>
               <div className='flex items-center'>
@@ -120,7 +121,7 @@ const ContactSection = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className='text-secondary text-sm'>邮箱</p>
+                  <p className='text-secondary text-sm'>{t('contact.email')}</p>
                   <a
                     href='mailto:yangjinfei001@gmail.com'
                     className='text-text hover:text-primary transition-colors'
@@ -148,7 +149,7 @@ const ContactSection = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className='text-secondary text-sm'>电话</p>
+                  <p className='text-secondary text-sm'>{t('contact.phone')}</p>
                   <a
                     href='tel:+8613008857268'
                     className='text-text hover:text-primary transition-colors'
@@ -182,13 +183,13 @@ const ContactSection = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className='text-secondary text-sm'>地址</p>
-                  <p className='text-text'>中国，深圳</p>
+                  <p className='text-secondary text-sm'>{t('contact.location')}</p>
+                  <p className='text-text'>{t('contact.locationValue')}</p>
                 </div>
               </div>
             </div>
 
-            <h3 className='text-xl font-semibold mb-4 text-primary'>社交媒体</h3>
+            <h3 className='text-xl font-semibold mb-4 text-primary'>{t('contact.social')}</h3>
             <div className='flex space-x-4'>
               <a
                 href='https://github.com/JimmFly'
@@ -217,13 +218,13 @@ const ContactSection = () => {
             </div>
           </motion.div>
 
-          {/* 联系表单 */}
+          {/* Contact form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className='text-xl font-semibold mb-6 text-primary'>发送消息</h3>
+            <h3 className='text-xl font-semibold mb-6 text-primary'>{t('contact.form.title')}</h3>
 
             {isSubmitted ? (
               <motion.div
@@ -246,14 +247,16 @@ const ContactSection = () => {
                     d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
                   />
                 </svg>
-                <h4 className='text-xl font-medium text-primary mb-2'>邮件客户端已打开</h4>
-                <p className='text-secondary'>请在您的邮件客户端中发送邮件，我会尽快回复您！</p>
+                <h4 className='text-xl font-medium text-primary mb-2'>
+                  {t('contact.form.success')}
+                </h4>
+                <p className='text-secondary'>{t('contact.form.successMessage')}</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className='space-y-4'>
                 <div>
                   <label htmlFor='name' className='block text-secondary text-sm mb-1'>
-                    姓名
+                    {t('contact.form.name')}
                   </label>
                   <input
                     type='text'
@@ -268,7 +271,7 @@ const ContactSection = () => {
 
                 <div>
                   <label htmlFor='email' className='block text-secondary text-sm mb-1'>
-                    邮箱
+                    {t('contact.form.email')}
                   </label>
                   <input
                     type='email'
@@ -283,7 +286,7 @@ const ContactSection = () => {
 
                 <div>
                   <label htmlFor='message' className='block text-secondary text-sm mb-1'>
-                    消息
+                    {t('contact.form.message')}
                   </label>
                   <textarea
                     id='message'
@@ -324,10 +327,10 @@ const ContactSection = () => {
                           d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
                         ></path>
                       </svg>
-                      发送中...
+                      {t('contact.form.sending')}
                     </>
                   ) : (
-                    '发送消息'
+                    t('contact.form.send')
                   )}
                 </motion.button>
               </form>

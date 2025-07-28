@@ -20,7 +20,7 @@ export const Text3D: React.FC<Text3DProps> = ({
 
   useFrame(state => {
     if (textRef.current) {
-      // 动态光影效果
+      // Dynamic lighting effects
       const time = state.clock.elapsedTime
       textRef.current.rotation.y = Math.sin(time * 0.5) * 0.1
       textRef.current.position.y = position[1] + Math.sin(time * 2) * 0.1

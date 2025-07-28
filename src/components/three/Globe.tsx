@@ -11,14 +11,14 @@ interface GlobeProps {
 export const Globe: React.FC<GlobeProps> = ({ position = [0, 0, 0], scale = 1 }) => {
   const meshRef = useRef<THREE.Mesh>(null!)
 
-  // 创建地球纹理
+  // Create earth texture
   const earthTexture = useMemo(() => {
     const canvas = document.createElement('canvas')
     const ctx = canvas.getContext('2d')!
     canvas.width = 512
     canvas.height = 256
 
-    // 创建简单的地球纹理
+    // Create simple earth texture
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0)
     gradient.addColorStop(0, '#1e40af')
     gradient.addColorStop(0.3, '#3b82f6')
@@ -28,7 +28,7 @@ export const Globe: React.FC<GlobeProps> = ({ position = [0, 0, 0], scale = 1 })
     ctx.fillStyle = gradient
     ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-    // 添加一些陆地形状
+    // Add some land shapes
     ctx.fillStyle = '#22c55e'
     for (let i = 0; i < 20; i++) {
       const x = Math.random() * canvas.width
@@ -42,7 +42,7 @@ export const Globe: React.FC<GlobeProps> = ({ position = [0, 0, 0], scale = 1 })
     return new THREE.CanvasTexture(canvas)
   }, [])
 
-  // 动画旋转
+  // Animation rotation
   useFrame((state, delta) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += delta * 0.2
@@ -56,12 +56,12 @@ export const Globe: React.FC<GlobeProps> = ({ position = [0, 0, 0], scale = 1 })
         <meshStandardMaterial map={earthTexture} transparent opacity={0.9} />
       </Sphere>
 
-      {/* 大气层效果 */}
+      {/* Atmosphere effect */}
       <Sphere args={[1.05, 32, 16]} scale={scale}>
         <meshBasicMaterial color='#60a5fa' transparent opacity={0.1} side={THREE.BackSide} />
       </Sphere>
 
-      {/* 发光效果 */}
+      {/* Glow effect */}
       <Sphere args={[1.1, 32, 16]} scale={scale}>
         <meshBasicMaterial color='#3b82f6' transparent opacity={0.05} side={THREE.BackSide} />
       </Sphere>

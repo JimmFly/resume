@@ -1,0 +1,167 @@
+{
+  "nav": {
+    "about": "私について",
+    "experience": "職歴",
+    "resume": "履歴書",
+    "projects": "プロジェクト",
+    "contact": "お問い合わせ",
+    "language": "言語"
+  },
+  "hero": {
+    "greeting": "こんにちは、私は",
+    "name": "楊晋飛",
+    "title": "フロントエンド開発エンジニア · 3年の経験 · ToEverything",
+    "subtitle": "AI技術の探求と革新的な応用に情熱を注ぐ",
+    "description": "Reactテクノロジースタックに特化したフロントエンド開発エンジニアで、3年の豊富な経験を持ちます。TypeScript、GraphQL、Tailwind CSSなどの現代的なフロントエンド技術に精通し、AFFiNEオープンソースプロジェクトの開発に参加しています。高品質で再利用可能なコンポーネントライブラリの構築を得意とし、優れたユーザーエクスペリエンスの創造に取り組んでいます。",
+    "cta": "私の作品を見る",
+    "contactMe": "お問い合わせ",
+    "github": "GitHub"
+  },
+  "about": {
+    "title": "私について",
+    "description1": "私は楊晋飛、3年の豊富な経験を持つフロントエンド開発エンジニアで、現在ToEverything（杭州）有限責任公司に勤務しています。Reactテクノロジースタックに特化し、TypeScript、GraphQL、Tailwind CSSなどの現代的なフロントエンド技術に精通しています。",
+    "description2": "キャリアにおいて、自己展開可能なローカルファーストマルチユーザー協働ナレッジベースであるAFFiNEオープンソースプロジェクトの開発を主導しました。フロントエンドアーキテクチャ設計、国際化実装、admin panel開発などのコア機能モジュールを担当しています。",
+    "description3": "最先端技術の探求に情熱を注ぎ、50% vibe codingで、AI応用開発方向に高い関心を持っています。高品質で再利用可能なコンポーネントライブラリの構築に取り組み、優れたユーザーエクスペリエンスと製品イノベーションを追求しています。",
+    "skills": {
+      "title": "技術スキル",
+      "frontend": "フロントエンド開発",
+      "backend": "バックエンド開発",
+      "tools": "ツールと手法"
+    },
+    "cards": {
+      "experience": {
+        "title": "職歴",
+        "company": "ToEverything（杭州）有限責任公司",
+        "position": "フロントエンド開発エンジニア | 2022.06 - 2025.06"
+      },
+      "projects": {
+        "title": "コアプロジェクト",
+        "affine": "AFFiNE - オープンソースナレッジベース",
+        "stack": "React + TypeScript + GraphQL"
+      },
+      "contact": {
+        "title": "連絡先",
+        "phone": "📞 13008857268",
+        "email": "✉️ yangjinfei001@gmail.com"
+      }
+    },
+    "advantages": {
+      "title": "個人の強み",
+      "technical": "堅実な技術基盤、3年以上のReactエコシステム開発経験",
+      "experience": "豊富なプロジェクト経験、オープンソースプロジェクトとエンタープライズアプリケーション開発をカバー",
+      "learning": "継続的な学習能力、フロントエンド技術の発展トレンドに追従",
+      "teamwork": "優秀なチームワークと部門間コミュニケーション能力",
+      "innovation": "イノベーション駆動思考、新技術の探求と応用に情熱"
+    }
+  },
+  "experience": {
+    "title": "職歴",
+    "present": "現在",
+    "achievements": "主な成果",
+    "technologies": "使用技術",
+    "toeverything": {
+      "company": "ToEverything（杭州）有限責任公司",
+      "position": "フロントエンド開発エンジニア",
+      "period": "2022.06 - 2025.06",
+      "location": "杭州、中国",
+      "description": "自己展開可能なローカルファーストマルチユーザー協働ナレッジベースであるAFFiNEオープンソースプロジェクトのフロントエンド開発を担当。フロントエンドアーキテクチャ設計、国際化実装、admin panel開発を主導。",
+      "achievements": {
+        "architecture": "フロントエンドアーキテクチャ設計を主導、チーム開発規範と標準を確立",
+        "i18n": "完全な国際化システムを実装、多言語と地域適応をサポート",
+        "admin": "admin panel管理システムを開発、ユーザー管理と権限制御を実現",
+        "components": "高品質で再利用可能なコンポーネントライブラリを構築、開発効率を向上"
+      }
+    }
+  },
+  "projects": {
+    "title": "プロジェクト経験",
+    "viewProject": "プロジェクトを見る",
+    "viewCode": "コードを見る",
+    "viewDetails": "詳細を見る",
+    "technologies": "使用技術",
+    "affine": {
+      "title": "AFFiNE - オープンソースナレッジベース",
+      "description": "海外展開オープンソースプロジェクト、自己展開可能なローカルファーストマルチユーザー協働ナレッジベース。コア機能にはテキストエディタ、キャンバスページ、ページ管理、AI文書生成、文書履歴と権限管理などが含まれます。フロントエンドアーキテクチャ設計、国際化実装、admin panel開発を主導しました。"
+    },
+    "adminPanel": {
+      "title": "Admin Panel 管理システム",
+      "description": "AFFiNEプロジェクト向けに開発されたバックエンド管理プラットフォーム、React + TypeScript + GraphQL技術スタックを使用し、shadcn-uiとTailwind CSSを組み合わせています。ユーザー管理、権限制御、データ統計などのコア機能を実装しました。"
+    },
+    "i18n": {
+      "title": "国際化多言語システム",
+      "description": "AFFiNEプロジェクトの国際化サポートの設計と実装を主導し、多言語切り替えと地域適応をサポートしています。高再利用性のレスポンシブコンポーネントを構築し、UIスタイルとインタラクション体験を統一し、グローバルユーザーの使用体験を向上させました。"
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "新しい機会や興味深いプロジェクトについて、いつでもお気軽にご相談ください。",
+    "email": "メール",
+    "phone": "電話",
+    "location": "所在地",
+    "locationValue": "中国、深圳",
+    "info": "連絡先情報",
+    "social": "ソーシャルメディア",
+    "form": {
+      "title": "メッセージを送信",
+      "name": "お名前",
+      "email": "メールアドレス",
+      "message": "メッセージ",
+      "send": "メッセージを送信",
+      "sending": "送信中...",
+      "success": "メールクライアントが開きました",
+      "successMessage": "メールクライアントでメールを送信してください。できるだけ早く返信いたします！",
+      "error": "送信に失敗しました。もう一度お試しください。",
+      "emailSubject": "からのお問い合わせ",
+      "sentAt": "送信時刻"
+    }
+  },
+  "chatbot": {
+    "title": "AI アシスタント",
+    "placeholder": "メッセージを入力...",
+    "send": "送信",
+    "welcome": "こんにちは！AI アシスタントです。何かお手伝いできることはありますか？",
+    "openChat": "チャットを開く",
+    "closeChat": "チャットを閉じる",
+    "sendMessage": "メッセージを送信",
+    "configureApiKey": "環境変数で VITE_OPENAI_API_KEY を設定してください",
+    "messageCount": "メッセージ: {{current}}/{{max}}",
+    "sessionDuration": "セッション時間: {{minutes}}分",
+    "blocked": "⚠️ 一時的に制限されています。しばらくしてからお試しください",
+    "warning": "💡 ヒント：あと {{remaining}} 件のメッセージを送信できます。これは API の乱用を防ぐための保護措置です。",
+    "errors": {
+      "sessionTimeout": "セッション時間が {{minutes}} 分の制限を超えました",
+      "messageLimit": "1セッションあたり {{count}} メッセージの制限に達しました",
+      "rateLimit": "{{seconds}} 秒待ってから送信してください",
+      "noApiKey": "まず OpenAI API Key を設定してください",
+      "general": "申し訳ございません。エラーが発生しました",
+      "apiRateLimit": "⚠️ API リクエストの頻度が高すぎます。しばらくしてからお試しください",
+      "quotaExceeded": "⚠️ API クォータを超過しました。ウェブサイト管理者にお問い合わせください",
+      "specific": "申し訳ございません。エラーが発生しました：{{message}}"
+    }
+  },
+  "footer": {
+    "rights": "全著作権所有",
+    "builtWith": "構築技術"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "retry": "再試行",
+    "close": "閉じる",
+    "open": "開く",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "delete": "削除",
+    "edit": "編集",
+    "add": "追加",
+    "search": "検索",
+    "filter": "フィルター",
+    "sort": "並び替え",
+    "next": "次へ",
+    "previous": "前へ",
+    "submit": "送信",
+    "reset": "リセット",
+    "scrollDown": "下にスクロール"
+  }
+}

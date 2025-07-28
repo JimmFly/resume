@@ -3,7 +3,7 @@ import { BREAKPOINTS } from '../constants'
 import type { Breakpoint } from '../types'
 
 /**
- * 自定义hook：响应式屏幕尺寸检测
+ * Custom hook: Responsive screen size detection
  */
 export const useResponsive = () => {
   const [screenSize, setScreenSize] = useState<{
@@ -16,7 +16,7 @@ export const useResponsive = () => {
         height: window.innerHeight,
       }
     }
-    return { width: 1024, height: 768 } // 默认值
+    return { width: 1024, height: 768 } // Default values
   })
 
   const [currentBreakpoint, setCurrentBreakpoint] = useState<Breakpoint>('lg')
@@ -28,7 +28,7 @@ export const useResponsive = () => {
 
       setScreenSize({ width, height })
 
-      // 确定当前断点
+      // Determine current breakpoint
       if (width >= BREAKPOINTS['2xl']) {
         setCurrentBreakpoint('2xl')
       } else if (width >= BREAKPOINTS.xl) {
@@ -42,17 +42,17 @@ export const useResponsive = () => {
       }
     }
 
-    // 初始化
+    // Initialize
     handleResize()
 
-    // 添加事件监听器
+    // Add event listener
     window.addEventListener('resize', handleResize)
 
-    // 清理函数
+    // Cleanup function
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  // 检查是否匹配特定断点
+  // Check if matches specific breakpoint
   const isBreakpoint = (breakpoint: Breakpoint): boolean => {
     const breakpointOrder: Breakpoint[] = ['sm', 'md', 'lg', 'xl', '2xl']
     const currentIndex = breakpointOrder.indexOf(currentBreakpoint)
@@ -60,13 +60,13 @@ export const useResponsive = () => {
     return currentIndex >= targetIndex
   }
 
-  // 检查是否为移动设备
+  // Check if mobile device
   const isMobile = currentBreakpoint === 'sm'
 
-  // 检查是否为平板设备
+  // Check if tablet device
   const isTablet = currentBreakpoint === 'md'
 
-  // 检查是否为桌面设备
+  // Check if desktop device
   const isDesktop = ['lg', 'xl', '2xl'].includes(currentBreakpoint)
 
   return {
@@ -80,7 +80,7 @@ export const useResponsive = () => {
 }
 
 /**
- * 自定义hook：媒体查询检测
+ * Custom hook: Media query detection
  */
 export const useMediaQuery = (query: string): boolean => {
   const [matches, setMatches] = useState<boolean>(() => {
@@ -97,13 +97,13 @@ export const useMediaQuery = (query: string): boolean => {
       setMatches(event.matches)
     }
 
-    // 设置初始值
+    // Set initial value
     setMatches(mediaQuery.matches)
 
-    // 添加监听器
+    // Add listener
     mediaQuery.addEventListener('change', handleChange)
 
-    // 清理函数
+    // Cleanup function
     return () => mediaQuery.removeEventListener('change', handleChange)
   }, [query])
 
@@ -111,7 +111,7 @@ export const useMediaQuery = (query: string): boolean => {
 }
 
 /**
- * 自定义hook：检测用户偏好
+ * Custom hook: Detect user preferences
  */
 export const useUserPreferences = () => {
   const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)')

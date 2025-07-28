@@ -1,0 +1,167 @@
+{
+  "nav": {
+    "about": "About",
+    "resume": "Resume",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Yang Jinfei",
+    "title": "Frontend Developer · 3 Years Experience · ToEverything",
+    "subtitle": "Passionate about AI technology exploration and innovative applications",
+    "description": "A frontend developer focused on React technology stack with 3 years of rich experience. Proficient in TypeScript, GraphQL, Tailwind CSS and other modern frontend technologies, participated in AFFiNE open source project development. Skilled in building high-quality, reusable component libraries, committed to creating excellent user experiences.",
+    "cta": "View My Work",
+    "contactMe": "Contact Me",
+    "github": "GitHub"
+  },
+  "about": {
+    "title": "About Me",
+    "description1": "I am Yang Jinfei, a frontend developer with 3 years of rich experience, currently working at ToEverything (Hangzhou) Co., Ltd. I focus on React technology stack and am proficient in TypeScript, GraphQL, Tailwind CSS and other modern frontend technologies.",
+    "description2": "In my career, I have led and participated in the development of AFFiNE open source project, which is a self-deployable local-first multi-user collaborative knowledge base. I was responsible for frontend architecture design, internationalization implementation, admin panel development and other core functional modules.",
+    "description3": "I am passionate about exploring cutting-edge technologies, 50% vibe coding, and maintain high interest in AI application development. I am committed to building high-quality, reusable component libraries, pursuing excellent user experience and product innovation.",
+    "skills": {
+      "title": "Technical Skills",
+      "frontend": "Frontend Development",
+      "backend": "Backend Development",
+      "tools": "Tools & Methods"
+    },
+    "cards": {
+      "experience": {
+        "title": "Work Experience",
+        "company": "ToEverything (Hangzhou) Co., Ltd.",
+        "position": "Frontend Developer | 2022.06 - 2025.06"
+      },
+      "projects": {
+        "title": "Core Projects",
+        "affine": "AFFiNE - Open Source Knowledge Base",
+        "stack": "React + TypeScript + GraphQL"
+      },
+      "contact": {
+        "title": "Contact Info",
+        "phone": "📞 13008857268",
+        "email": "✉️ yangjinfei001@gmail.com"
+      }
+    },
+    "advantages": {
+      "title": "Personal Advantages",
+      "technical": "Strong technical foundation with 3+ years of React ecosystem experience",
+      "experience": "Rich project experience in open source projects and enterprise applications",
+      "learning": "Continuous learning ability, keeping up with frontend technology trends",
+      "teamwork": "Excellent teamwork and cross-functional collaboration skills",
+      "innovation": "Innovation-driven mindset with passion for exploring new technologies"
+    }
+  },
+  "experience": {
+    "title": "Work Experience",
+    "present": "Present",
+    "achievements": "Key Achievements",
+    "technologies": "Technologies Used",
+    "toeverything": {
+      "company": "ToEverything (Hangzhou) Co., Ltd.",
+      "position": "Frontend Developer",
+      "period": "2022.06 - Present",
+      "location": "Hangzhou, China",
+      "description": "Responsible for frontend development of AFFiNE open source project, a self-deployable local-first multi-user collaborative knowledge base. Led frontend architecture design, internationalization implementation, and admin panel development.",
+      "achievements": {
+        "architecture": "Led frontend architecture design and established development standards for the team",
+        "i18n": "Implemented comprehensive internationalization system supporting multiple languages and regions",
+        "admin": "Developed admin panel management system with user management and permission control",
+        "components": "Built high-quality, reusable component library improving development efficiency"
+      }
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "viewDetails": "View Details",
+    "technologies": "Technologies Used",
+    "affine": {
+      "title": "AFFiNE - Open Source Knowledge Base",
+      "description": "A self-deployable, local-first, multi-user collaborative knowledge base. Core features include block editor, whiteboard, database, and multiple editing modes. I led frontend architecture design, internationalization implementation, and admin panel development."
+    },
+    "adminPanel": {
+      "title": "Admin Panel Management System",
+      "description": "Backend management platform developed for the AFFiNE project using React + TypeScript + GraphQL tech stack, combined with shadcn-ui and Tailwind CSS. Implemented core features including user management, permission control, and data statistics."
+    },
+    "i18n": {
+      "title": "Internationalization Multi-language System",
+      "description": "Led the design and implementation of internationalization support for the AFFiNE project, supporting multi-language switching and regional adaptation. Built highly reusable responsive components, unified UI style and interaction experience, improving global user experience."
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "I'm always open to discussing new opportunities and interesting projects.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "locationValue": "Shenzhen, China",
+    "info": "Contact Information",
+    "social": "Social Media",
+    "form": {
+      "title": "Send Message",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Email Client Opened",
+      "successMessage": "Please send the email in your email client, I will reply as soon as possible!",
+      "error": "Failed to send message. Please try again.",
+      "emailSubject": "Contact from",
+      "sentAt": "Sent at"
+    }
+  },
+  "chatbot": {
+    "title": "AI Assistant",
+    "placeholder": "Type your message...",
+    "send": "Send",
+    "welcome": "Hello! I'm an AI assistant. How can I help you today?",
+    "openChat": "Open chat",
+    "closeChat": "Close chat",
+    "sendMessage": "Send message",
+    "configureApiKey": "Please configure VITE_OPENAI_API_KEY in environment variables",
+    "messageCount": "Messages: {{current}}/{{max}}",
+    "sessionDuration": "Session: {{minutes}} minutes",
+    "blocked": "⚠️ Temporarily restricted, please try again later",
+    "warning": "💡 Tip: You can send {{remaining}} more messages. This is a protection measure to prevent API abuse.",
+    "errors": {
+      "sessionTimeout": "Session time has exceeded {{minutes}} minutes limit",
+      "messageLimit": "Reached the limit of {{count}} messages per session",
+      "rateLimit": "Please wait {{seconds}} seconds before sending",
+      "noApiKey": "Please configure OpenAI API Key first",
+      "general": "Sorry, an error occurred",
+      "apiRateLimit": "⚠️ API request rate too high, please try again later",
+      "quotaExceeded": "⚠️ API quota exceeded, please contact the website administrator",
+      "specific": "Sorry, an error occurred: {{message}}"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "builtWith": "Built with"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "close": "Close",
+    "open": "Open",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "reset": "Reset",
+    "scrollDown": "Scroll Down"
+  }
+}

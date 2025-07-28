@@ -1,6 +1,6 @@
-// 动画配置常量
+// Animation configuration constants
 export const ANIMATION_CONFIG = {
-  // 基础动画时长
+  // Basic animation duration
   duration: {
     fast: 0.3,
     normal: 0.5,
@@ -8,7 +8,7 @@ export const ANIMATION_CONFIG = {
     globe: 1.0,
   },
 
-  // 延迟配置
+  // Delay configuration
   delay: {
     none: 0,
     short: 0.1,
@@ -16,29 +16,29 @@ export const ANIMATION_CONFIG = {
     long: 0.4,
   },
 
-  // 缓动函数
+  // Easing functions
   easing: {
     easeOut: [0.25, 0.46, 0.45, 0.94],
     easeInOut: [0.4, 0, 0.2, 1],
     bounce: [0.68, -0.55, 0.265, 1.55],
   },
 
-  // 视口配置
+  // Viewport configuration
   viewport: {
     once: true,
     amount: 0.3,
   },
 } as const
 
-// 地球配置
+// Globe configuration
 export const GLOBE_CONFIG = {
-  // 深圳坐标
+  // Shenzhen coordinates
   shenzhen: {
     latitude: 22.5431,
     longitude: 114.0579,
   },
 
-  // 地球材质配置
+  // Globe material configuration
   material: {
     roughness: 0.8,
     metalness: 0.1,
@@ -46,13 +46,13 @@ export const GLOBE_CONFIG = {
     specular: 0x111111,
   },
 
-  // 旋转配置
+  // Rotation configuration
   rotation: {
     speed: 0.005,
     autoRotate: true,
   },
 
-  // 标记配置
+  // Marker configuration
   marker: {
     color: '#64ffda',
     size: 0.02,
@@ -60,7 +60,7 @@ export const GLOBE_CONFIG = {
     glowOpacity: 0.3,
   },
 
-  // 3D场景配置
+  // 3D scene configuration
   position: [0, 0, 0] as [number, number, number],
   scale: 1.62,
   autoRotate: true,
@@ -69,20 +69,19 @@ export const GLOBE_CONFIG = {
 
 // Hero区域内容
 export const HERO_CONTENT = {
-  greeting: '你好，我是',
-  name: '杨晋飞',
-  title: '前端开发工程师 · 3年经验 · 万有理论科技',
-  description:
-    '专注于React技术栈的前端开发工程师，拥有3年丰富经验。熟练掌握TypeScript、GraphQL、Tailwind CSS等现代前端技术，参与AFFiNE开源项目开发。擅长构建高质量、可复用的组件库，致力于打造优秀的用户体验。',
+  greeting: 'hero.greeting',
+  name: 'hero.name',
+  title: 'hero.title',
+  description: 'hero.description',
   buttons: [
     {
-      text: '联系我',
+      text: 'hero.contactMe',
       href: 'mailto:yangjinfei001@gmail.com',
       primary: true,
       external: false,
     },
     {
-      text: 'GitHub',
+      text: 'hero.github',
       href: 'https://github.com/JimmFly',
       primary: false,
       external: true,
@@ -129,25 +128,28 @@ export const PARALLAX_CONFIG = {
 
 // About区域内容
 export const ABOUT_CONTENT = {
-  title: '关于我',
-  description: [
-    '我是杨晋飞，一名拥有3年丰富经验的前端开发工程师，目前就职于万有理论科技（杭州）有限责任公司。专注于React技术栈，熟练掌握TypeScript、GraphQL、Tailwind CSS等现代前端技术。',
-    '在职业生涯中，我主导参与了AFFiNE开源项目的开发，这是一个可自部署的本地优先多人协同知识库。负责前端架构设计、国际化实现、admin panel开发等核心功能模块。',
-    '我热衷于探索前沿技术，50% vibe coding，对AI应用开发方向保持高度兴趣。致力于构建高质量、可复用的组件库，追求优秀的用户体验和产品创新。',
-  ],
+  title: 'about.title',
+  description: ['about.description1', 'about.description2', 'about.description3'],
   cards: [
     {
-      title: '工作经历',
-      items: ['万有理论科技（杭州）有限责任公司', '前端开发工程师 | 2022.06 - 2025.06'],
+      title: 'about.cards.experience.title',
+      items: ['about.cards.experience.company', 'about.cards.experience.position'],
     },
     {
-      title: '核心项目',
-      items: ['AFFiNE - 开源知识库', 'React + TypeScript + GraphQL'],
+      title: 'about.cards.projects.title',
+      items: ['about.cards.projects.affine', 'about.cards.projects.stack'],
     },
     {
-      title: '联系方式',
-      items: ['📞 13008857268', '✉️ yangjinfei001@gmail.com'],
+      title: 'about.cards.contact.title',
+      items: ['about.cards.contact.phone', 'about.cards.contact.email'],
     },
+  ],
+  advantages: [
+    'about.advantages.technical',
+    'about.advantages.experience',
+    'about.advantages.learning',
+    'about.advantages.teamwork',
+    'about.advantages.innovation',
   ],
 } as const
 
@@ -192,4 +194,23 @@ export const SKILLS_DATA = [
   { name: 'Figma', level: 75, category: 'tools' as const },
   { name: 'Notion', level: 80, category: 'tools' as const },
   { name: 'AI Coding', level: 85, category: 'tools' as const },
+] as const
+
+// 工作经历数据
+export const EXPERIENCE_DATA = [
+  {
+    id: 1,
+    company: 'experience.toeverything.company',
+    position: 'experience.toeverything.position',
+    period: 'experience.toeverything.period',
+    location: 'experience.toeverything.location',
+    description: 'experience.toeverything.description',
+    achievements: [
+      'experience.toeverything.achievements.architecture',
+      'experience.toeverything.achievements.i18n',
+      'experience.toeverything.achievements.admin',
+      'experience.toeverything.achievements.components',
+    ],
+    technologies: ['React', 'TypeScript', 'GraphQL', 'Tailwind CSS', 'shadcn-ui'],
+  },
 ] as const
