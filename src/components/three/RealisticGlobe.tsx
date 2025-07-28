@@ -22,7 +22,7 @@ const RealisticGlobe: React.FC<RealisticGlobeProps> = ({
   const atmosphereRef = useRef<THREE.Mesh>(null!)
 
   // Load earth texture
-  const earthTexture = useLoader(TextureLoader, '/textures/earth_daymap.jpg')
+  const earthTexture = useLoader(TextureLoader, './textures/earth_daymap.jpg')
 
   // Shenzhen coordinates (latitude, longitude)
   const shenzhenCoords = {
