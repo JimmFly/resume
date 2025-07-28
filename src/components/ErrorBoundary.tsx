@@ -1,4 +1,4 @@
-import React, { Component, type ReactNode } from 'react';
+import { Component, type ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import type { ErrorBoundaryState, ErrorInfo } from '../types';
 

@@ -44,15 +44,15 @@ const RealisticGlobe: React.FC<RealisticGlobeProps> = ({
   // 深圳标记位置
   const shenzhenPosition = useMemo(() => {
     return latLngToVector3(shenzhenCoords.lat, shenzhenCoords.lng, 1.02)
-  }, [latLngToVector3])
+  }, [latLngToVector3, shenzhenCoords.lat, shenzhenCoords.lng])
   
   // 深圳标签位置
   const shenzhenLabelPosition = useMemo(() => {
     return latLngToVector3(shenzhenCoords.lat, shenzhenCoords.lng, 1.15)
-  }, [latLngToVector3])
+  }, [latLngToVector3, shenzhenCoords.lat, shenzhenCoords.lng])
   
   // 动画循环
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (autoRotate && meshRef.current) {
       meshRef.current.rotation.y += delta * rotationSpeed * 0.1
     }

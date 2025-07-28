@@ -1,6 +1,6 @@
 import React, { useRef, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { Sphere, useTexture } from '@react-three/drei'
+import { Sphere } from '@react-three/drei'
 import * as THREE from 'three'
 
 interface GlobeProps {

@@ -19,7 +19,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}>
             <p className="text-secondary text-sm">
-              &copy; {currentYear} Portfolio. All rights reserved.
+              &copy; {currentYear} Resume. All rights reserved.
             </p>
           </motion.div>
 
