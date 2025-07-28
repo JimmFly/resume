@@ -5,12 +5,14 @@
 ## 🚀 快速开始
 
 1. **Fork 项目**
+
    ```bash
    git clone https://github.com/your-username/resume.git
    cd resume
    ```
 
 2. **安装依赖**
+
    ```bash
    yarn install
    ```
@@ -23,16 +25,19 @@
 ## 📝 贡献类型
 
 ### 🐛 Bug 报告
+
 - 使用 GitHub Issues 报告 bug
 - 提供详细的重现步骤
 - 包含环境信息（浏览器、操作系统等）
 
 ### ✨ 功能请求
+
 - 在 Issues 中描述新功能
 - 解释功能的用途和价值
 - 提供可能的实现方案
 
 ### 🔧 代码贡献
+
 - 创建功能分支：`git checkout -b feature/amazing-feature`
 - 遵循代码规范和最佳实践
 - 添加必要的测试
@@ -41,11 +46,13 @@
 ## 📋 开发规范
 
 ### 代码风格
+
 - 使用 ESLint 和 Prettier 进行代码格式化
 - 运行 `yarn lint` 检查代码质量
 - 运行 `yarn lint:fix` 自动修复问题
 
 ### 提交规范
+
 使用 [Conventional Commits](https://www.conventionalcommits.org/) 规范：
 
 ```
@@ -57,6 +64,7 @@ type(scope): description
 ```
 
 **类型 (type):**
+
 - `feat`: 新功能
 - `fix`: Bug 修复
 - `docs`: 文档更新
@@ -67,6 +75,7 @@ type(scope): description
 - `chore`: 构建过程或辅助工具的变动
 
 **示例:**
+
 ```
 feat(parallax): add multi-layer parallax scrolling effect
 
@@ -77,6 +86,7 @@ Closes #123
 ```
 
 ### 分支命名
+
 - `feature/feature-name` - 新功能
 - `fix/bug-description` - Bug 修复
 - `docs/update-readme` - 文档更新

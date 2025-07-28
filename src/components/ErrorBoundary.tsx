@@ -1,11 +1,11 @@
-import { Component, type ReactNode } from 'react';
-import { motion } from 'framer-motion';
-import type { ErrorBoundaryState, ErrorInfo } from '../types';
+import { Component, type ReactNode } from 'react'
+import { motion } from 'framer-motion'
+import type { ErrorBoundaryState, ErrorInfo } from '../types'
 
 interface ErrorBoundaryProps {
-  children: ReactNode;
-  fallback?: ReactNode;
-  onError?: (error: Error, errorInfo: ErrorInfo) => void;
+  children: ReactNode
+  fallback?: ReactNode
+  onError?: (error: Error, errorInfo: ErrorInfo) => void
 }
 
 /**
@@ -13,85 +13,81 @@ interface ErrorBoundaryProps {
  */
 class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
-    super(props);
-    this.state = { hasError: false };
+    super(props)
+    this.state = { hasError: false }
   }
 
   static getDerivedStateFromError(error: Error): ErrorBoundaryState {
     // 更新 state 使下一次渲染能够显示降级后的 UI
     return {
       hasError: true,
-      error
-    };
+      error,
+    }
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     // 记录错误信息
-    console.error('ErrorBoundary caught an error:', error, errorInfo);
-    
+    console.error('ErrorBoundary caught an error:', error, errorInfo)
+
     // 更新状态
     this.setState({
       error,
-      errorInfo
-    });
+      errorInfo,
+    })
 
     // 调用错误回调
     if (this.props.onError) {
-      this.props.onError(error, errorInfo);
+      this.props.onError(error, errorInfo)
     }
   }
 
   handleRetry = () => {
-    this.setState({ hasError: false, error: undefined, errorInfo: undefined });
-  };
+    this.setState({ hasError: false, error: undefined, errorInfo: undefined })
+  }
 
   render() {
     if (this.state.hasError) {
       // 如果提供了自定义fallback，使用它
       if (this.props.fallback) {
-        return this.props.fallback;
+        return this.props.fallback
       }
 
       // 默认错误UI
       return (
-        <motion.div 
-          className="min-h-screen flex items-center justify-center bg-background text-text p-8"
+        <motion.div
+          className='min-h-screen flex items-center justify-center bg-background text-text p-8'
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="max-w-md mx-auto text-center">
+          <div className='max-w-md mx-auto text-center'>
             <motion.div
-              className="mb-8"
+              className='mb-8'
               initial={{ y: -20 }}
               animate={{ y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <div className="text-6xl mb-4">⚠️</div>
-              <h1 className="text-2xl font-bold text-primary mb-2">
-                出现了一些问题
-              </h1>
-              <p className="text-secondary">
-                页面遇到了意外错误，请尝试刷新页面
-              </p>
+              <div className='text-6xl mb-4'>⚠️</div>
+              <h1 className='text-2xl font-bold text-primary mb-2'>出现了一些问题</h1>
+              <p className='text-secondary'>页面遇到了意外错误，请尝试刷新页面</p>
             </motion.div>
 
             <motion.div
-              className="space-y-4"
+              className='space-y-4'
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
               <button
                 onClick={this.handleRetry}
-                className="bg-primary text-background px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200"
+                className='bg-primary text-background px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200'
               >
                 重试
               </button>
-              
+
               <button
                 onClick={() => window.location.reload()}
-                className="block w-full text-secondary hover:text-primary transition-colors duration-200"
+                className='block w-full text-secondary hover:text-primary transition-colors duration-200'
               >
                 刷新页面
               </button>
@@ -100,31 +96,31 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
             {/* 开发环境下显示错误详情 */}
             {import.meta.env.DEV && this.state.error && (
               <motion.details
-                className="mt-8 text-left bg-accent/20 p-4 rounded-lg"
+                className='mt-8 text-left bg-accent/20 p-4 rounded-lg'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
               >
-                <summary className="cursor-pointer text-primary font-medium mb-2">
+                <summary className='cursor-pointer text-primary font-medium mb-2'>
                   错误详情 (开发模式)
                 </summary>
-                <div className="text-sm text-secondary space-y-2">
+                <div className='text-sm text-secondary space-y-2'>
                   <div>
                     <strong>错误信息:</strong>
-                    <pre className="mt-1 p-2 bg-background/50 rounded text-xs overflow-auto">
+                    <pre className='mt-1 p-2 bg-background/50 rounded text-xs overflow-auto'>
                       {this.state.error.message}
                     </pre>
                   </div>
                   <div>
                     <strong>错误堆栈:</strong>
-                    <pre className="mt-1 p-2 bg-background/50 rounded text-xs overflow-auto max-h-32">
+                    <pre className='mt-1 p-2 bg-background/50 rounded text-xs overflow-auto max-h-32'>
                       {this.state.error.stack}
                     </pre>
                   </div>
                   {this.state.errorInfo && (
                     <div>
                       <strong>组件堆栈:</strong>
-                      <pre className="mt-1 p-2 bg-background/50 rounded text-xs overflow-auto max-h-32">
+                      <pre className='mt-1 p-2 bg-background/50 rounded text-xs overflow-auto max-h-32'>
                         {this.state.errorInfo.componentStack}
                       </pre>
                     </div>
@@ -134,11 +130,11 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
             )}
           </div>
         </motion.div>
-      );
+      )
     }
 
-    return this.props.children;
+    return this.props.children
   }
 }
 
-export default ErrorBoundary;
+export default ErrorBoundary

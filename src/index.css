@@ -22,11 +22,11 @@
   .glass-card {
     @apply bg-background/30 backdrop-blur-md border border-primary/10 rounded-lg shadow-lg;
   }
-  
+
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 min-h-screen flex flex-col justify-center;
   }
-  
+
   .heading-gradient {
     @apply bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent;
   }

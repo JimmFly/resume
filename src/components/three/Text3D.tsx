@@ -10,15 +10,15 @@ interface Text3DProps {
   color?: string
 }
 
-export const Text3D: React.FC<Text3DProps> = ({ 
-  text, 
-  position = [0, 0, 0], 
+export const Text3D: React.FC<Text3DProps> = ({
+  text,
+  position = [0, 0, 0],
   fontSize = 1,
-  color = '#60a5fa'
+  color = '#60a5fa',
 }) => {
   const textRef = useRef<THREE.Mesh>(null!)
-  
-  useFrame((state) => {
+
+  useFrame(state => {
     if (textRef.current) {
       // 动态光影效果
       const time = state.clock.elapsedTime
@@ -26,18 +26,18 @@ export const Text3D: React.FC<Text3DProps> = ({
       textRef.current.position.y = position[1] + Math.sin(time * 2) * 0.1
     }
   })
-  
+
   return (
     <Text
       ref={textRef}
       position={position}
       fontSize={fontSize}
       color={color}
-      anchorX="center"
-      anchorY="middle"
+      anchorX='center'
+      anchorY='middle'
     >
       {text}
-      <meshStandardMaterial 
+      <meshStandardMaterial
         color={color}
         emissive={color}
         emissiveIntensity={0.2}
