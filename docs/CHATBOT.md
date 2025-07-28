@@ -12,27 +12,35 @@
 - 💾 会话历史记录
 - ⚡ 快速响应
 
-## 配置步骤
+## 🔧 配置步骤
 
 ### 1. 获取 OpenAI API Key
 
-1. 访问 [OpenAI Platform](https://platform.openai.com/api-keys)
-2. 登录或注册账户
-3. 创建新的 API Key
-4. 复制生成的 API Key
+1. 访问 [OpenAI Platform](https://platform.openai.com/)
+2. 注册或登录账户
+3. 前往 [API Keys](https://platform.openai.com/api-keys) 页面
+4. 点击 "Create new secret key" 创建新的 API Key
+5. 复制生成的 API Key（请妥善保管）
 
 ### 2. 环境变量配置
 
-1. 复制 `.env.example` 文件为 `.env`：
+1. 在项目根目录创建 `.env.local` 文件
+2. 参考 `.env.local.example` 文件内容
+3. 添加以下内容：
 
-   ```bash
-   cp .env.example .env
-   ```
+```bash
+VITE_OPENAI_API_KEY=your_openai_api_key_here
+```
 
-2. 在 `.env` 文件中配置你的 OpenAI API Key：
-   ```env
-   VITE_OPENAI_API_KEY=your-actual-openai-api-key-here
-   ```
+4. 将 `your_openai_api_key_here` 替换为您的实际 API Key
+5. 重启开发服务器使配置生效
+
+### 3. 安全设置建议
+
+1. 在 OpenAI 控制台设置使用限额
+2. 定期监控 API 使用情况
+3. 不要将 API Key 分享给他人
+4. 定期轮换 API Key
 
 ### 3. 启动应用
 
@@ -40,13 +48,18 @@
 yarn dev
 ```
 
-## 使用方法
+## 🎯 使用方法
 
-1. 打开应用后，你会在右下角看到一个蓝色的聊天按钮
-2. 点击按钮打开聊天窗口
-3. 在输入框中输入你的问题
-4. 按 Enter 键或点击发送按钮发送消息
-5. AI 助手会实时回复你的问题
+1. **打开聊天窗口**：点击页面右下角的聊天图标
+2. **查看使用状态**：底部显示消息计数和会话时长
+3. **开始对话**：在输入框中输入您的问题
+4. **发送消息**：点击发送按钮或按 Enter 键（注意频率限制）
+5. **查看回复**：AI 助手会智能回复您的问题
+6. **注意限制**：
+   - 每个会话最多 5 条消息
+   - 发送间隔至少 5 秒
+   - 会话时长最多 15 分钟
+   - 接近限制时会收到提醒
 
 ## 技术架构
 
@@ -74,7 +87,25 @@ src/components/ChatBot/
 4. **错误处理**：网络错误和 API 错误处理
 5. **状态管理**：加载状态、消息历史
 
-## 自定义配置
+## 🔧 自定义配置
+
+### 修改安全限制
+
+```typescript
+<ChatBot
+  apiKey={apiKey}
+  maxMessagesPerSession={5}    // 每会话最大消息数
+  rateLimitMs={5000}          // 请求间隔毫秒数
+  maxSessionDuration={15}     // 会话最长分钟数
+  className="custom-chatbot-style"
+/>
+```
+
+### 安全参数说明
+
+- `maxMessagesPerSession`: 控制每个会话的最大消息数量
+- `rateLimitMs`: 控制两次请求之间的最小间隔时间
+- `maxSessionDuration`: 控制单次会话的最长持续时间
 
 ### 修改 AI 模型参数
 
@@ -88,6 +119,8 @@ chatRef.current = new ChatOpenAI({
   maxTokens: 1000, // 最大回复长度
 })
 ```
+
+⚠️ **重要提醒**：修改安全限制参数时请谨慎，过于宽松的设置可能导致 API 费用激增。
 
 ### 自定义样式
 
@@ -107,22 +140,29 @@ const systemMessage = new SystemMessage('你是一个专业的前端开发助手
 messageHistory.unshift(systemMessage)
 ```
 
-## 安全注意事项
+## 🛡️ 安全保护措施
 
-1. **API Key 保护**：
-   - 永远不要在代码中硬编码 API Key
-   - 使用环境变量管理敏感信息
-   - 不要将 `.env` 文件提交到版本控制
+### 内置安全限制
 
-2. **使用限制**：
-   - 监控 API 使用量和费用
-   - 设置合理的请求频率限制
-   - 考虑添加用户认证
+- **消息限制**：每个会话最多 5 条消息
+- **频率限制**：请求间隔至少 5 秒
+- **会话时长**：单次会话最长 15 分钟
+- **自动阻断**：检测到 API 限制时自动暂停使用
+- **使用提醒**：接近限制时显示警告信息
 
-3. **内容过滤**：
-   - 实施输入验证
-   - 考虑添加内容审核
-   - 处理不当内容的响应
+### API Key 安全
+
+- **环境变量**：使用 `.env.local` 文件存储敏感信息
+- **版本控制**：绝不要将 API Key 提交到 Git
+- **访问控制**：仅限招聘者试用，防止滥用
+- **使用监控**：定期检查 OpenAI 使用情况和账单
+- **配额管理**：建议在 OpenAI 控制台设置使用限额
+
+### 错误处理
+
+- **智能识别**：自动识别不同类型的 API 错误
+- **友好提示**：为用户提供清晰的错误说明
+- **自动恢复**：部分错误会自动解除限制
 
 ## 故障排除
 

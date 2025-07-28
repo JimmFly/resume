@@ -13,9 +13,18 @@ interface Message {
 interface ChatBotProps {
   apiKey?: string
   className?: string
+  maxMessagesPerSession?: number
+  rateLimitMs?: number
+  maxSessionDuration?: number // in minutes
 }
 
-const ChatBot: React.FC<ChatBotProps> = ({ apiKey, className = '' }) => {
+const ChatBot: React.FC<ChatBotProps> = ({
+  apiKey,
+  className = '',
+  maxMessagesPerSession = 10,
+  rateLimitMs = 3000,
+  maxSessionDuration = 30,
+}) => {
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -27,6 +36,10 @@ const ChatBot: React.FC<ChatBotProps> = ({ apiKey, className = '' }) => {
   ])
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [messageCount, setMessageCount] = useState(0)
+  const [lastRequestTime, setLastRequestTime] = useState(0)
+  const [sessionStartTime] = useState(Date.now())
+  const [isBlocked, setIsBlocked] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const chatRef = useRef<ChatOpenAI | null>(null)
 
@@ -50,9 +63,45 @@ const ChatBot: React.FC<ChatBotProps> = ({ apiKey, className = '' }) => {
     scrollToBottom()
   }, [messages])
 
+  // 检查使用限制
+  const checkUsageLimits = (): { allowed: boolean; reason?: string } => {
+    // 检查会话时长
+    const sessionDuration = (Date.now() - sessionStartTime) / (1000 * 60)
+    if (sessionDuration > maxSessionDuration) {
+      return { allowed: false, reason: `会话时间已超过 ${maxSessionDuration} 分钟限制` }
+    }
+
+    // 检查消息数量
+    if (messageCount >= maxMessagesPerSession) {
+      return { allowed: false, reason: `已达到单次会话 ${maxMessagesPerSession} 条消息限制` }
+    }
+
+    // 检查请求频率
+    const now = Date.now()
+    if (now - lastRequestTime < rateLimitMs) {
+      const waitTime = Math.ceil((rateLimitMs - (now - lastRequestTime)) / 1000)
+      return { allowed: false, reason: `请等待 ${waitTime} 秒后再发送` }
+    }
+
+    return { allowed: true }
+  }
+
   // 发送消息
   const handleSendMessage = async () => {
-    if (!inputValue.trim() || isLoading) return
+    if (!inputValue.trim() || isLoading || isBlocked) return
+
+    // 检查使用限制
+    const limitCheck = checkUsageLimits()
+    if (!limitCheck.allowed) {
+      const errorMessage: Message = {
+        id: Date.now().toString(),
+        content: `⚠️ ${limitCheck.reason}`,
+        type: 'ai',
+        timestamp: new Date(),
+      }
+      setMessages(prev => [...prev, errorMessage])
+      return
+    }
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -64,6 +113,8 @@ const ChatBot: React.FC<ChatBotProps> = ({ apiKey, className = '' }) => {
     setMessages(prev => [...prev, userMessage])
     setInputValue('')
     setIsLoading(true)
+    setMessageCount(prev => prev + 1)
+    setLastRequestTime(Date.now())
 
     try {
       if (!chatRef.current) {
@@ -87,11 +138,39 @@ const ChatBot: React.FC<ChatBotProps> = ({ apiKey, className = '' }) => {
       }
 
       setMessages(prev => [...prev, aiMessage])
+
+      // 检查是否接近限制
+      if (messageCount + 1 >= maxMessagesPerSession - 2) {
+        const warningMessage: Message = {
+          id: (Date.now() + 2).toString(),
+          content: `💡 提示：您还可以发送 ${maxMessagesPerSession - messageCount - 1} 条消息。这是为了防止 API 滥用的保护措施。`,
+          type: 'ai',
+          timestamp: new Date(),
+        }
+        setTimeout(() => {
+          setMessages(prev => [...prev, warningMessage])
+        }, 1000)
+      }
     } catch (error) {
       console.error('Chat error:', error)
+      let errorContent = '抱歉，发生了错误'
+
+      if (error instanceof Error) {
+        if (error.message.includes('rate_limit')) {
+          errorContent = '⚠️ API 请求频率过高，请稍后再试'
+          setIsBlocked(true)
+          setTimeout(() => setIsBlocked(false), 60000) // 1分钟后解除阻止
+        } else if (error.message.includes('quota')) {
+          errorContent = '⚠️ API 配额已用完，请联系网站管理员'
+          setIsBlocked(true)
+        } else {
+          errorContent = `抱歉，发生了错误：${error.message}`
+        }
+      }
+
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: `抱歉，发生了错误：${error instanceof Error ? error.message : '未知错误'}`,
+        content: errorContent,
         type: 'ai',
         timestamp: new Date(),
       }
@@ -210,7 +289,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ apiKey, className = '' }) => {
               />
               <button
                 onClick={handleSendMessage}
-                disabled={!inputValue.trim() || isLoading}
+                disabled={!inputValue.trim() || isLoading || isBlocked}
                 className='bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 text-white p-2 rounded-lg transition-colors'
                 aria-label='发送消息'
               >
@@ -219,6 +298,15 @@ const ChatBot: React.FC<ChatBotProps> = ({ apiKey, className = '' }) => {
             </div>
             {!apiKey && (
               <p className='text-xs text-red-500 mt-2'>请在环境变量中配置 VITE_OPENAI_API_KEY</p>
+            )}
+            <div className='flex justify-between text-xs text-gray-500 mt-1'>
+              <span>
+                消息: {messageCount}/{maxMessagesPerSession}
+              </span>
+              <span>会话时长: {Math.floor((Date.now() - sessionStartTime) / (1000 * 60))}分钟</span>
+            </div>
+            {isBlocked && (
+              <p className='text-xs text-red-500 mt-1'>⚠️ 暂时被限制使用，请稍后再试</p>
             )}
           </div>
         </div>

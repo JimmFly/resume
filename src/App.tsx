@@ -29,7 +29,12 @@ function App() {
         </main>
         <Footer />
         {/* ChatBot 组件 */}
-        <ChatBot apiKey={openaiApiKey} />
+        <ChatBot
+          apiKey={openaiApiKey}
+          maxMessagesPerSession={5}
+          rateLimitMs={5000}
+          maxSessionDuration={15}
+        />
       </div>
     </ParallaxContainer>
   )
