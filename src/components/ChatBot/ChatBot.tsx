@@ -47,9 +47,10 @@ const ChatBot: React.FC<ChatBotProps> = ({
   useEffect(() => {
     if (apiKey) {
       chatRef.current = new ChatOpenAI({
-        openAIApiKey: apiKey,
+        apiKey: apiKey,
         modelName: 'gpt-3.5-turbo',
         temperature: 0.7,
+        streaming: true,
       })
     }
   }, [apiKey])
@@ -127,17 +128,30 @@ const ChatBot: React.FC<ChatBotProps> = ({
       )
       messageHistory.push(new HumanMessage(userMessage.content))
 
-      // 调用 LangChain
-      const response = await chatRef.current.invoke(messageHistory)
-
-      const aiMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        content: response.content as string,
+      // 创建临时 AI 消息用于流式输出
+      const tempAiMessageId = (Date.now() + 1).toString()
+      const tempAiMessage: Message = {
+        id: tempAiMessageId,
+        content: '',
         type: 'ai',
         timestamp: new Date(),
       }
+      setMessages(prev => [...prev, tempAiMessage])
 
-      setMessages(prev => [...prev, aiMessage])
+      // 使用流式输出
+      const stream = await chatRef.current.stream(messageHistory)
+      let fullContent = ''
+
+      for await (const chunk of stream) {
+        const content = chunk.content as string
+        if (content) {
+          fullContent += content
+          // 实时更新消息内容
+          setMessages(prev =>
+            prev.map(msg => (msg.id === tempAiMessageId ? { ...msg, content: fullContent } : msg))
+          )
+        }
+      }
 
       // 检查是否接近限制
       if (messageCount + 1 >= maxMessagesPerSession - 2) {
@@ -284,7 +298,7 @@ const ChatBot: React.FC<ChatBotProps> = ({
                 onChange={e => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder='输入消息...'
-                className='flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+                className='flex-1 border-2 border-gray-400 rounded-lg px-3 py-2 text-sm bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm'
                 disabled={isLoading}
               />
               <button
