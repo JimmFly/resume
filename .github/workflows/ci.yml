@@ -30,7 +30,7 @@ jobs:
           corepack prepare yarn@4.9.2 --activate
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Check Prettier formatting
         run: yarn prettier --check "src/**/*.{ts,tsx,js,jsx,css,scss,html}" "*.{json,md,yml,yaml}"
@@ -76,7 +76,7 @@ jobs:
           corepack prepare yarn@4.9.2 --activate
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Run comprehensive security audit
         run: yarn security-audit
@@ -120,7 +120,7 @@ jobs:
           corepack prepare yarn@4.9.2 --activate
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Build project
         run: yarn build
