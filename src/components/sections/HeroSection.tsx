@@ -3,8 +3,12 @@ import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import RealisticGlobe from "../three/RealisticGlobe";
+import { HERO_CONTENT, GLOBE_CONFIG } from '../../constants';
+import { useAnimation } from '../../hooks/useAnimation';
 
-const HeroSection = () => {
+const HeroSection = React.memo(() => {
+  const { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } = useAnimation();
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* 背景效果 */}
@@ -17,68 +21,59 @@ const HeroSection = () => {
           {/* 左侧内容 */}
           <motion.div
             className="flex-1"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}>
+            variants={fadeInLeft}
+            initial="hidden"
+            animate="show">
             <motion.p
               className="text-primary font-mono mb-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}>
-              你好，我是
+              variants={fadeInUp}>
+              {HERO_CONTENT.greeting}
             </motion.p>
 
             <motion.h1
               className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}>
-              杨晋飞
+              variants={fadeInUp}>
+              {HERO_CONTENT.name}
             </motion.h1>
 
             <motion.h2
               className="text-xl md:text-2xl text-gray-300 mb-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}>
-              前端开发工程师 · 3年经验 · 万有理论科技
+              variants={fadeInUp}>
+              {HERO_CONTENT.title}
             </motion.h2>
 
             <motion.p
               className="text-lg text-gray-400 mb-12 max-w-2xl leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}>
-              专注于React技术栈的前端开发工程师，拥有3年丰富经验。熟练掌握TypeScript、GraphQL、Tailwind
-              CSS等现代前端技术，参与AFFiNE开源项目开发。擅长构建高质量、可复用的组件库，致力于打造优秀的用户体验。
+              variants={fadeInUp}>
+              {HERO_CONTENT.description}
             </motion.p>
 
             <motion.div
               className="flex flex-wrap gap-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}>
-              <a
-                href="mailto:yangjinfei001@gmail.com"
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                联系我
-              </a>
-              <a
-                href="https://github.com/JimmFly"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-gray-600 text-gray-300 px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 hover:border-gray-500 transition-all duration-300 transform hover:scale-105">
-                GitHub
-              </a>
+              variants={staggerContainer}>
+              {HERO_CONTENT.buttons.map((button, index) => (
+                <motion.a
+                  key={index}
+                  href={button.href}
+                  target={button.external ? "_blank" : undefined}
+                  rel={button.external ? "noopener noreferrer" : undefined}
+                  className={button.primary 
+                    ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    : "border border-gray-600 text-gray-300 px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 hover:border-gray-500 transition-all duration-300 transform hover:scale-105"
+                  }
+                  variants={fadeInUp}>
+                  {button.text}
+                </motion.a>
+              ))}
             </motion.div>
           </motion.div>
 
           {/* 右侧3D地球 */}
           <motion.div
             className="flex-1 flex justify-center items-center"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}>
+            variants={fadeInRight}
+            initial="hidden"
+            animate="show">
             <div className="relative w-96 h-96 md:w-[28rem] md:h-[28rem]">
               <Canvas
                 camera={{ position: [0, 0, 3], fov: 75 }}
@@ -96,11 +91,11 @@ const HeroSection = () => {
 
                   {/* 3D地球 */}
                   <RealisticGlobe 
-                   position={[0, 0, 0]} 
-                   scale={1.62}
-                   autoRotate={true}
-                   rotationSpeed={0.15}
-                 />
+                    position={GLOBE_CONFIG.position}
+                    scale={GLOBE_CONFIG.scale}
+                    autoRotate={GLOBE_CONFIG.autoRotate}
+                    rotationSpeed={GLOBE_CONFIG.rotationSpeed}
+                  />
 
                   {/* 控制器 */}
                   <OrbitControls
@@ -119,9 +114,9 @@ const HeroSection = () => {
         {/* 向下滚动指示器 */}
         <motion.div
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.5 }}>
+          variants={fadeInUp}
+          initial="hidden"
+          animate="show">
           <a href="#about" className="flex flex-col items-center text-primary">
             <span className="text-sm mb-2">向下滚动</span>
             <svg
@@ -142,6 +137,8 @@ const HeroSection = () => {
       </div>
     </section>
   );
-};
+});
+
+HeroSection.displayName = 'HeroSection';
 
 export default HeroSection;

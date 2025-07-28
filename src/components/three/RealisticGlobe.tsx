@@ -3,6 +3,7 @@ import { useFrame, useLoader } from '@react-three/fiber'
 import { TextureLoader } from 'three'
 import { Text } from '@react-three/drei'
 import * as THREE from 'three'
+import { GLOBE_CONFIG } from '../../constants'
 
 interface RealisticGlobeProps {
   position?: [number, number, number]
@@ -24,7 +25,7 @@ const RealisticGlobe: React.FC<RealisticGlobeProps> = ({
   const earthTexture = useLoader(TextureLoader, '/textures/earth_daymap.jpg')
   
   // 深圳坐标 (纬度, 经度)
-  const shenzhenCoords = { lat: 22.5431, lng: 114.0579 }
+  const shenzhenCoords = { lat: GLOBE_CONFIG.shenzhen.latitude, lng: GLOBE_CONFIG.shenzhen.longitude }
   
   // 将经纬度转换为3D坐标
   const latLngToVector3 = useMemo(() => {
@@ -64,8 +65,8 @@ const RealisticGlobe: React.FC<RealisticGlobeProps> = ({
   const initialRotation = useMemo(() => {
     // 深圳位于东经114.0579度，需要调整旋转让其面向前方
     // 通过实验调整角度，让深圳朝向屏幕
-    const shenzhenLongitude = 114.0579
-    const shenzhenLatitude = 22.5431
+    const shenzhenLongitude = GLOBE_CONFIG.shenzhen.longitude
+    const shenzhenLatitude = GLOBE_CONFIG.shenzhen.latitude
     const rotationX = -(shenzhenLatitude * Math.PI) / 180 + Math.PI / 6 + Math.PI / 6
     const rotationY = -(shenzhenLongitude * Math.PI) / 180 - Math.PI / 2
     return [rotationX, rotationY, 0] as [number, number, number]
@@ -78,24 +79,24 @@ const RealisticGlobe: React.FC<RealisticGlobeProps> = ({
         <sphereGeometry args={[1, 64, 64]} />
         <meshPhongMaterial 
           map={earthTexture}
-          shininess={100}
-          specular={new THREE.Color(0x111111)}
+          shininess={GLOBE_CONFIG.material.shininess}
+           specular={new THREE.Color(GLOBE_CONFIG.material.specular)}
         />
         
         {/* 深圳标记点 - 放在地球内部跟随旋转 */}
         <mesh position={[shenzhenPosition.x, shenzhenPosition.y, shenzhenPosition.z]}>
-          <sphereGeometry args={[0.015, 16, 16]} />
-          <meshBasicMaterial color={0xff4444} />
+          <sphereGeometry args={[GLOBE_CONFIG.marker.size, 16, 16]} />
+           <meshBasicMaterial color={GLOBE_CONFIG.marker.color} />
         </mesh>
         
         {/* 深圳标记发光效果 */}
         <mesh position={[shenzhenPosition.x, shenzhenPosition.y, shenzhenPosition.z]}>
-          <sphereGeometry args={[0.025, 16, 16]} />
-          <meshBasicMaterial 
-            color={0xff4444}
-            transparent
-            opacity={0.3}
-          />
+          <sphereGeometry args={[GLOBE_CONFIG.marker.size * 1.67, 16, 16]} />
+           <meshBasicMaterial 
+             color={GLOBE_CONFIG.marker.color}
+             transparent
+             opacity={GLOBE_CONFIG.marker.glowOpacity}
+           />
         </mesh>
         
         {/* 深圳标签 - 修复镜面反转并跟随旋转 */}

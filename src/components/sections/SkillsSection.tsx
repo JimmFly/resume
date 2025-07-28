@@ -1,67 +1,27 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { SKILLS_DATA, ANIMATION_CONFIG } from '../../constants';
+import { useAnimation } from '../../hooks/useAnimation';
+import type { SkillBarProps } from '../../types';
 
-interface Skill {
-  name: string;
-  level: number; // 1-100
-  category: 'frontend' | 'backend' | 'tools';
-}
-
-interface SkillBarProps {
-  skill: Skill;
-  key?: string;
-}
-
-const skills: Skill[] = [
-  // 前端核心技术
-  { name: 'React', level: 95, category: 'frontend' },
-  { name: 'TypeScript', level: 90, category: 'frontend' },
-  { name: 'JavaScript', level: 95, category: 'frontend' },
-  { name: 'HTML5/CSS3', level: 95, category: 'frontend' },
-  { name: 'ES6+', level: 90, category: 'frontend' },
-  { name: 'Tailwind CSS', level: 90, category: 'frontend' },
-  { name: 'shadcn-ui', level: 85, category: 'frontend' },
-  { name: 'radix-ui', level: 80, category: 'frontend' },
+const SkillsSection: React.FC = React.memo(() => {
+  const { fadeInUp, staggerContainer, viewport } = useAnimation();
   
-  // 后端与数据
-  { name: 'GraphQL', level: 85, category: 'backend' },
-  { name: 'Node.js', level: 75, category: 'backend' },
-  { name: 'MVC架构', level: 80, category: 'backend' },
-  
-  // 开发工具
-  { name: 'Git', level: 95, category: 'tools' },
-  { name: 'Vite', level: 85, category: 'tools' },
-  { name: 'Figma', level: 75, category: 'tools' },
-  { name: 'Notion', level: 80, category: 'tools' },
-  { name: 'AI Coding', level: 85, category: 'tools' },
-];
-
-const SkillsSection: React.FC = () => {
-  const frontendSkills = skills.filter(skill => skill.category === 'frontend');
-  const backendSkills = skills.filter(skill => skill.category === 'backend');
-  const toolSkills = skills.filter(skill => skill.category === 'tools');
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  // 动画配置
+  const skillCategories = useMemo(() => ({
+    frontend: SKILLS_DATA.filter(skill => skill.category === 'frontend'),
+    backend: SKILLS_DATA.filter(skill => skill.category === 'backend'),
+    tools: SKILLS_DATA.filter(skill => skill.category === 'tools')
+  }), []);
 
   return (
     <section id="skills" className="section-container bg-accent/10">
       <div className="max-w-4xl mx-auto">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold mb-12 text-center font-heading"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewport}
         >
           <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">技能专长</span>
         </motion.h2>
@@ -69,21 +29,21 @@ const SkillsSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* 前端技能 */}
           <motion.div
-            className="bg-gray-800/30 p-6 rounded-lg border border-gray-700 backdrop-blur-sm"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            className="glass-card p-6"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={viewport}
           >
             <h3 className="text-xl font-semibold mb-6 text-cyan-400">前端开发</h3>
             <motion.div
               className="space-y-4"
-              variants={container}
+              variants={staggerContainer}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true }}
+              viewport={viewport}
             >
-              {frontendSkills.map((skill) => (
+              {skillCategories.frontend.map((skill) => (
                 <SkillBar key={skill.name} skill={skill} />
               ))}
             </motion.div>
@@ -92,20 +52,21 @@ const SkillsSection: React.FC = () => {
           {/* 后端技能 */}
           <motion.div
             className="glass-card p-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={viewport}
+            transition={{ delay: ANIMATION_CONFIG.delay.medium }}
           >
             <h3 className="text-xl font-semibold mb-6 text-cyan-400">后端开发</h3>
             <motion.div
               className="space-y-4"
-              variants={container}
+              variants={staggerContainer}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true }}
+              viewport={viewport}
             >
-              {backendSkills.map((skill) => (
+              {skillCategories.backend.map((skill) => (
                 <SkillBar key={skill.name} skill={skill} />
               ))}
             </motion.div>
@@ -114,20 +75,21 @@ const SkillsSection: React.FC = () => {
           {/* 工具和其他 */}
           <motion.div
             className="glass-card p-6 md:col-span-2 lg:col-span-1"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={viewport}
+            transition={{ delay: ANIMATION_CONFIG.delay.long }}
           >
             <h3 className="text-xl font-semibold mb-6 text-cyan-400">工具与方法</h3>
             <motion.div
               className="space-y-4"
-              variants={container}
+              variants={staggerContainer}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true }}
+              viewport={viewport}
             >
-              {toolSkills.map((skill) => (
+              {skillCategories.tools.map((skill) => (
                 <SkillBar key={skill.name} skill={skill} />
               ))}
             </motion.div>
@@ -136,16 +98,13 @@ const SkillsSection: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 
-const SkillBar: React.FC<SkillBarProps> = ({ skill }) => {
-  const itemAnimation = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
-  };
+const SkillBar: React.FC<SkillBarProps> = React.memo(({ skill }) => {
+  const { fadeInUp, viewport } = useAnimation();
   
   return (
-    <motion.div variants={itemAnimation}>
+    <motion.div variants={fadeInUp}>
       <div className="flex justify-between mb-1">
         <span className="text-text">{skill.name}</span>
         <span className="text-primary">{skill.level}%</span>
@@ -155,12 +114,15 @@ const SkillBar: React.FC<SkillBarProps> = ({ skill }) => {
           className="bg-primary h-2.5 rounded-full" 
           initial={{ width: 0 }}
           whileInView={{ width: `${skill.level}%` }}
-          transition={{ duration: 1, delay: 0.3 }}
-          viewport={{ once: true }}
+          transition={{ 
+            duration: ANIMATION_CONFIG.duration.globe, 
+            delay: ANIMATION_CONFIG.delay.medium 
+          }}
+          viewport={viewport}
         />
       </div>
     </motion.div>
   );
-};
+});
 
 export default SkillsSection;
