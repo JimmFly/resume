@@ -31,6 +31,10 @@ jobs:
         with:
           node-version: '18'
           cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
+
+      - name: Clear Yarn cache
+        run: yarn cache clean
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
