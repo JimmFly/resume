@@ -17,6 +17,30 @@
     "contactMe": "お問い合わせ",
     "github": "GitHub"
   },
+  "skills": {
+    "title": "技術スキル",
+    "frontend": "フロントエンド",
+    "backend": "バックエンド",
+    "tools": "ツール",
+    "names": {
+      "React": "React",
+      "TypeScript": "TypeScript",
+      "JavaScript": "JavaScript",
+      "HTML5/CSS3": "HTML5/CSS3",
+      "ES6+": "ES6+",
+      "Tailwind CSS": "Tailwind CSS",
+      "shadcn-ui": "shadcn-ui",
+      "radix-ui": "radix-ui",
+      "GraphQL": "GraphQL",
+      "Node.js": "Node.js",
+      "MVC架构": "MVCアーキテクチャ",
+      "Git": "Git",
+      "Vite": "Vite",
+      "Figma": "Figma",
+      "Notion": "Notion",
+      "AI Coding": "AIコーディング"
+    }
+  },
   "about": {
     "title": "私について",
     "description1": "私は楊晋飛、3年の豊富な経験を持つフロントエンド開発エンジニアで、現在ToEverything（杭州）有限責任公司に勤務しています。Reactテクノロジースタックに特化し、TypeScript、GraphQL、Tailwind CSSなどの現代的なフロントエンド技術に精通しています。",

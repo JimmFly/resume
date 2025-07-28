@@ -17,17 +17,35 @@
     "contactMe": "联系我",
     "github": "GitHub"
   },
+  "skills": {
+    "title": "技能专长",
+    "frontend": "前端技术",
+    "backend": "后端技术",
+    "tools": "开发工具",
+    "names": {
+      "React": "React",
+      "TypeScript": "TypeScript",
+      "JavaScript": "JavaScript",
+      "HTML5/CSS3": "HTML5/CSS3",
+      "ES6+": "ES6+",
+      "Tailwind CSS": "Tailwind CSS",
+      "shadcn-ui": "shadcn-ui",
+      "radix-ui": "radix-ui",
+      "GraphQL": "GraphQL",
+      "Node.js": "Node.js",
+      "MVC架构": "MVC架构",
+      "Git": "Git",
+      "Vite": "Vite",
+      "Figma": "Figma",
+      "Notion": "Notion",
+      "AI Coding": "AI编程"
+    }
+  },
   "about": {
     "title": "关于我",
     "description1": "我是杨晋飞，一名拥有3年丰富经验的前端开发工程师，目前就职于万有理论科技（杭州）有限责任公司。专注于React技术栈，熟练掌握TypeScript、GraphQL、Tailwind CSS等现代前端技术。",
     "description2": "在职业生涯中，我主导参与了AFFiNE开源项目的开发，这是一个可自部署的本地优先多人协同知识库。负责前端架构设计、国际化实现、admin panel开发等核心功能模块。",
     "description3": "我热衷于探索前沿技术，50% vibe coding，对AI应用开发方向保持高度兴趣。致力于构建高质量、可复用的组件库，追求优秀的用户体验和产品创新。",
-    "skills": {
-      "title": "技能专长",
-      "frontend": "前端开发",
-      "backend": "后端开发",
-      "tools": "工具与方法"
-    },
     "cards": {
       "experience": {
         "title": "工作经历",

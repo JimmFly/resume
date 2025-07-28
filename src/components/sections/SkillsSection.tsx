@@ -124,12 +124,13 @@ const SkillsSection: React.FC = React.memo(() => {
 })
 
 const SkillBar: React.FC<SkillBarProps> = React.memo(({ skill }) => {
+  const { t } = useTranslation()
   const { fadeInUp, viewport } = useAnimation()
 
   return (
     <motion.div variants={fadeInUp}>
       <div className='flex justify-between mb-1'>
-        <span className='text-text'>{skill.name}</span>
+        <span className='text-text'>{t(`skills.names.${skill.name}`, skill.name)}</span>
         <span className='text-primary'>{skill.level}%</span>
       </div>
       <div className='w-full bg-background/50 rounded-full h-2.5'>

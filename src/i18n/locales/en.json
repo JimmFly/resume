@@ -17,6 +17,30 @@
     "contactMe": "Contact Me",
     "github": "GitHub"
   },
+  "skills": {
+    "title": "Technical Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools",
+    "names": {
+      "React": "React",
+      "TypeScript": "TypeScript",
+      "JavaScript": "JavaScript",
+      "HTML5/CSS3": "HTML5/CSS3",
+      "ES6+": "ES6+",
+      "Tailwind CSS": "Tailwind CSS",
+      "shadcn-ui": "shadcn-ui",
+      "radix-ui": "radix-ui",
+      "GraphQL": "GraphQL",
+      "Node.js": "Node.js",
+      "MVC架构": "MVC Architecture",
+      "Git": "Git",
+      "Vite": "Vite",
+      "Figma": "Figma",
+      "Notion": "Notion",
+      "AI Coding": "AI Coding"
+    }
+  },
   "about": {
     "title": "About Me",
     "description1": "I am Yang Jinfei, a frontend developer with 3 years of rich experience, currently working at ToEverything (Hangzhou) Co., Ltd. I focus on React technology stack and am proficient in TypeScript, GraphQL, Tailwind CSS and other modern frontend technologies.",

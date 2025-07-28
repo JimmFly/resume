@@ -23,7 +23,7 @@ const HeroSection = React.memo(() => {
   const github = t('hero.github')
 
   return (
-    <section className='min-h-screen flex items-center justify-center relative overflow-hidden'>
+    <section className='min-h-screen flex items-center justify-center relative overflow-hidden pt-16 sm:pt-20'>
       {/* Background effects - Add parallax effect */}
       <div className='absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/20 to-gray-900' />
       <div
@@ -72,17 +72,20 @@ const HeroSection = React.memo(() => {
               {description}
             </motion.p>
 
-            <motion.div className='flex flex-col sm:flex-row gap-4' variants={staggerContainer}>
+            <motion.div
+              className='flex flex-wrap gap-4 justify-center sm:justify-start'
+              variants={staggerContainer}
+            >
               <motion.a
                 href='#projects'
-                className='bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl'
+                className='bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap'
                 variants={fadeInUp}
               >
                 {cta}
               </motion.a>
               <motion.a
                 href='#contact'
-                className='border-2 border-blue-500 text-blue-400 px-8 py-4 rounded-lg font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105'
+                className='border-2 border-blue-500 text-blue-400 px-8 py-4 rounded-lg font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105 whitespace-nowrap'
                 variants={fadeInUp}
               >
                 {contactMe}
@@ -91,7 +94,7 @@ const HeroSection = React.memo(() => {
                 href='https://github.com/jimmfly'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='border-2 border-gray-500 text-gray-400 px-8 py-4 rounded-lg font-semibold hover:bg-gray-500 hover:text-white transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2'
+                className='border-2 border-gray-500 text-gray-400 px-8 py-4 rounded-lg font-semibold hover:bg-gray-500 hover:text-white transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 whitespace-nowrap'
                 variants={fadeInUp}
               >
                 <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 20 20'>
