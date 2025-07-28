@@ -116,3 +116,15 @@ pids
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Husky
+.husky/_
+
+# Prettier
+.prettierrc.local
+
+# OxLint
+.oxlint_cache/
+
+# GitHub Actions
+.github/workflows/*.local.yml

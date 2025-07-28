@@ -1,0 +1,43 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxlint/configuration_schema.json",
+  "rules": {
+    "typescript": "warn",
+    "react": "warn",
+    "jsx-a11y": "warn",
+    "oxc": "warn",
+    "eslint": "warn",
+    "import": "warn",
+    "jsdoc": "off",
+    "jest": "off",
+    "vitest": "off",
+    "unicorn": "off",
+    "react-perf": "warn",
+    "nextjs": "off"
+  },
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "globals": {
+    "React": "readonly",
+    "JSX": "readonly"
+  },
+  "ignore_patterns": [
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    "coverage/**",
+    "*.config.js",
+    "*.config.ts",
+    "vite.config.ts",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ],
+  "plugins": [],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
