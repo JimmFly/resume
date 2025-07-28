@@ -9,8 +9,12 @@ import ContactSection from './components/sections/ContactSection'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import ParallaxContainer from './components/common/ParallaxContainer'
+import ChatBot from './components/ChatBot'
 
 function App() {
+  // 从环境变量获取 OpenAI API Key
+  const openaiApiKey = import.meta.env.VITE_OPENAI_API_KEY
+
   return (
     <ParallaxContainer>
       <div className='min-h-screen bg-background text-text'>
@@ -24,6 +28,8 @@ function App() {
           <ContactSection />
         </main>
         <Footer />
+        {/* ChatBot 组件 */}
+        <ChatBot apiKey={openaiApiKey} />
       </div>
     </ParallaxContainer>
   )
