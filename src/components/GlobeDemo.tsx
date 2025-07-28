@@ -12,16 +12,16 @@ const GlobeDemo: React.FC = () => {
         <div className='h-96 w-full bg-black/20 rounded-lg overflow-hidden'>
           <Canvas camera={{ position: [0, 0, 3], fov: 75 }} gl={{ antialias: true, alpha: true }}>
             <Suspense fallback={null}>
-              {/* 环境光照 */}
+              {/* Ambient lighting */}
               <ambientLight intensity={0.4} />
 
-              {/* 定向光（太阳光） */}
+              {/* Directional light (sunlight) */}
               <directionalLight position={[5, 3, 5]} intensity={1.2} color='#ffffff' />
 
-              {/* 补充光源 */}
+              {/* Supplementary light source */}
               <pointLight position={[-3, -2, -3]} intensity={0.3} color='#4a90e2' />
 
-              {/* 3D地球 */}
+              {/* 3D Globe */}
               <RealisticGlobe
                 position={[0, 0, 0]}
                 scale={1.5}
@@ -29,7 +29,7 @@ const GlobeDemo: React.FC = () => {
                 rotationSpeed={0.5}
               />
 
-              {/* 控制器 */}
+              {/* Controls */}
               <OrbitControls
                 enableZoom={true}
                 enablePan={true}

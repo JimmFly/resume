@@ -47,10 +47,10 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = '' }) =
 
       {isOpen && (
         <>
-          {/* 背景遮罩 */}
+          {/* Background overlay */}
           <div className='fixed inset-0 z-10' onClick={() => setIsOpen(false)} />
 
-          {/* 下拉菜单 */}
+          {/* Dropdown menu */}
           <div className='absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-20'>
             {languages.map(language => (
               <button

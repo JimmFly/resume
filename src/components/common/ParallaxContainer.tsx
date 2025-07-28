@@ -11,9 +11,9 @@ const ParallaxContainer: React.FC<ParallaxContainerProps> = ({ children }) => {
 
   return (
     <div className='relative'>
-      {/* 全局背景视差元素 */}
+      {/* Global background parallax elements */}
       <div className='fixed inset-0 pointer-events-none overflow-hidden'>
-        {/* 星空背景 */}
+        {/* Starry background */}
         <div
           className='absolute inset-0 opacity-30'
           style={{
@@ -30,7 +30,7 @@ const ParallaxContainer: React.FC<ParallaxContainerProps> = ({ children }) => {
           }}
         />
 
-        {/* 浮动几何形状 */}
+        {/* Floating geometric shapes */}
         <div
           className='absolute top-1/4 left-1/6 w-4 h-4 bg-cyan-400/20 rounded-full'
           style={{
@@ -50,7 +50,7 @@ const ParallaxContainer: React.FC<ParallaxContainerProps> = ({ children }) => {
           }}
         />
 
-        {/* 渐变光晕 */}
+        {/* Gradient glow */}
         <div
           className='absolute top-0 left-1/2 w-96 h-96 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl'
           style={{
@@ -65,7 +65,7 @@ const ParallaxContainer: React.FC<ParallaxContainerProps> = ({ children }) => {
         />
       </div>
 
-      {/* 主要内容 */}
+      {/* Main content */}
       <div className='relative z-10'>{children}</div>
     </div>
   )

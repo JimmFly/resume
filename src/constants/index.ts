@@ -67,7 +67,7 @@ export const GLOBE_CONFIG = {
   rotationSpeed: 0.15,
 } as const
 
-// Hero区域内容
+// Hero section content
 export const HERO_CONTENT = {
   greeting: 'hero.greeting',
   name: 'hero.name',
@@ -89,44 +89,44 @@ export const HERO_CONTENT = {
   ],
 } as const
 
-// 视差效果配置
+// Parallax effect configuration
 export const PARALLAX_CONFIG = {
-  // 背景层视差速度
+  // Background layer parallax speed
   background: {
     slow: 0.2,
     medium: 0.4,
     fast: 0.6,
   },
 
-  // 元素视差速度
+  // Element parallax speed
   elements: {
     subtle: 0.1,
     normal: 0.3,
     strong: 0.5,
   },
 
-  // 滚动阈值
+  // Scroll threshold
   thresholds: {
     inView: 0.1,
     halfView: 0.5,
     fullView: 0.9,
   },
 
-  // 视差层配置
+  // Parallax layer configuration
   layers: {
     hero: [
-      { speed: 0.2, offset: 0 }, // 背景最慢
-      { speed: 0.4, offset: 0 }, // 中景
-      { speed: 0.6, offset: 0 }, // 前景最快
+      { speed: 0.2, offset: 0 }, // Background slowest
+      { speed: 0.4, offset: 0 }, // Midground
+      { speed: 0.6, offset: 0 }, // Foreground fastest
     ],
     sections: [
-      { speed: 0.1, offset: 0 }, // 背景装饰
-      { speed: 0.3, offset: 0 }, // 内容元素
+      { speed: 0.1, offset: 0 }, // Background decoration
+      { speed: 0.3, offset: 0 }, // Content elements
     ],
   },
 } as const
 
-// About区域内容
+// About section content
 export const ABOUT_CONTENT = {
   title: 'about.title',
   description: ['about.description1', 'about.description2', 'about.description3'],
@@ -153,7 +153,7 @@ export const ABOUT_CONTENT = {
   ],
 } as const
 
-// 响应式断点
+// Responsive breakpoints
 export const BREAKPOINTS = {
   sm: 640,
   md: 768,
@@ -162,7 +162,7 @@ export const BREAKPOINTS = {
   '2xl': 1536,
 } as const
 
-// 颜色主题
+// Color theme
 export const THEME_COLORS = {
   background: '#0a192f',
   text: '#e6f1ff',
@@ -171,9 +171,9 @@ export const THEME_COLORS = {
   accent: '#112240',
 } as const
 
-// 技能数据
+// Skills data
 export const SKILLS_DATA = [
-  // 前端核心技术
+  // Frontend core technologies
   { name: 'React', level: 95, category: 'frontend' as const },
   { name: 'TypeScript', level: 90, category: 'frontend' as const },
   { name: 'JavaScript', level: 95, category: 'frontend' as const },
@@ -183,12 +183,12 @@ export const SKILLS_DATA = [
   { name: 'shadcn-ui', level: 85, category: 'frontend' as const },
   { name: 'radix-ui', level: 80, category: 'frontend' as const },
 
-  // 后端与数据
+  // Backend and data
   { name: 'GraphQL', level: 85, category: 'backend' as const },
   { name: 'Node.js', level: 75, category: 'backend' as const },
   { name: 'MVC架构', level: 80, category: 'backend' as const },
 
-  // 开发工具
+  // Development tools
   { name: 'Git', level: 95, category: 'tools' as const },
   { name: 'Vite', level: 85, category: 'tools' as const },
   { name: 'Figma', level: 75, category: 'tools' as const },
@@ -196,7 +196,7 @@ export const SKILLS_DATA = [
   { name: 'AI Coding', level: 85, category: 'tools' as const },
 ] as const
 
-// 工作经历数据
+// Work experience data
 export const EXPERIENCE_DATA = [
   {
     id: 1,

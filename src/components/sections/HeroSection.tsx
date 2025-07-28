@@ -8,11 +8,19 @@ import { GLOBE_CONFIG, PARALLAX_CONFIG } from '../../constants'
 import { useAnimation } from '../../hooks/useAnimation'
 import { useMultiLayerParallax } from '../../hooks/useParallax'
 
+/**
+ * Hero section component - Main display area of the website homepage1
+ * Contains 3D globe model, personal introduction and multi-layer parallax effects
+ */
 const HeroSection = React.memo(() => {
+  // Internationalization translation hook
   const { t } = useTranslation()
+  // Animation effects hook - get various animation variants
   const { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } = useAnimation()
+  // Multi-layer parallax effect hook - get layer style functions
   const { getLayerStyle } = useMultiLayerParallax([...PARALLAX_CONFIG.layers.hero])
 
+  // Get all required translation texts
   const greeting = t('hero.greeting')
   const name = t('hero.name')
   const title = t('hero.title')
@@ -24,16 +32,20 @@ const HeroSection = React.memo(() => {
 
   return (
     <section className='min-h-screen flex items-center justify-center relative overflow-hidden pt-16 sm:pt-20'>
-      {/* Background effects - Add parallax effect */}
+      {/* Background effect layer - contains gradient background and multi-layer parallax glow effects */}
+      {/* Main background gradient - diagonal gradient from dark gray to blue-gray */}
       <div className='absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/20 to-gray-900' />
+      {/* Top-left cyan glow - first layer parallax effect */}
       <div
         className='absolute top-20 left-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl'
         style={getLayerStyle(0)}
       />
+      {/* Bottom-right blue glow - second layer parallax effect */}
       <div
         className='absolute bottom-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl'
         style={getLayerStyle(1)}
       />
+      {/* Center purple glow - third layer parallax effect, provides overall atmosphere */}
       <div
         className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-3xl'
         style={getLayerStyle(2)}
@@ -41,7 +53,7 @@ const HeroSection = React.memo(() => {
 
       <div className='container mx-auto px-6 text-center relative z-20'>
         <div className='flex flex-col md:flex-row items-center justify-between gap-12'>
-          {/* Left content */}
+          {/* Left content area - personal introduction and action buttons */}
           <motion.div className='flex-1' variants={fadeInLeft} initial='hidden' animate='show'>
             <motion.p className='text-primary font-mono mb-4' variants={fadeInUp}>
               {greeting}
@@ -109,26 +121,28 @@ const HeroSection = React.memo(() => {
             </motion.div>
           </motion.div>
 
-          {/* Right side 3D globe */}
+          {/* Right side 3D globe display area */}
           <motion.div
             className='flex-1 flex justify-center items-center relative'
             variants={fadeInRight}
             initial='hidden'
             animate='show'
           >
+            {/* 3D globe container - responsive size design */}
             <div className='relative w-96 h-96 md:w-[28rem] md:h-[28rem]'>
+              {/* Three.js Canvas - 3D rendering canvas */}
               <Canvas
                 camera={{ position: [0, 0, 3], fov: 75 }}
                 gl={{ antialias: true, alpha: true }}
               >
                 <Suspense fallback={null}>
-                  {/* Ambient lighting - Enhanced brightness for global daylight */}
+                  {/* Ambient lighting - enhanced brightness to simulate global daylight effect */}
                   <ambientLight intensity={1.0} />
 
-                  {/* Additional light source */}
+                  {/* Additional point light - provides blue-toned supplementary lighting */}
                   <pointLight position={[-3, -2, -3]} intensity={0.2} color='#4a90e2' />
 
-                  {/* 3D Globe */}
+                  {/* 3D globe model component - uses parameters from configuration file */}
                   <RealisticGlobe
                     position={GLOBE_CONFIG.position}
                     scale={GLOBE_CONFIG.scale}
@@ -136,7 +150,7 @@ const HeroSection = React.memo(() => {
                     rotationSpeed={GLOBE_CONFIG.rotationSpeed}
                   />
 
-                  {/* Controls */}
+                  {/* Orbit controls - allows user interactive control of viewing angle */}
                   <OrbitControls
                     enableZoom={true}
                     enablePan={false}
@@ -150,15 +164,17 @@ const HeroSection = React.memo(() => {
           </motion.div>
         </div>
 
-        {/* Scroll down indicator */}
+        {/* Scroll down indicator - guides users to continue browsing */}
         <motion.div
           className='absolute bottom-10 left-1/2 transform -translate-x-1/2'
           variants={fadeInUp}
           initial='hidden'
           animate='show'
         >
+          {/* Scroll hint link - click to jump to about me section */}
           <a href='#about' className='flex flex-col items-center text-primary'>
             <span className='text-sm mb-2'>{t('common.scrollDown')}</span>
+            {/* Down arrow icon - with bounce animation effect */}
             <svg
               className='w-6 h-6 animate-bounce'
               fill='none'

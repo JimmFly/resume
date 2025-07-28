@@ -4,6 +4,9 @@ import { HumanMessage, AIMessage } from '@langchain/core/messages'
 import { MessageCircle, Send, X, Bot, User } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
+/**
+ * Chat message interface definition
+ */
 interface Message {
   id: string
   content: string
@@ -11,12 +14,20 @@ interface Message {
   timestamp: Date
 }
 
+/**
+ * ChatBot component props interface
+ */
 interface ChatBotProps {
+  /** OpenAI API key */
   apiKey?: string
+  /** Custom CSS class name */
   className?: string
+  /** Maximum messages per session */
   maxMessagesPerSession?: number
+  /** Rate limit in milliseconds */
   rateLimitMs?: number
-  maxSessionDuration?: number // in minutes
+  /** Maximum session duration in minutes */
+  maxSessionDuration?: number
 }
 
 const ChatBot: React.FC<ChatBotProps> = ({
@@ -46,7 +57,7 @@ const ChatBot: React.FC<ChatBotProps> = ({
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const chatRef = useRef<ChatOpenAI | null>(null)
 
-  // 初始化 ChatOpenAI 实例
+  // Initialize ChatOpenAI instance
   useEffect(() => {
     if (apiKey) {
       chatRef.current = new ChatOpenAI({
@@ -58,7 +69,7 @@ const ChatBot: React.FC<ChatBotProps> = ({
     }
   }, [apiKey])
 
-  // 自动滚动到底部
+  // Auto scroll to bottom
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -67,143 +78,226 @@ const ChatBot: React.FC<ChatBotProps> = ({
     scrollToBottom()
   }, [messages])
 
-  // 检查使用限制
-  const checkUsageLimits = (): { allowed: boolean; reason?: string } => {
-    // 检查会话时长
+  /**
+   * Check if session duration exceeds limit
+   */
+  const checkSessionDuration = (): { valid: boolean; reason?: string } => {
     const sessionDuration = (Date.now() - sessionStartTime) / (1000 * 60)
     if (sessionDuration > maxSessionDuration) {
       return {
-        allowed: false,
+        valid: false,
         reason: t('chatbot.errors.sessionTimeout', { minutes: maxSessionDuration }),
       }
     }
+    return { valid: true }
+  }
 
-    // 检查消息数量
+  /**
+   * Check if message count exceeds limit
+   */
+  const checkMessageLimit = (): { valid: boolean; reason?: string } => {
     if (messageCount >= maxMessagesPerSession) {
       return {
-        allowed: false,
+        valid: false,
         reason: t('chatbot.errors.messageLimit', { count: maxMessagesPerSession }),
       }
     }
+    return { valid: true }
+  }
 
-    // 检查请求频率
+  /**
+   * Check if request rate exceeds limit
+   */
+  const checkRateLimit = (): { valid: boolean; reason?: string } => {
     const now = Date.now()
     if (now - lastRequestTime < rateLimitMs) {
       const waitTime = Math.ceil((rateLimitMs - (now - lastRequestTime)) / 1000)
-      return { allowed: false, reason: t('chatbot.errors.rateLimit', { seconds: waitTime }) }
+      return { valid: false, reason: t('chatbot.errors.rateLimit', { seconds: waitTime }) }
+    }
+    return { valid: true }
+  }
+
+  /**
+   * Comprehensive check of all usage limits
+   */
+  const checkUsageLimits = (): { allowed: boolean; reason?: string } => {
+    const sessionCheck = checkSessionDuration()
+    if (!sessionCheck.valid) {
+      return { allowed: false, reason: sessionCheck.reason }
+    }
+
+    const messageCheck = checkMessageLimit()
+    if (!messageCheck.valid) {
+      return { allowed: false, reason: messageCheck.reason }
+    }
+
+    const rateCheck = checkRateLimit()
+    if (!rateCheck.valid) {
+      return { allowed: false, reason: rateCheck.reason }
     }
 
     return { allowed: true }
   }
 
-  // 发送消息
-  const handleSendMessage = async () => {
-    if (!inputValue.trim() || isLoading || isBlocked) return
+  /**
+   * Create user message object
+   */
+  const createUserMessage = (content: string): Message => ({
+    id: Date.now().toString(),
+    content: content.trim(),
+    type: 'human',
+    timestamp: new Date(),
+  })
 
-    // 检查使用限制
-    const limitCheck = checkUsageLimits()
-    if (!limitCheck.allowed) {
-      const errorMessage: Message = {
-        id: Date.now().toString(),
-        content: `⚠️ ${limitCheck.reason}`,
+  /**
+   * Create AI message object
+   */
+  const createAIMessage = (): Message => ({
+    id: (Date.now() + 1).toString(),
+    content: '',
+    type: 'ai',
+    timestamp: new Date(),
+  })
+
+  /**
+   * Create error message object
+   */
+  const createErrorMessage = (content: string): Message => ({
+    id: Date.now().toString(),
+    content,
+    type: 'ai',
+    timestamp: new Date(),
+  })
+
+  /**
+   * Handle API errors and return corresponding error message
+   */
+  const handleAPIError = (error: unknown): string => {
+    console.error('Chat error:', error)
+
+    if (error instanceof Error) {
+      if (error.message.includes('rate_limit')) {
+        setIsBlocked(true)
+        setTimeout(() => setIsBlocked(false), 60000) // Unblock after 1 minute
+        return t('chatbot.errors.apiRateLimit')
+      }
+
+      if (error.message.includes('quota')) {
+        setIsBlocked(true)
+        return t('chatbot.errors.quotaExceeded')
+      }
+
+      return t('chatbot.errors.specific', { message: error.message })
+    }
+
+    return t('chatbot.errors.general')
+  }
+
+  /**
+   * Build message history
+   */
+  const buildMessageHistory = (userMessage: Message) => {
+    const messageHistory = messages.map(msg =>
+      msg.type === 'human' ? new HumanMessage(msg.content) : new AIMessage(msg.content)
+    )
+    messageHistory.push(new HumanMessage(userMessage.content))
+    return messageHistory
+  }
+
+  /**
+   * Handle streaming response
+   */
+  const handleStreamResponse = async (
+    messageHistory: (HumanMessage | AIMessage)[],
+    tempAiMessageId: string
+  ) => {
+    if (!chatRef.current) {
+      throw new Error(t('chatbot.errors.noApiKey'))
+    }
+
+    const stream = await chatRef.current.stream(messageHistory)
+    let fullContent = ''
+
+    for await (const chunk of stream) {
+      const content = chunk.content as string
+      if (content) {
+        fullContent += content
+        // Update message content in real-time
+        setMessages(prev =>
+          prev.map(msg => (msg.id === tempAiMessageId ? { ...msg, content: fullContent } : msg))
+        )
+      }
+    }
+  }
+
+  /**
+   * Check and show warning when approaching limits
+   */
+  const checkAndShowWarning = () => {
+    if (messageCount + 1 >= maxMessagesPerSession - 2) {
+      const warningMessage: Message = {
+        id: (Date.now() + 2).toString(),
+        content: t('chatbot.warning', { remaining: maxMessagesPerSession - messageCount - 1 }),
         type: 'ai',
         timestamp: new Date(),
       }
+      setTimeout(() => {
+        setMessages(prev => [...prev, warningMessage])
+      }, 1000)
+    }
+  }
+
+  /**
+   * Main message sending handler function
+   */
+  const handleSendMessage = async () => {
+    // Basic validation: check input, loading state and blocked state
+    if (!inputValue.trim() || isLoading || isBlocked) return
+
+    // Check usage limits (session duration, message count, request rate)
+    const limitCheck = checkUsageLimits()
+    if (!limitCheck.allowed) {
+      const errorMessage = createErrorMessage(`⚠️ ${limitCheck.reason}`)
       setMessages(prev => [...prev, errorMessage])
       return
     }
 
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      content: inputValue.trim(),
-      type: 'human',
-      timestamp: new Date(),
-    }
-
+    // Create and add user message
+    const userMessage = createUserMessage(inputValue)
     setMessages(prev => [...prev, userMessage])
+
+    // Reset input and update state
     setInputValue('')
     setIsLoading(true)
     setMessageCount(prev => prev + 1)
     setLastRequestTime(Date.now())
 
     try {
-      if (!chatRef.current) {
-        throw new Error(t('chatbot.errors.noApiKey'))
-      }
+      // Build message history
+      const messageHistory = buildMessageHistory(userMessage)
 
-      // 构建消息历史
-      const messageHistory = messages.map(msg =>
-        msg.type === 'human' ? new HumanMessage(msg.content) : new AIMessage(msg.content)
-      )
-      messageHistory.push(new HumanMessage(userMessage.content))
-
-      // 创建临时 AI 消息用于流式输出
-      const tempAiMessageId = (Date.now() + 1).toString()
-      const tempAiMessage: Message = {
-        id: tempAiMessageId,
-        content: '',
-        type: 'ai',
-        timestamp: new Date(),
-      }
+      // Create temporary AI message for streaming output
+      const tempAiMessage = createAIMessage()
+      const tempAiMessageId = tempAiMessage.id
       setMessages(prev => [...prev, tempAiMessage])
 
-      // 使用流式输出
-      const stream = await chatRef.current.stream(messageHistory)
-      let fullContent = ''
+      // Handle streaming response
+      await handleStreamResponse(messageHistory, tempAiMessageId)
 
-      for await (const chunk of stream) {
-        const content = chunk.content as string
-        if (content) {
-          fullContent += content
-          // 实时更新消息内容
-          setMessages(prev =>
-            prev.map(msg => (msg.id === tempAiMessageId ? { ...msg, content: fullContent } : msg))
-          )
-        }
-      }
-
-      // 检查是否接近限制
-      if (messageCount + 1 >= maxMessagesPerSession - 2) {
-        const warningMessage: Message = {
-          id: (Date.now() + 2).toString(),
-          content: t('chatbot.warning', { remaining: maxMessagesPerSession - messageCount - 1 }),
-          type: 'ai',
-          timestamp: new Date(),
-        }
-        setTimeout(() => {
-          setMessages(prev => [...prev, warningMessage])
-        }, 1000)
-      }
+      // Check if approaching message limit and show warning
+      checkAndShowWarning()
     } catch (error) {
-      console.error('Chat error:', error)
-      let errorContent = t('chatbot.errors.general')
-
-      if (error instanceof Error) {
-        if (error.message.includes('rate_limit')) {
-          errorContent = t('chatbot.errors.apiRateLimit')
-          setIsBlocked(true)
-          setTimeout(() => setIsBlocked(false), 60000) // 1分钟后解除阻止
-        } else if (error.message.includes('quota')) {
-          errorContent = t('chatbot.errors.quotaExceeded')
-          setIsBlocked(true)
-        } else {
-          errorContent = t('chatbot.errors.specific', { message: error.message })
-        }
-      }
-
-      const errorMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        content: errorContent,
-        type: 'ai',
-        timestamp: new Date(),
-      }
+      // Handle error and show error message
+      const errorContent = handleAPIError(error)
+      const errorMessage = createErrorMessage(errorContent)
       setMessages(prev => [...prev, errorMessage])
     } finally {
+      // Ensure loading state is reset
       setIsLoading(false)
     }
   }
 
-  // 处理键盘事件
+  // Handle keyboard events
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
@@ -211,7 +305,7 @@ const ChatBot: React.FC<ChatBotProps> = ({
     }
   }
 
-  // 格式化时间
+  // Format time
   const formatTime = (date: Date) => {
     return date.toLocaleTimeString('zh-CN', {
       hour: '2-digit',
@@ -221,7 +315,7 @@ const ChatBot: React.FC<ChatBotProps> = ({
 
   return (
     <div className={`fixed bottom-4 right-4 z-50 ${className}`}>
-      {/* 聊天按钮 */}
+      {/* Chat button */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
@@ -232,10 +326,10 @@ const ChatBot: React.FC<ChatBotProps> = ({
         </button>
       )}
 
-      {/* 聊天窗口 */}
+      {/* Chat window */}
       {isOpen && (
         <div className='bg-white rounded-lg shadow-2xl w-80 h-96 flex flex-col border border-gray-200'>
-          {/* 头部 */}
+          {/* Header */}
           <div className='bg-blue-600 text-white p-4 rounded-t-lg flex items-center justify-between'>
             <div className='flex items-center space-x-2'>
               <Bot size={20} />
@@ -250,7 +344,7 @@ const ChatBot: React.FC<ChatBotProps> = ({
             </button>
           </div>
 
-          {/* 消息区域 */}
+          {/* Message area */}
           <div className='flex-1 overflow-y-auto p-4 space-y-4'>
             {messages.map(message => (
               <div
@@ -298,7 +392,7 @@ const ChatBot: React.FC<ChatBotProps> = ({
             <div ref={messagesEndRef} />
           </div>
 
-          {/* 输入区域 */}
+          {/* Input area */}
           <div className='p-4 border-t border-gray-200'>
             <div className='flex space-x-2'>
               <input

@@ -2,8 +2,10 @@ import { useEffect, useState, useCallback } from 'react'
 
 /**
  * Parallax scrolling effect Hook
- * @param speed Parallax speed, between 0-1, smaller values move slower
- * @param offset Initial offset
+ * Creates a parallax effect based on scroll position, useful for background images or element movements
+ * @param speed Parallax speed multiplier, range 0-1, smaller values move slower, 0 means no movement, 1 means synchronized with scroll
+ * @param offset Initial offset in pixels
+ * @returns Object containing scroll position, parallax offset, and transform styles
  */
 export const useParallax = (speed: number = 0.5, offset: number = 0) => {
   const [scrollY, setScrollY] = useState(0)
@@ -33,7 +35,8 @@ export const useParallax = (speed: number = 0.5, offset: number = 0) => {
 
 /**
  * Scroll progress Hook
- * Returns the percentage progress of current page scroll
+ * Calculates and returns the current scroll progress percentage, useful for progress bar displays
+ * @returns Scroll progress percentage, range 0-100
  */
 export const useScrollProgress = () => {
   const [progress, setProgress] = useState(0)
@@ -57,7 +60,9 @@ export const useScrollProgress = () => {
 
 /**
  * Element visibility detection Hook
- * @param threshold Visibility threshold, between 0-1
+ * Uses the Intersection Observer API to detect if an element is visible in the viewport, useful for lazy loading and animation triggers
+ * @param threshold Visibility threshold, range 0-1, 0 means the element is just entering the viewport, 1 means the element is fully visible
+ * @returns Returns an array containing the ref setting function and visibility status
  */
 export const useInView = (threshold: number = 0.1) => {
   const [isInView, setIsInView] = useState(false)
@@ -82,7 +87,9 @@ export const useInView = (threshold: number = 0.1) => {
 
 /**
  * Multi-layer parallax effect Hook
- * Used to create multiple parallax layers with different speeds
+ * Creates multiple parallax layers with different movement speeds, useful for rich visual hierarchies
+ * @param layers Array of parallax layer configurations, each layer contains speed and optional initial offset
+ * @returns Object containing scroll position, layer offsets, and method to get layer styles
  */
 export const useMultiLayerParallax = (layers: { speed: number; offset?: number }[]) => {
   const [scrollY, setScrollY] = useState(0)
@@ -105,16 +112,26 @@ export const useMultiLayerParallax = (layers: { speed: number; offset?: number }
     return () => window.removeEventListener('scroll', handleScroll)
   }, [layers])
 
+  /**
+   * Get the CSS transform style for a specific layer
+   * @param index Layer index
+   * @returns CSS transform style object
+   */
+  const getLayerStyle = (index: number) => {
+    // Safe array access to prevent out-of-bounds
+    const offset = layerOffsets.at(Math.max(0, Math.min(index, layerOffsets.length - 1))) ?? 0
+    return {
+      transform: `translateY(${offset}px)`,
+      willChange: 'transform',
+    }
+  }
+
   return {
+    /** Current scroll position */
     scrollY,
+    /** Array of offsets for each layer */
     layerOffsets,
-    getLayerStyle: (index: number) => {
-      // Safe array access to prevent object injection attacks
-      const offset = layerOffsets.at(Math.max(0, Math.min(index, layerOffsets.length - 1))) ?? 0
-      return {
-        transform: `translateY(${offset}px)`,
-        willChange: 'transform',
-      }
-    },
+    /** Method to get layer styles */
+    getLayerStyle,
   }
 }

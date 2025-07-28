@@ -23,7 +23,7 @@ const ProjectsSection = () => {
       title: t('projects.affine.title'),
       description: t('projects.affine.description'),
       technologies: ['React', 'TypeScript', 'GraphQL', 'Tailwind CSS', 'shadcn-ui'],
-      image: '📚', // 使用emoji代替图片
+      image: '📚', // Use emoji instead of image
       link: 'https://affine.pro',
       github: 'https://github.com/toeverything/AFFiNE',
     },
@@ -32,7 +32,7 @@ const ProjectsSection = () => {
       title: t('projects.adminPanel.title'),
       description: t('projects.adminPanel.description'),
       technologies: ['React', 'TypeScript', 'GraphQL', 'shadcn-ui', 'Tailwind CSS'],
-      image: '⚙️', // 使用emoji代替图片
+      image: '⚙️', // Use emoji instead of image
       link: '#',
       github: 'https://github.com/toeverything/AFFiNE',
     },
@@ -41,7 +41,7 @@ const ProjectsSection = () => {
       title: t('projects.i18n.title'),
       description: t('projects.i18n.description'),
       technologies: ['React', 'TypeScript', 'i18next', 'React-i18next'],
-      image: '🌍', // 使用emoji代替图片
+      image: '🌍', // Use emoji instead of image
       link: '#',
       github: 'https://github.com/toeverything/AFFiNE',
     },

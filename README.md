@@ -1,6 +1,12 @@
 # 🚀 个人简历网站
 
-一个100% vibe coding 构建的交互式个人简历网站，具有沉浸式视差滚动效果和优雅的动画设计。展示前端开发技能、项目经验和专业联系方式。
+**中文** | [English](README.en.md) | [日本語](README.ja.md)
+
+一个100% vibe coding 构建的交互式个人 AI 原生简历网站，具有沉浸式视差滚动效果和优雅的动画设计。展示前端开发技能、项目经验和专业联系方式。
+
+## 🔗 在线预览
+
+**[🚀 立即访问 GitHub Pages 部署版本](https://jimmfly.github.io/resume/)**
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://jimmfly.github.io/resume/)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/JimmFly/resume)
@@ -202,15 +208,17 @@ src/
 
 - **Vite 构建系统** - 极速的开发服务器和构建过程
 - **Tree Shaking** - 自动移除未使用的代码
-- **代码分割** - 按需加载组件和资源
+- **代码分割** - 按需加载组件和资源，React.lazy + Suspense
 - **资源压缩** - 自动压缩 JS、CSS 和图片
+- **Bundle 分析** - 使用 `yarn analyze` 分析包体积
 
 ### 🎨 渲染优化
 
 - **GPU 加速动画** - 使用 transform3d 和 will-change
-- **虚拟滚动** - 大列表的性能优化
+- **React.memo** - 防止不必要的组件重渲染
 - **图片懒加载** - 延迟加载非关键图片
 - **CSS 优化** - Tailwind CSS 的 PurgeCSS 集成
+- **3D 渲染优化** - Three.js 性能优化和LOD管理
 
 ### 📊 性能指标
 
@@ -218,32 +226,498 @@ src/
 - **Lighthouse 评分** > 90
 - **Core Web Vitals** 优化
 - **包体积** < 500KB (gzipped)
+- **FPS** 保持在 60fps
+
+### 🚀 进一步优化建议
+
+1. **图片优化**
+
+   ```bash
+   # 使用 WebP 格式
+   # 实现响应式图片
+   # 添加图片压缩
+   ```
+
+2. **缓存策略**
+
+   ```bash
+   # 配置 Service Worker
+   # 实现离线缓存
+   # 优化浏览器缓存
+   ```
+
+3. **性能监控**
+   ```bash
+   # 集成 Web Vitals
+   # 添加性能分析
+   # 监控用户体验指标
+   ```
+
+## 🛠️ 开发指南
+
+### 📋 开发环境设置
+
+1. **推荐的 IDE 配置**
+
+   ```bash
+   # VS Code 扩展推荐
+   - ES7+ React/Redux/React-Native snippets
+   - Tailwind CSS IntelliSense
+   - TypeScript Importer
+   - Prettier - Code formatter
+   - ESLint
+   ```
+
+2. **代码规范**
+
+   ```bash
+   # 运行代码检查
+   yarn lint
+
+   # 自动修复代码格式
+   yarn lint:fix
+
+   # 类型检查
+   yarn type-check
+   ```
+
+3. **Git Hooks**
+   ```bash
+   # 提交前自动运行 lint 和格式化
+   # 已配置 husky 和 lint-staged
+   ```
+
+### 🧪 测试
+
+```bash
+# 运行单元测试
+yarn test
+
+# 运行测试覆盖率
+yarn test:coverage
+
+# 运行 E2E 测试
+yarn test:e2e
+```
+
+### 📊 性能分析
+
+```bash
+# 分析 Bundle 大小
+yarn analyze
+
+# 性能审计
+yarn audit
+
+# 安全审计
+yarn audit:security
+```
 
 ## 🎨 自定义指南
 
-### 📝 内容自定义
+### 📝 内容自定化
 
-- **个人信息** - 修改 `src/components/sections/` 中的各个组件
-- **项目展示** - 更新 `ProjectsSection.tsx` 中的项目数据
-- **技能列表** - 编辑 `SkillsSection.tsx` 中的技能配置
-- **联系方式** - 修改 `ContactSection.tsx` 中的邮箱和社交链接
+1. **个人信息修改**
+
+   ```typescript
+   // src/constants/index.ts
+   export const HERO_CONTENT = {
+     greeting: '你好，我是',
+     name: '你的姓名',
+     title: '你的职位',
+     description: '你的简介',
+   }
+   ```
+
+2. **项目数据更新**
+
+   ```typescript
+   // src/components/sections/ProjectsSection.tsx
+   const projects = [
+     {
+       title: '项目名称',
+       description: '项目描述',
+       technologies: ['React', 'TypeScript'],
+       github: 'https://github.com/username/repo',
+       demo: 'https://demo-url.com',
+     },
+   ]
+   ```
+
+3. **技能配置**
+   ```typescript
+   // src/constants/index.ts
+   export const SKILLS_DATA = {
+     frontend: ['React', 'TypeScript', 'Tailwind CSS'],
+     backend: ['Node.js', 'Python', 'PostgreSQL'],
+     tools: ['Git', 'Docker', 'AWS'],
+   }
+   ```
 
 ### 🎨 样式自定义
 
-- **主题颜色** - 编辑 `tailwind.config.js` 中的颜色配置
-- **字体设置** - 在 `tailwind.config.js` 中配置字体族
-- **动画效果** - 调整 `src/constants/index.ts` 中的视差配置
-- **全局样式** - 修改 `src/index.css` 中的自定义样式
+1. **主题颜色**
+
+   ```javascript
+   // tailwind.config.js
+   module.exports = {
+     theme: {
+       extend: {
+         colors: {
+           primary: '#your-primary-color',
+           secondary: '#your-secondary-color',
+         },
+       },
+     },
+   }
+   ```
+
+2. **动画配置**
+
+   ```typescript
+   // src/constants/index.ts
+   export const ANIMATION_CONFIG = {
+     duration: 0.6,
+     ease: 'easeOut',
+     stagger: 0.1,
+   }
+   ```
+
+3. **视差效果调整**
+   ```typescript
+   // src/constants/index.ts
+   export const PARALLAX_CONFIG = {
+     layers: {
+       hero: [
+         { speed: 0.2, offset: 0 },
+         { speed: 0.5, offset: 0 },
+         { speed: 0.8, offset: 0 },
+       ],
+     },
+   }
+   ```
 
 ### ⚙️ 功能配置
 
-- **视差效果** - 调整 `PARALLAX_CONFIG` 中的参数
-- **动画时长** - 修改 Framer Motion 的动画配置
-- **3D 效果** - 自定义 Three.js 场景参数
+1. **ChatBot 配置**
+
+   ```typescript
+   // src/App.tsx
+   <ChatBot
+     apiKey={import.meta.env.VITE_OPENAI_API_KEY}
+     maxMessagesPerSession={5}
+     rateLimitMs={5000}
+     maxSessionDuration={15}
+   />
+   ```
+
+2. **3D 效果参数**
+   ```typescript
+   // src/constants/index.ts
+   export const GLOBE_CONFIG = {
+     position: [0, 0, 0],
+     scale: [1, 1, 1],
+     rotation: [0, 0, 0],
+   }
+   ```
+
+## 🔧 故障排除
+
+### 常见问题
+
+1. **ChatBot 不工作**
+
+   ```bash
+   # 检查环境变量
+   echo $VITE_OPENAI_API_KEY
+
+   # 确保 API Key 有效
+   # 检查网络连接
+   # 查看浏览器控制台错误
+   ```
+
+2. **3D 模型不显示**
+
+   ```bash
+   # 检查 WebGL 支持
+   # 更新显卡驱动
+   # 尝试不同浏览器
+   ```
+
+3. **构建失败**
+
+   ```bash
+   # 清理缓存
+   yarn clean
+
+   # 重新安装依赖
+   rm -rf node_modules yarn.lock
+   yarn install
+
+   # 检查 Node.js 版本
+   node --version
+   ```
+
+4. **性能问题**
+
+   ```bash
+   # 检查 Bundle 大小
+   yarn analyze
+
+   # 优化图片资源
+   # 减少动画复杂度
+   # 启用生产模式构建
+   ```
+
+### 调试技巧
+
+1. **开发工具**
+
+   ```bash
+   # React Developer Tools
+   # Three.js Inspector
+   # Performance Monitor
+   ```
+
+2. **日志记录**
+
+   ```typescript
+   // 启用详细日志
+   console.log('Debug info:', data)
+
+   // 性能监控
+   console.time('Operation')
+   // ... 代码
+   console.timeEnd('Operation')
+   ```
+
+## 📚 最佳实践
+
+### 🏗️ 代码组织
+
+1. **组件设计原则**
+   - 单一职责原则
+   - 可复用性
+   - 类型安全
+   - 性能优化
+
+2. **文件命名规范**
+
+   ```
+   components/     # PascalCase
+   hooks/         # camelCase with 'use' prefix
+   utils/         # camelCase
+   constants/     # UPPER_SNAKE_CASE
+   ```
+
+3. **导入顺序**
+
+   ```typescript
+   // 1. React 相关
+   import React from 'react'
+
+   // 2. 第三方库
+   import { motion } from 'framer-motion'
+
+   // 3. 内部组件
+   import { Button } from './Button'
+
+   // 4. 类型定义
+   import type { Props } from './types'
+   ```
+
+### 🚀 性能最佳实践
+
+1. **组件优化**
+
+   ```typescript
+   // 使用 React.memo
+   export const Component = React.memo(() => {
+     // 组件逻辑
+   })
+
+   // 使用 useMemo 和 useCallback
+   const memoizedValue = useMemo(() => computation, [deps])
+   const memoizedCallback = useCallback(() => {}, [deps])
+   ```
+
+2. **懒加载**
+
+   ```typescript
+   // 组件懒加载
+   const LazyComponent = React.lazy(() => import('./Component'))
+
+   // 路由懒加载
+   const LazyPage = React.lazy(() => import('./pages/Page'))
+   ```
+
+3. **资源优化**
+
+   ```typescript
+   // 图片懒加载
+   <img loading="lazy" src="image.jpg" alt="description" />
+
+   // 预加载关键资源
+   <link rel="preload" href="critical.css" as="style" />
+   ```
+
+### 🔒 安全最佳实践
+
+1. **环境变量管理**
+
+   ```bash
+   # 永远不要提交敏感信息到代码库
+   # 使用 .env 文件管理配置
+   # 在生产环境中使用安全的密钥管理
+   ```
+
+2. **API 安全**
+   ```typescript
+   // 验证用户输入
+   // 实现速率限制
+   // 使用 HTTPS
+   // 处理错误时不暴露敏感信息
+   ```
+
+## 🏗️ 项目架构
+
+### 📊 架构图
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        用户界面层                              │
+├─────────────────────────────────────────────────────────────┤
+│  HeroSection  │  AboutSection  │  SkillsSection  │  Projects │
+├─────────────────────────────────────────────────────────────┤
+│                      组件层                                   │
+├─────────────────────────────────────────────────────────────┤
+│  ParallaxContainer  │  ChatBot  │  3D Components  │  UI     │
+├─────────────────────────────────────────────────────────────┤
+│                      Hooks 层                                │
+├─────────────────────────────────────────────────────────────┤
+│  useParallax  │  useAnimation  │  useInView  │  useScroll   │
+├─────────────────────────────────────────────────────────────┤
+│                      服务层                                   │
+├─────────────────────────────────────────────────────────────┤
+│  LangChain.js  │  OpenAI API  │  Three.js  │  Framer Motion │
+├─────────────────────────────────────────────────────────────┤
+│                      构建层                                   │
+├─────────────────────────────────────────────────────────────┤
+│  Vite  │  TypeScript  │  Tailwind CSS  │  ESLint  │  Yarn   │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 🔧 技术决策
+
+#### 为什么选择这些技术？
+
+1. **React 18 + TypeScript**
+   - ✅ 强类型支持，减少运行时错误
+   - ✅ 现代 React 特性（Concurrent Features）
+   - ✅ 优秀的开发体验和生态系统
+
+2. **Vite 构建工具**
+   - ✅ 极速的开发服务器启动
+   - ✅ 原生 ES 模块支持
+   - ✅ 优化的生产构建
+
+3. **Tailwind CSS**
+   - ✅ 实用优先的设计理念
+   - ✅ 高度可定制
+   - ✅ 优秀的性能（PurgeCSS）
+
+4. **Framer Motion**
+   - ✅ 声明式动画 API
+   - ✅ 优秀的性能
+   - ✅ 丰富的动画特性
+
+5. **Three.js + React Three Fiber**
+   - ✅ 强大的 3D 渲染能力
+   - ✅ React 生态系统集成
+   - ✅ 活跃的社区支持
+
+6. **LangChain.js + OpenAI**
+   - ✅ 现代 AI 应用开发框架
+   - ✅ 流式响应支持
+   - ✅ 灵活的配置选项
+
+### 📁 详细目录结构
+
+```
+src/
+├── components/                 # 组件目录
+│   ├── 3d/                    # 3D 相关组件
+│   │   ├── GlobeDemo.tsx      # 3D 地球组件
+│   │   └── RealisticGlobe.tsx # 真实地球模型
+│   ├── ChatBot/               # AI 聊天组件
+│   │   ├── ChatBot.tsx        # 主聊天组件
+│   │   └── index.ts           # 导出文件
+│   ├── sections/              # 页面区域组件
+│   │   ├── HeroSection.tsx    # 英雄区域
+│   │   ├── AboutSection.tsx   # 关于我
+│   │   ├── SkillsSection.tsx  # 技能展示
+│   │   ├── ProjectsSection.tsx # 项目展示
+│   │   ├── ExperienceSection.tsx # 工作经验
+│   │   └── ContactSection.tsx # 联系方式
+│   └── ui/                    # UI 组件
+│       ├── ParallaxContainer.tsx # 视差容器
+│       ├── ErrorBoundary.tsx  # 错误边界
+│       └── withErrorBoundary.tsx # HOC
+├── hooks/                     # 自定义 Hooks
+│   ├── useParallax.ts        # 视差滚动
+│   ├── useAnimation.ts       # 动画效果
+│   └── useInView.ts          # 视图检测
+├── constants/                 # 常量配置
+│   └── index.ts              # 全局常量
+├── i18n/                     # 国际化
+│   ├── index.ts              # i18n 配置
+│   └── locales/              # 语言文件
+│       ├── en.json           # 英文
+│       ├── zh.json           # 中文
+│       └── ja.json           # 日文
+├── types/                    # 类型定义
+│   └── index.ts              # 全局类型
+├── utils/                    # 工具函数
+│   └── index.ts              # 工具方法
+├── assets/                   # 静态资源
+│   ├── models/               # 3D 模型
+│   └── textures/             # 纹理贴图
+├── App.tsx                   # 主应用组件
+├── main.tsx                  # 应用入口
+└── index.css                 # 全局样式
+```
+
+### 🔄 数据流
+
+```
+用户交互 → 组件状态更新 → Hooks 处理 → UI 重新渲染
+    ↓
+视差滚动 → useParallax → 计算偏移量 → 应用变换
+    ↓
+3D 交互 → Three.js → 渲染循环 → Canvas 更新
+    ↓
+AI 对话 → LangChain → OpenAI API → 流式响应
+```
 
 ## 📸 项目截图
 
-> 添加一些项目的截图展示不同设备上的效果
+### 🖥️ 桌面端展示
+
+> 建议添加以下截图：
+>
+> - 首页 Hero 区域（展示 3D 地球和视差效果）
+> - 技能展示区域（展示动画效果）
+> - 项目展示区域（展示卡片布局）
+> - ChatBot 对话界面（展示 AI 功能）
+
+### 📱 移动端展示
+
+> 建议添加以下截图：
+>
+> - 移动端首页适配
+> - 响应式导航菜单
+> - 移动端聊天界面
+> - 触摸交互效果
 
 ## 🌐 部署
 
