@@ -93,16 +93,19 @@
   "packageManager": "yarn@4.9.2",
   "lint-staged": {
     "*.{ts,tsx}": [
+      "prettier --check",
       "prettier --write",
       "oxlint",
       "eslint --fix"
     ],
     "*.{js,jsx}": [
+      "prettier --check",
       "prettier --write",
       "oxlint",
       "eslint --fix"
     ],
     "*.{json,md,yml,yaml,css,scss,html}": [
+      "prettier --check",
       "prettier --write"
     ],
     "src/**/*.{ts,tsx}": [
