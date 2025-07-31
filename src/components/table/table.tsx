@@ -198,8 +198,6 @@ const AdvancedFilterTable: React.FC = () => {
     setSelectedCities(newSelection)
   }
 
-
-
   // Table columns configuration
   const columns = [
     {

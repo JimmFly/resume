@@ -54,7 +54,7 @@ Which areas does this feature affect?
 - [ ] Desktop
 - [ ] 3D/Animation
 - [ ] Content
-- [ ] Other: ****\_\_\_****
+- [ ] Other: \***\*\_\_\_\*\***
 
 ## 📋 Additional Context
 

@@ -1,21 +1,21 @@
-import React from 'react';
-import ChatBot from './ChatBot';
-import ParallaxContainer from './common/ParallaxContainer';
-import Footer from './layout/Footer';
-import Navbar from './layout/Navbar';
-import AboutSection from './sections/AboutSection';
-import ContactSection from './sections/ContactSection';
-import ExperienceSection from './sections/ExperienceSection';
-import HeroSection from './sections/HeroSection';
-import ProjectsSection from './sections/ProjectsSection';
-import SkillsSection from './sections/SkillsSection';
+import React from 'react'
+import ChatBot from './ChatBot'
+import ParallaxContainer from './common/ParallaxContainer'
+import Footer from './layout/Footer'
+import Navbar from './layout/Navbar'
+import AboutSection from './sections/AboutSection'
+import ContactSection from './sections/ContactSection'
+import ExperienceSection from './sections/ExperienceSection'
+import HeroSection from './sections/HeroSection'
+import ProjectsSection from './sections/ProjectsSection'
+import SkillsSection from './sections/SkillsSection'
 
 /**
  * Resume page component that displays the main portfolio content
  */
 const ResumePage: React.FC = () => {
   // Get OpenAI API Key from environment variables
-  const openaiApiKey = import.meta.env.VITE_OPENAI_API_KEY;
+  const openaiApiKey = import.meta.env.VITE_OPENAI_API_KEY
 
   return (
     <ParallaxContainer>
@@ -40,7 +40,7 @@ const ResumePage: React.FC = () => {
         />
       </div>
     </ParallaxContainer>
-  );
-};
+  )
+}
 
-export default ResumePage;
+export default ResumePage

@@ -115,16 +115,16 @@
   .advanced-filter-table {
     padding: 16px;
   }
-  
+
   .checkbox-grid {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
-  
+
   .filter-header {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .results-header {
     flex-direction: column;
     align-items: flex-start;
@@ -136,7 +136,7 @@
   .checkbox-grid {
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   }
-  
+
   .table-title {
     font-size: 20px;
   }
@@ -210,7 +210,7 @@
   .filter-actions {
     justify-content: center;
   }
-  
+
   .action-button {
     flex: 1;
     min-width: 60px;
