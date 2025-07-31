@@ -96,7 +96,8 @@
       "prettier --check",
       "prettier --write",
       "oxlint",
-      "eslint --fix"
+      "eslint --fix",
+      "bash -c 'yarn type-check'"
     ],
     "*.{js,jsx}": [
       "prettier --check",
@@ -107,9 +108,6 @@
     "*.{json,md,yml,yaml,css,scss,html}": [
       "prettier --check",
       "prettier --write"
-    ],
-    "src/**/*.{ts,tsx}": [
-      "bash -c 'yarn type-check'"
     ]
   }
 }
