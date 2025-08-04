@@ -43,6 +43,7 @@ jobs:
         env:
           # Add any environment variables needed for build
           VITE_BASE_URL: ${{ github.event.repository.name }}
+          VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
