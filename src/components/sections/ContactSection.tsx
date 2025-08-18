@@ -80,9 +80,7 @@ const ContactSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
         >
-          <span className='heading-gradient'>
-            {t('contact.title')}
-          </span>
+          <span className='heading-gradient'>{t('contact.title')}</span>
         </motion.h2>
         <motion.p
           className='text-gray-300 text-center mb-16 max-w-2xl mx-auto text-xl text-modern'
@@ -103,7 +101,9 @@ const ContactSection = () => {
           >
             <div className='absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200'></div>
             <div className='relative card-modern'>
-              <h3 className='text-2xl font-bold mb-8 text-cyan-400 heading-modern'>{t('contact.info')}</h3>
+              <h3 className='text-2xl font-bold mb-8 text-cyan-400 heading-modern'>
+                {t('contact.info')}
+              </h3>
 
               <div className='space-y-6 mb-10'>
                 <div className='flex items-center group/item hover:scale-105 transition-transform duration-300'>
@@ -192,7 +192,9 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <h3 className='text-2xl font-bold mb-6 text-emerald-400 heading-modern'>{t('contact.social')}</h3>
+              <h3 className='text-2xl font-bold mb-6 text-emerald-400 heading-modern'>
+                {t('contact.social')}
+              </h3>
               <div className='flex space-x-4'>
                 <a
                   href='https://github.com/JimmFly'
@@ -231,7 +233,9 @@ const ContactSection = () => {
           >
             <div className='absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200'></div>
             <div className='relative card-modern'>
-              <h3 className='text-2xl font-bold mb-8 text-purple-400 heading-modern'>{t('contact.form.title')}</h3>
+              <h3 className='text-2xl font-bold mb-8 text-purple-400 heading-modern'>
+                {t('contact.form.title')}
+              </h3>
 
               {isSubmitted ? (
                 <motion.div
@@ -264,7 +268,10 @@ const ContactSection = () => {
               ) : (
                 <form onSubmit={handleSubmit} className='space-y-6'>
                   <div className='group'>
-                    <label htmlFor='name' className='block text-gray-300 text-lg font-semibold mb-3'>
+                    <label
+                      htmlFor='name'
+                      className='block text-gray-300 text-lg font-semibold mb-3'
+                    >
                       {t('contact.form.name')}
                     </label>
                     <input
@@ -280,7 +287,10 @@ const ContactSection = () => {
                   </div>
 
                   <div className='group'>
-                    <label htmlFor='email' className='block text-gray-300 text-lg font-semibold mb-3'>
+                    <label
+                      htmlFor='email'
+                      className='block text-gray-300 text-lg font-semibold mb-3'
+                    >
                       {t('contact.form.email')}
                     </label>
                     <input
@@ -296,7 +306,10 @@ const ContactSection = () => {
                   </div>
 
                   <div className='group'>
-                    <label htmlFor='message' className='block text-gray-300 text-lg font-semibold mb-3'>
+                    <label
+                      htmlFor='message'
+                      className='block text-gray-300 text-lg font-semibold mb-3'
+                    >
                       {t('contact.form.message')}
                     </label>
                     <textarea

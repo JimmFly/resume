@@ -51,7 +51,7 @@ const ExperienceSection = React.memo(() => {
             >
               {/* Enhanced gradient border */}
               <div className='absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200'></div>
-              
+
               <div className='relative card-modern'>
                 {/* Modern timeline decoration */}
                 <div className='absolute left-0 top-8 bottom-8 w-1.5 bg-gradient-to-b from-cyan-400 via-purple-500 to-pink-500 rounded-full shadow-glow' />
@@ -69,13 +69,17 @@ const ExperienceSection = React.memo(() => {
                       </h4>
                     </div>
                     <div className='text-gray-300'>
-                      <div className='text-xl font-semibold text-emerald-400'>{t(experience.period)}</div>
+                      <div className='text-xl font-semibold text-emerald-400'>
+                        {t(experience.period)}
+                      </div>
                       <div className='text-lg text-gray-400'>{t(experience.location)}</div>
                     </div>
                   </div>
 
                   {/* Enhanced job description */}
-                  <p className='text-gray-300 mb-8 leading-relaxed text-lg text-modern'>{t(experience.description)}</p>
+                  <p className='text-gray-300 mb-8 leading-relaxed text-lg text-modern'>
+                    {t(experience.description)}
+                  </p>
 
                   {/* Enhanced achievements */}
                   <div className='mb-8'>
@@ -83,42 +87,46 @@ const ExperienceSection = React.memo(() => {
                       {t('experience.achievements')}
                     </h5>
                     <ul className='space-y-4'>
-                    {experience.achievements.map((achievement, achievementIndex) => (
-                      <motion.li
-                        key={achievementIndex}
-                        className='group flex items-start text-gray-300'
-                        variants={fadeInUp}
-                        transition={{ delay: index * 0.2 + achievementIndex * 0.1 }}
-                      >
-                        <span className='text-cyan-400 mr-4 mt-1 text-xl group-hover:text-purple-400 transition-colors'>▸</span>
-                        <span className='text-lg leading-relaxed text-modern group-hover:text-white transition-colors'>{t(achievement)}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
+                      {experience.achievements.map((achievement, achievementIndex) => (
+                        <motion.li
+                          key={achievementIndex}
+                          className='group flex items-start text-gray-300'
+                          variants={fadeInUp}
+                          transition={{ delay: index * 0.2 + achievementIndex * 0.1 }}
+                        >
+                          <span className='text-cyan-400 mr-4 mt-1 text-xl group-hover:text-purple-400 transition-colors'>
+                            ▸
+                          </span>
+                          <span className='text-lg leading-relaxed text-modern group-hover:text-white transition-colors'>
+                            {t(achievement)}
+                          </span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
 
-                {/* Enhanced technology stack */}
-                <div>
-                  <h5 className='text-2xl font-bold text-emerald-400 mb-6 heading-modern'>
-                    {t('experience.technologies')}
-                  </h5>
-                  <div className='flex flex-wrap gap-3'>
-                    {experience.technologies.map((tech, techIndex) => (
-                      <motion.span
-                        key={techIndex}
-                        className='px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-cyan-300 rounded-xl text-sm font-semibold border border-cyan-500/20 hover:border-purple-500/30 hover:scale-105 transition-all duration-300'
-                        variants={fadeInUp}
-                        transition={{ delay: index * 0.2 + techIndex * 0.05 }}
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        {tech}
-                      </motion.span>
-                    ))}
+                  {/* Enhanced technology stack */}
+                  <div>
+                    <h5 className='text-2xl font-bold text-emerald-400 mb-6 heading-modern'>
+                      {t('experience.technologies')}
+                    </h5>
+                    <div className='flex flex-wrap gap-3'>
+                      {experience.technologies.map((tech, techIndex) => (
+                        <motion.span
+                          key={techIndex}
+                          className='px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-cyan-300 rounded-xl text-sm font-semibold border border-cyan-500/20 hover:border-purple-500/30 hover:scale-105 transition-all duration-300'
+                          variants={fadeInUp}
+                          transition={{ delay: index * 0.2 + techIndex * 0.05 }}
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          {tech}
+                        </motion.span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
           ))}
         </div>
       </motion.div>

@@ -35,13 +35,13 @@
 
   .glass-card-hover {
     @apply transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-3xl;
-    box-shadow: 
+    box-shadow:
       0 25px 50px -12px rgba(0, 0, 0, 0.25),
       0 0 0 1px rgba(255, 255, 255, 0.1);
   }
 
   .glass-card-hover:hover {
-    box-shadow: 
+    box-shadow:
       0 35px 60px -12px rgba(0, 0, 0, 0.4),
       0 0 0 1px rgba(255, 255, 255, 0.15),
       0 0 80px rgba(100, 255, 218, 0.1);
@@ -107,7 +107,9 @@
     padding: 2px;
     background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c);
     border-radius: inherit;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
     mask-composite: xor;
   }
 }

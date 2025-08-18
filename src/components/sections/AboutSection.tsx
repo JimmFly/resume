@@ -43,9 +43,7 @@ const AboutSection = React.memo(() => {
           className='text-4xl md:text-5xl font-black mb-16 text-center heading-modern'
           variants={fadeInUp}
         >
-          <span className='heading-gradient'>
-            {t('about.title')}
-          </span>
+          <span className='heading-gradient'>{t('about.title')}</span>
         </motion.h2>
 
         <div className='max-w-4xl mx-auto mb-16 px-4'>
@@ -85,7 +83,9 @@ const AboutSection = React.memo(() => {
                 <h3 className='text-2xl font-bold text-cyan-400 mb-4 heading-modern'>
                   {t('about.cards.experience.title')}
                 </h3>
-                <p className='text-gray-300 font-semibold mb-3 text-lg'>{t('about.cards.experience.company')}</p>
+                <p className='text-gray-300 font-semibold mb-3 text-lg'>
+                  {t('about.cards.experience.company')}
+                </p>
                 <p className='text-gray-400'>{t('about.cards.experience.position')}</p>
               </div>
             </div>
@@ -102,7 +102,9 @@ const AboutSection = React.memo(() => {
                 <h3 className='text-2xl font-bold text-purple-400 mb-4 heading-modern'>
                   {t('about.cards.projects.title')}
                 </h3>
-                <p className='text-gray-300 font-semibold mb-3 text-lg'>{t('about.cards.projects.affine')}</p>
+                <p className='text-gray-300 font-semibold mb-3 text-lg'>
+                  {t('about.cards.projects.affine')}
+                </p>
                 <p className='text-gray-400'>{t('about.cards.projects.stack')}</p>
               </div>
             </div>
@@ -136,18 +138,20 @@ const AboutSection = React.memo(() => {
           </motion.h3>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6'>
             {Object.entries(advantages).map(([key, value], index) => (
-              <motion.div
-                key={key}
-                className='group relative'
-                variants={fadeInUp}
-              >
+              <motion.div key={key} className='group relative' variants={fadeInUp}>
                 <div className='absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200'></div>
                 <div className='relative flex items-start gap-4 p-6 glass-card hover:scale-[1.02] transition-all duration-300'>
-                  <div className={`w-3 h-3 rounded-full mt-2 flex-shrink-0 animate-pulse ${
-                    index % 4 === 0 ? 'bg-cyan-400' :
-                    index % 4 === 1 ? 'bg-purple-400' :
-                    index % 4 === 2 ? 'bg-pink-400' : 'bg-emerald-400'
-                  }`}></div>
+                  <div
+                    className={`w-3 h-3 rounded-full mt-2 flex-shrink-0 animate-pulse ${
+                      index % 4 === 0
+                        ? 'bg-cyan-400'
+                        : index % 4 === 1
+                          ? 'bg-purple-400'
+                          : index % 4 === 2
+                            ? 'bg-pink-400'
+                            : 'bg-emerald-400'
+                    }`}
+                  ></div>
                   <p className='text-gray-300 leading-relaxed text-lg font-medium'>{value}</p>
                 </div>
               </motion.div>

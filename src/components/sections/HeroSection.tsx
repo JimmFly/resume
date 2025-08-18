@@ -35,7 +35,7 @@ const HeroSection = React.memo(() => {
       {/* Background effect layer - contains gradient background and multi-layer parallax glow effects */}
       {/* Main background gradient - sophisticated dark gradient */}
       <div className='absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900' />
-      
+
       {/* Enhanced glow effects with modern colors */}
       <div
         className='absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full blur-3xl'
@@ -54,7 +54,10 @@ const HeroSection = React.memo(() => {
         <div className='flex flex-col md:flex-row items-center justify-between gap-16'>
           {/* Left content area - personal introduction and action buttons */}
           <motion.div className='flex-1' variants={fadeInLeft} initial='hidden' animate='show'>
-            <motion.p className='text-primary font-mono mb-6 text-lg tracking-wide' variants={fadeInUp}>
+            <motion.p
+              className='text-primary font-mono mb-6 text-lg tracking-wide'
+              variants={fadeInUp}
+            >
               {greeting}
             </motion.p>
 
@@ -67,7 +70,10 @@ const HeroSection = React.memo(() => {
               </span>
             </motion.h1>
 
-            <motion.h2 className='text-2xl md:text-3xl text-gray-300 mb-10 font-medium' variants={fadeInUp}>
+            <motion.h2
+              className='text-2xl md:text-3xl text-gray-300 mb-10 font-medium'
+              variants={fadeInUp}
+            >
               {title}
             </motion.h2>
 
@@ -133,7 +139,7 @@ const HeroSection = React.memo(() => {
             <div className='relative w-96 h-96 md:w-[32rem] md:h-[32rem]'>
               {/* Ambient glow behind globe */}
               <div className='absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-500/20 rounded-full blur-2xl animate-glow' />
-              
+
               {/* Three.js Canvas - 3D rendering canvas */}
               <Canvas
                 className='relative z-10'
