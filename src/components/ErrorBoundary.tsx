@@ -1,11 +1,13 @@
 import { Component, type ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import type { ErrorBoundaryState, ErrorInfo } from '../types'
+import ServerErrorPage from './ServerErrorPage'
 
 interface ErrorBoundaryProps {
   children: ReactNode
   fallback?: ReactNode
   onError?: (error: Error, errorInfo: ErrorInfo) => void
+  useServerErrorPage?: boolean
 }
 
 /**
@@ -45,11 +47,36 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     this.setState({ hasError: false, error: undefined, errorInfo: undefined })
   }
 
+  isServerError = () => {
+    if (!this.state.error) return false
+    
+    // Check for common server error patterns
+    const errorMessage = this.state.error.message.toLowerCase()
+    const serverErrorPatterns = [
+      'network error',
+      'fetch failed',
+      'server error',
+      'internal server error',
+      'service unavailable',
+      'gateway timeout',
+      'bad gateway',
+      'connection refused',
+      'timeout'
+    ]
+    
+    return serverErrorPatterns.some(pattern => errorMessage.includes(pattern))
+  }
+
   render() {
     if (this.state.hasError) {
       // Use custom fallback if provided
       if (this.props.fallback) {
         return this.props.fallback
+      }
+
+      // Use ServerErrorPage for server errors or if explicitly requested
+      if (this.props.useServerErrorPage || this.isServerError()) {
+        return <ServerErrorPage error={this.state.error} onRetry={this.handleRetry} />
       }
 
       // Default error UI
