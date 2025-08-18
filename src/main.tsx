@@ -4,9 +4,12 @@ import 'antd/dist/reset.css'
 import './index.css'
 import App from './App.tsx'
 import './i18n'
+import ErrorBoundary from './components/ErrorBoundary'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
   </StrictMode>
 )
