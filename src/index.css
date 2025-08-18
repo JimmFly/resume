@@ -1,15 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-background: #0a192f;
-  --color-text: #e6f1ff;
+  --color-background: #0a0a0f;
+  --color-text: #f0f6ff;
   --color-primary: #64ffda;
   --color-secondary: #8892b0;
-  --color-accent: #112240;
+  --color-accent: #1a1a2e;
+  --color-gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --color-gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --color-gradient-tertiary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --color-gradient-purple: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  --color-gradient-orange: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
 }
 
 @layer base {
@@ -20,15 +25,90 @@
 
 @layer components {
   .glass-card {
-    @apply bg-background/30 backdrop-blur-md border border-primary/10 rounded-lg shadow-lg;
+    @apply bg-background/20 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl;
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+  }
+
+  .glass-card-hover {
+    @apply transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-3xl;
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-card-hover:hover {
+    box-shadow: 
+      0 35px 60px -12px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.15),
+      0 0 80px rgba(100, 255, 218, 0.1);
   }
 
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 min-h-screen flex flex-col justify-center;
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-24 min-h-screen flex flex-col justify-center;
   }
 
   .heading-gradient {
-    @apply bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-purple-400 to-pink-400 bg-clip-text text-transparent;
+  }
+
+  .heading-modern {
+    @apply font-black tracking-tight leading-tight;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+  }
+
+  .text-modern {
+    @apply font-medium leading-relaxed;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .button-modern {
+    @apply relative overflow-hidden rounded-2xl px-8 py-4 font-semibold transition-all duration-300 transform hover:scale-105;
+    background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, rgba(120, 100, 255, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .button-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .button-modern:hover::before {
+    left: 100%;
+  }
+
+  .card-modern {
+    @apply glass-card glass-card-hover p-8 rounded-3xl;
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+  }
+
+  .gradient-border {
+    position: relative;
+    border-radius: 24px;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c);
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
   }
 }
 

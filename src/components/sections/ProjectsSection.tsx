@@ -70,7 +70,7 @@ const ProjectsSection = () => {
       />
       <div className='relative z-10'>
         <motion.h2
-          className='text-3xl md:text-4xl font-bold mb-12 text-center font-heading'
+          className='text-4xl md:text-5xl font-black mb-16 text-center heading-modern'
           initial={{ opacity: 0, y: -20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
@@ -78,35 +78,73 @@ const ProjectsSection = () => {
           <span className='heading-gradient'>{t('projects.title')}</span>
         </motion.h2>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className='glass-card overflow-hidden cursor-pointer group'
+              className='group relative cursor-pointer'
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
               onClick={() => setActiveProject(project)}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <div className='p-6'>
-                <div className='mb-4 text-6xl flex justify-center'>{project.image}</div>
-                <h3 className='text-xl font-semibold mb-2 text-primary group-hover:text-primary/80 transition-colors'>
+              {/* Enhanced gradient border effect */}
+              <div className={`absolute -inset-1 rounded-3xl blur opacity-25 group-hover:opacity-60 transition duration-1000 group-hover:duration-200 ${
+                index % 3 === 0 ? 'bg-gradient-to-r from-cyan-500 to-blue-600' :
+                index % 3 === 1 ? 'bg-gradient-to-r from-purple-500 to-pink-600' :
+                'bg-gradient-to-r from-emerald-500 to-teal-600'
+              }`}></div>
+              
+              <div className='relative card-modern overflow-hidden'>
+                {/* Icon with enhanced styling */}
+                <div className='mb-6 text-7xl flex justify-center transform group-hover:scale-110 transition-transform duration-300'>
+                  <div className={`p-4 rounded-2xl ${
+                    index % 3 === 0 ? 'bg-cyan-500/10' :
+                    index % 3 === 1 ? 'bg-purple-500/10' :
+                    'bg-emerald-500/10'
+                  }`}>
+                    {project.image}
+                  </div>
+                </div>
+                
+                <h3 className={`text-2xl font-bold mb-4 group-hover:scale-105 transition-all duration-300 heading-modern ${
+                  index % 3 === 0 ? 'text-cyan-400' :
+                  index % 3 === 1 ? 'text-purple-400' :
+                  'text-emerald-400'
+                }`}>
                   {project.title}
                 </h3>
-                <p className='text-secondary mb-4 line-clamp-2'>{project.description}</p>
-                <div className='flex flex-wrap gap-2 mb-4'>
-                  {project.technologies.map(tech => (
+                
+                <p className='text-gray-300 mb-6 leading-relaxed text-modern line-clamp-3'>
+                  {project.description}
+                </p>
+                
+                <div className='flex flex-wrap gap-2 mb-6'>
+                  {project.technologies.map((tech, techIndex) => (
                     <span
                       key={tech}
-                      className='px-2 py-1 bg-accent/50 rounded-full text-xs text-text'
+                      className={`px-3 py-1.5 rounded-xl text-sm font-medium transition-all duration-300 ${
+                        index % 3 === 0 ? 'bg-cyan-500/10 text-cyan-300 border border-cyan-500/20' :
+                        index % 3 === 1 ? 'bg-purple-500/10 text-purple-300 border border-purple-500/20' :
+                        'bg-emerald-500/10 text-emerald-300 border border-emerald-500/20'
+                      }`}
+                      style={{
+                        animationDelay: `${techIndex * 0.1}s`
+                      }}
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
+                
                 <div className='flex justify-end'>
-                  <button className='text-primary text-sm hover:underline'>
+                  <button className={`button-modern text-sm font-semibold border-2 transition-all duration-300 ${
+                    index % 3 === 0 ? 'border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10' :
+                    index % 3 === 1 ? 'border-purple-500/50 text-purple-400 hover:bg-purple-500/10' :
+                    'border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10'
+                  }`}>
                     {t('projects.viewDetails')}
                   </button>
                 </div>
