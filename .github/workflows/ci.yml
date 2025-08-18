@@ -19,6 +19,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Configure GPG signing
+        if: github.actor == 'copilot-swe-agent[bot]'
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
+          git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
+          git config --global commit.gpgsign true
+          git config --global user.name "copilot-swe-agent[bot]"
+          git config --global user.email "copilot-swe-agent[bot]@users.noreply.github.com"
+          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          GNUPGHOME: /home/runner/.gnupg
+
       - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -65,6 +80,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Configure GPG signing
+        if: github.actor == 'copilot-swe-agent[bot]'
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
+          git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
+          git config --global commit.gpgsign true
+          git config --global user.name "copilot-swe-agent[bot]"
+          git config --global user.email "copilot-swe-agent[bot]@users.noreply.github.com"
+          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          GNUPGHOME: /home/runner/.gnupg
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -108,6 +138,21 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Configure GPG signing
+        if: github.actor == 'copilot-swe-agent[bot]'
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
+          git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
+          git config --global commit.gpgsign true
+          git config --global user.name "copilot-swe-agent[bot]"
+          git config --global user.email "copilot-swe-agent[bot]@users.noreply.github.com"
+          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          GNUPGHOME: /home/runner/.gnupg
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
