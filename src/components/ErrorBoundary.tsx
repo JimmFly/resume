@@ -49,7 +49,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   isServerError = () => {
     if (!this.state.error) return false
-    
+
     // Check for common server error patterns
     const errorMessage = this.state.error.message.toLowerCase()
     const serverErrorPatterns = [
@@ -61,9 +61,9 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
       'gateway timeout',
       'bad gateway',
       'connection refused',
-      'timeout'
+      'timeout',
     ]
-    
+
     return serverErrorPatterns.some(pattern => errorMessage.includes(pattern))
   }
 

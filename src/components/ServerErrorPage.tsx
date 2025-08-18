@@ -42,9 +42,7 @@ const ServerErrorPage = ({ error, onRetry }: ServerErrorPageProps) => {
           <div className='text-6xl mb-4'>🚫</div>
           <h1 className='text-4xl font-bold text-primary mb-2'>500</h1>
           <h2 className='text-2xl font-bold text-primary mb-4'>Server Error</h2>
-          <p className='text-secondary'>
-            Something went wrong on our end. Please try again later
-          </p>
+          <p className='text-secondary'>Something went wrong on our end. Please try again later</p>
         </motion.div>
 
         <motion.div
