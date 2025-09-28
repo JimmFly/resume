@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 // Import page components
 import ResumePage from './components/ResumePage'
 import TablePage from './components/TablePage'
+import NotFoundPage from './components/NotFoundPage'
 
 /**
  * Get the base name for React Router based on environment
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path='/' element={<ResumePage />} />
         <Route path='/table' element={<TablePage />} />
+        <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </Router>
   )
