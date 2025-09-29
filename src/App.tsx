@@ -10,8 +10,9 @@ import NotFoundPage from './components/NotFoundPage'
  * In production (GitHub Pages), use the repository name as basename
  */
 const getBasename = () => {
-  if (import.meta.env.PROD && import.meta.env.VITE_BASE_URL) {
-    return `/${import.meta.env.VITE_BASE_URL}`
+  // For GitHub Pages, the base path should be the repository name
+  if (import.meta.env.PROD) {
+    return '/resume'
   }
   return '/'
 }
