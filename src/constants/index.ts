@@ -164,11 +164,18 @@ export const BREAKPOINTS = {
 
 // Color theme
 export const THEME_COLORS = {
-  background: '#0a192f',
-  text: '#e6f1ff',
+  background: '#0a0a0f',
+  text: '#f0f6ff',
   primary: '#64ffda',
   secondary: '#8892b0',
-  accent: '#112240',
+  accent: '#1a1a2e',
+  gradients: {
+    primary: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    secondary: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    tertiary: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    purple: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+    orange: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
+  },
 } as const
 
 // Skills data
