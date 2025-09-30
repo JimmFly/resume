@@ -38,7 +38,7 @@ const ContactSection = () => {
     )
 
     // Open email client
-    const mailtoLink = `mailto:yangjinfei001@gmail.com?subject=${subject}&body=${body}`
+    const mailtoLink = `mailto:jimmflyyang@gmail.com?subject=${subject}&body=${body}`
     window.open(mailtoLink, '_blank')
 
     // Show success status
@@ -126,38 +126,10 @@ const ContactSection = () => {
                   <div>
                     <p className='text-gray-400 text-base font-medium'>{t('contact.email')}</p>
                     <a
-                      href='mailto:yangjinfei001@gmail.com'
+                      href='mailto:jimmflyyang@gmail.com'
                       className='text-text hover:text-cyan-400 transition-colors text-lg font-semibold'
                     >
-                      yangjinfei001@gmail.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className='flex items-center group/item hover:scale-105 transition-transform duration-300'>
-                  <div className='w-14 h-14 rounded-2xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 flex items-center justify-center mr-6 group-hover/item:shadow-glow transition-all duration-300'>
-                    <svg
-                      className='w-7 h-7 text-purple-400'
-                      fill='none'
-                      stroke='currentColor'
-                      viewBox='0 0 24 24'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth={2}
-                        d='M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z'
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className='text-gray-400 text-base font-medium'>{t('contact.phone')}</p>
-                    <a
-                      href='tel:+8613008857268'
-                      className='text-text hover:text-purple-400 transition-colors text-lg font-semibold'
-                    >
-                      13008857268
+                      jimmflyyang@gmail.com
                     </a>
                   </div>
                 </div>

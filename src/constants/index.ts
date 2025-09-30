@@ -76,7 +76,7 @@ export const HERO_CONTENT = {
   buttons: [
     {
       text: 'hero.contactMe',
-      href: 'mailto:yangjinfei001@gmail.com',
+      href: 'mailto:jimmflyyang@gmail.com',
       primary: true,
       external: false,
     },
@@ -141,7 +141,7 @@ export const ABOUT_CONTENT = {
     },
     {
       title: 'about.cards.contact.title',
-      items: ['about.cards.contact.phone', 'about.cards.contact.email'],
+      items: ['about.cards.contact.email'],
     },
   ],
   advantages: [

@@ -137,7 +137,7 @@ Closes #123
 
 如果您有任何问题，可以通过以下方式联系：
 
-- 📧 Email: yangjinfei001@gmail.com
+- 📧 Email: jimmflyyang@gmail.com
 - 🐙 GitHub: [@JimmFly](https://github.com/JimmFly)
 - 💼 LinkedIn: [杨晋飞](https://linkedin.com/in/yangjinfei)
 

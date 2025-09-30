@@ -691,7 +691,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Yang Jinfei**
 
 - GitHub: [@jimmfly](https://github.com/jimmfly)
-- Email: yangjinfei001@gmail.com
+- Email: jimmflyyang@gmail.com
 - LinkedIn: [Yang Jinfei](https://linkedin.com/in/yangjinfei)
 
 ---
