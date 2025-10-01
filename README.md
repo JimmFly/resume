@@ -771,7 +771,7 @@ yarn build
 
 **杨晋飞 (JimmFly)**
 
-- 📧 Email: yangjinfei001@gmail.com
+- 📧 Email: jimmflyyang@gmail.com
 - 🐙 GitHub: [@JimmFly](https://github.com/JimmFly)
 - 💼 LinkedIn: [杨晋飞](https://linkedin.com/in/yangjinfei)
 

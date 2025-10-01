@@ -121,7 +121,6 @@ const AboutSection = React.memo(() => {
                 <h3 className='text-2xl font-bold text-emerald-400 mb-4 heading-modern'>
                   {t('about.cards.contact.title')}
                 </h3>
-                <p className='text-gray-300 mb-2'>{t('about.cards.contact.phone')}</p>
                 <p className='text-gray-300'>{t('about.cards.contact.email')}</p>
               </div>
             </div>
