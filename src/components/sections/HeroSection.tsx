@@ -1,12 +1,12 @@
-import React, { Suspense } from 'react'
-import { motion } from 'framer-motion'
-import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
+import { motion } from 'framer-motion'
+import React, { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
-import RealisticGlobe from '../three/RealisticGlobe'
 import { GLOBE_CONFIG, PARALLAX_CONFIG } from '../../constants'
 import { useAnimation } from '../../hooks/useAnimation'
 import { useMultiLayerParallax } from '../../hooks/useParallax'
+import RealisticGlobe from '../three/RealisticGlobe'
 
 /**
  * Hero section component - Main display area of the website homepage1
@@ -125,12 +125,12 @@ const HeroSection = React.memo(() => {
                   xmlns='http://www.w3.org/2000/svg'
                   aria-hidden='true'
                 >
-                  <path strokeLinecap='round' strokeLinejoin='round' d='M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2' />
                   <path
                     strokeLinecap='round'
                     strokeLinejoin='round'
-                    d='M7 10l5 5m0 0l5-5m-5 5V4'
+                    d='M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2'
                   />
+                  <path strokeLinecap='round' strokeLinejoin='round' d='M7 10l5 5m0 0l5-5m-5 5V4' />
                 </svg>
                 {download}
               </motion.a>
