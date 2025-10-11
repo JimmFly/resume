@@ -1,0 +1,572 @@
+number,title,url,state,created_at,closed_at
+123,feat/beautify the style of the VenusContainer,https://github.com/toeverything/AFFiNE/pull/123,merged,2022-08-06T10:19:32Z,2022-08-09T04:31:23Z
+190,Fix: windows zoom,https://github.com/toeverything/AFFiNE/pull/190,merged,2022-08-11T07:30:11Z,2022-08-11T07:48:51Z
+301,Feat/multi language support for venus,https://github.com/toeverything/AFFiNE/pull/301,merged,2022-08-19T11:18:57Z,2022-08-19T15:41:58Z
+344,feat:add i18n for layout,https://github.com/toeverything/AFFiNE/pull/344,merged,2022-08-29T10:46:59Z,2022-09-02T02:16:41Z
+548,feat: quick search,https://github.com/toeverything/AFFiNE/pull/548,merged,2022-12-08T08:32:04Z,2022-12-09T06:52:53Z
+552,feat: quick search,https://github.com/toeverything/AFFiNE/pull/552,merged,2022-12-13T10:05:50Z,2022-12-13T10:22:01Z
+555,feat: quick search support,https://github.com/toeverything/AFFiNE/pull/555,merged,2022-12-15T09:00:24Z,2022-12-15T09:03:34Z
+619,chore: update the Switch To  path,https://github.com/toeverything/AFFiNE/pull/619,merged,2022-12-29T08:58:31Z,2022-12-29T12:11:07Z
+627,chore: update quick search style of  slider bar,https://github.com/toeverything/AFFiNE/pull/627,merged,2022-12-30T03:04:18Z,2022-12-30T07:25:40Z
+648,fix: quick search style bug,https://github.com/toeverything/AFFiNE/pull/648,merged,2023-01-01T16:15:15Z,2023-01-01T16:21:04Z
+659,chore: delete the shortcut tips in slider bar,https://github.com/toeverything/AFFiNE/pull/659,merged,2023-01-03T07:38:55Z,2023-01-03T12:16:58Z
+660,test: add test case for quick search,https://github.com/toeverything/AFFiNE/pull/660,merged,2023-01-03T08:24:44Z,2023-01-03T12:16:34Z
+661,fix: wrong add page button position,https://github.com/toeverything/AFFiNE/pull/661,merged,2023-01-03T11:30:37Z,2023-01-03T12:15:59Z
+667,feat：add i18n support,https://github.com/toeverything/AFFiNE/pull/667,merged,2023-01-04T12:05:10Z,2023-01-04T12:22:42Z
+669,fix: favorite message typo,https://github.com/toeverything/AFFiNE/pull/669,merged,2023-01-05T04:48:27Z,2023-01-05T04:55:15Z
+675,chore: merge master to  feat/cloud-sync,https://github.com/toeverything/AFFiNE/pull/675,merged,2023-01-06T03:01:39Z,2023-01-06T03:11:47Z
+696,feat: extract i18n into a package,https://github.com/toeverything/AFFiNE/pull/696,merged,2023-01-09T06:59:24Z,2023-01-09T08:45:20Z
+702,feat: language local storage support,https://github.com/toeverything/AFFiNE/pull/702,merged,2023-01-10T10:54:09Z,2023-01-10T11:43:57Z
+709,feat: add sync i18n resource script,https://github.com/toeverything/AFFiNE/pull/709,merged,2023-01-11T07:47:40Z,2023-01-11T12:36:25Z
+711,chore: remove searchArrowButton,https://github.com/toeverything/AFFiNE/pull/711,merged,2023-01-11T09:27:30Z,2023-01-11T10:37:49Z
+712,chore: update copyright year,https://github.com/toeverything/AFFiNE/pull/712,merged,2023-01-11T09:45:17Z,2023-01-11T10:09:29Z
+715,feat: add i18n keys auto sync,https://github.com/toeverything/AFFiNE/pull/715,merged,2023-01-12T05:05:27Z,2023-01-12T07:15:46Z
+717,chore: remove hover tips of searchArrowButton,https://github.com/toeverything/AFFiNE/pull/717,merged,2023-01-12T09:03:48Z,2023-01-12T09:21:58Z
+719,feat: merge master for update i18n,https://github.com/toeverything/AFFiNE/pull/719,merged,2023-01-12T11:00:43Z,2023-01-12T11:04:08Z
+724,feat: add language switch in workspace modal,https://github.com/toeverything/AFFiNE/pull/724,merged,2023-01-13T06:06:22Z,2023-01-13T06:33:40Z
+739,feat: add nav bar to the public page,https://github.com/toeverything/AFFiNE/pull/739,merged,2023-01-16T09:41:01Z,2023-02-01T05:51:32Z
+743,feat:add datacenter settings style,https://github.com/toeverything/AFFiNE/pull/743,merged,2023-01-18T08:02:29Z,2023-01-19T07:39:45Z
+756,feat: update translation,https://github.com/toeverything/AFFiNE/pull/756,merged,2023-02-01T02:17:52Z,2023-02-01T05:40:27Z
+822,fix: retrieve lost entrance of quick search,https://github.com/toeverything/AFFiNE/pull/822,merged,2023-02-06T07:48:40Z,2023-02-07T02:20:54Z
+846,fix: update quick search close function,https://github.com/toeverything/AFFiNE/pull/846,merged,2023-02-07T03:12:52Z,2023-02-07T04:15:18Z
+852,fix: update search UI in public page,https://github.com/toeverything/AFFiNE/pull/852,merged,2023-02-07T04:32:24Z,2023-02-07T08:13:00Z
+856,fix: retrieves missing default language,https://github.com/toeverything/AFFiNE/pull/856,merged,2023-02-07T07:04:07Z,2023-02-07T08:23:58Z
+899,fix: retrieve lost cursor after closing search,https://github.com/toeverything/AFFiNE/pull/899,merged,2023-02-08T02:09:26Z,2023-02-08T22:05:15Z
+913,fix: infinite call of useEffect on 404 page,https://github.com/toeverything/AFFiNE/pull/913,merged,2023-02-09T02:54:46Z,2023-02-09T03:29:54Z
+919,chore: update font size of quick search,https://github.com/toeverything/AFFiNE/pull/919,merged,2023-02-09T05:03:40Z,2023-02-09T05:54:56Z
+927,"chore: replace all ""favourite"" with ""favorite""",https://github.com/toeverything/AFFiNE/pull/927,merged,2023-02-09T07:24:28Z,2023-02-09T07:47:00Z
+929,feat: update language,https://github.com/toeverything/AFFiNE/pull/929,merged,2023-02-09T07:49:32Z,2023-02-09T09:31:22Z
+933,chore: update skiped test,https://github.com/toeverything/AFFiNE/pull/933,merged,2023-02-09T09:35:41Z,2023-02-10T04:04:04Z
+952,chore: update translation,https://github.com/toeverything/AFFiNE/pull/952,merged,2023-02-13T06:18:34Z,2023-02-13T07:08:27Z
+967,chore: update translation,https://github.com/toeverything/AFFiNE/pull/967,merged,2023-02-13T10:11:52Z,2023-02-13T10:13:12Z
+1048,fix: assert error when toolWrapper is null,https://github.com/toeverything/AFFiNE/pull/1048,merged,2023-02-16T05:04:48Z,2023-02-16T05:38:33Z
+1054,"chore: change default Workspace name to ""Demo Workspace""",https://github.com/toeverything/AFFiNE/pull/1054,merged,2023-02-16T08:06:23Z,2023-02-16T09:55:55Z
+1177,fix: wrong workspace name when deleting workspace,https://github.com/toeverything/AFFiNE/pull/1177,merged,2023-02-22T05:21:48Z,2023-02-22T06:18:25Z
+1357,feat: add recentlyViewed ,https://github.com/toeverything/AFFiNE/pull/1357,merged,2023-03-06T10:27:58Z,2023-03-06T18:02:51Z
+1376,chore: update quick search style,https://github.com/toeverything/AFFiNE/pull/1376,merged,2023-03-07T10:07:26Z,2023-03-07T11:30:59Z
+1449,fix: create page with title,https://github.com/toeverything/AFFiNE/pull/1449,merged,2023-03-09T06:22:09Z,2023-03-09T07:25:32Z
+1457,fix: can't open quick search without cursor,https://github.com/toeverything/AFFiNE/pull/1457,merged,2023-03-09T09:29:36Z,2023-03-09T09:56:54Z
+1459,chore: update preloading article,https://github.com/toeverything/AFFiNE/pull/1459,merged,2023-03-09T09:48:31Z,2023-03-09T09:55:04Z
+1487,fix: recent still show when recent is empty,https://github.com/toeverything/AFFiNE/pull/1487,merged,2023-03-10T03:09:49Z,2023-03-10T03:45:20Z
+1490,chore: add null check for create new page with title,https://github.com/toeverything/AFFiNE/pull/1490,merged,2023-03-10T03:20:22Z,2023-03-10T03:48:13Z
+1493,feat: add novice guide for quick search arrow button,https://github.com/toeverything/AFFiNE/pull/1493,merged,2023-03-10T04:20:17Z,2023-03-10T06:17:27Z
+1505,fix: omit items when quick search items are too long,https://github.com/toeverything/AFFiNE/pull/1505,merged,2023-03-10T08:12:09Z,2023-03-10T08:46:37Z
+1512,refactor: quick search input and result,https://github.com/toeverything/AFFiNE/pull/1512,merged,2023-03-10T09:46:10Z,2023-03-10T10:00:17Z
+1525,fix: wrong OS judgment,https://github.com/toeverything/AFFiNE/pull/1525,merged,2023-03-10T16:55:46Z,2023-03-10T18:06:41Z
+1565,chore: update quick search style,https://github.com/toeverything/AFFiNE/pull/1565,merged,2023-03-14T05:39:50Z,2023-03-15T07:15:14Z
+1717,chore: update theme color,https://github.com/toeverything/AFFiNE/pull/1717,merged,2023-03-28T04:54:48Z,2023-03-28T05:43:29Z
+1734,feat: add change log,https://github.com/toeverything/AFFiNE/pull/1734,merged,2023-03-29T03:09:26Z,2023-03-30T20:17:36Z
+1792,chore: add build flag for change log,https://github.com/toeverything/AFFiNE/pull/1792,merged,2023-04-03T10:37:55Z,2023-04-03T11:13:43Z
+1805,feat: single page sharing support,https://github.com/toeverything/AFFiNE/pull/1805,merged,2023-04-04T03:08:22Z,2023-04-11T22:58:12Z
+1808,chore: update sentence,https://github.com/toeverything/AFFiNE/pull/1808,merged,2023-04-04T03:55:08Z,2023-04-04T04:01:57Z
+1832,chore: update change log style,https://github.com/toeverything/AFFiNE/pull/1832,merged,2023-04-06T12:24:55Z,2023-04-06T13:34:58Z
+1846,chore: update change log style,https://github.com/toeverything/AFFiNE/pull/1846,merged,2023-04-07T09:35:05Z,2023-04-07T11:24:29Z
+1891,chore: update style for share menu,https://github.com/toeverything/AFFiNE/pull/1891,merged,2023-04-12T05:48:45Z,2023-04-12T05:49:09Z
+1946,chore: add translation,https://github.com/toeverything/AFFiNE/pull/1946,merged,2023-04-14T06:33:17Z,2023-04-14T07:02:44Z
+1973,chore: update change log link,https://github.com/toeverything/AFFiNE/pull/1973,merged,2023-04-17T02:31:17Z,2023-04-17T02:48:30Z
+2001,chore: add translation,https://github.com/toeverything/AFFiNE/pull/2001,merged,2023-04-18T05:20:27Z,2023-04-18T05:34:21Z
+2010,chore: disable slider bar link item drag,https://github.com/toeverything/AFFiNE/pull/2010,merged,2023-04-18T07:07:19Z,2023-04-18T07:16:38Z
+2025,feat: move theme switch and language switch to editor option menu,https://github.com/toeverything/AFFiNE/pull/2025,merged,2023-04-19T03:40:02Z,2023-04-28T09:28:52Z
+2041,chore: improve disable legacy cloud,https://github.com/toeverything/AFFiNE/pull/2041,merged,2023-04-20T03:48:15Z,2023-04-20T04:25:46Z
+2046,chore: update temp disable affine cloud modal style,https://github.com/toeverything/AFFiNE/pull/2046,merged,2023-04-20T06:26:11Z,2023-04-20T07:27:26Z
+2107,fix: incorrect text color,https://github.com/toeverything/AFFiNE/pull/2107,merged,2023-04-24T12:41:48Z,2023-04-24T16:49:22Z
+2118,chore: add changeLog to storybook,https://github.com/toeverything/AFFiNE/pull/2118,merged,2023-04-25T05:17:02Z,2023-04-25T06:24:46Z
+2124,fix: theme color,https://github.com/toeverything/AFFiNE/pull/2124,merged,2023-04-25T09:25:51Z,2023-04-25T16:37:22Z
+2126,fix: text overflow problem in <a> tag,https://github.com/toeverything/AFFiNE/pull/2126,merged,2023-04-25T11:14:32Z,2023-04-25T16:40:14Z
+2144,feat: add onboarding for client,https://github.com/toeverything/AFFiNE/pull/2144,merged,2023-04-26T03:19:32Z,2023-05-04T07:29:17Z
+2151,feat: add download tips banner,https://github.com/toeverything/AFFiNE/pull/2151,merged,2023-04-26T17:43:02Z,2023-05-09T16:07:35Z
+2169,chore: update workspace setting button color,https://github.com/toeverything/AFFiNE/pull/2169,merged,2023-04-27T05:29:58Z,2023-04-27T17:55:59Z
+2170,chore: update menu background color,https://github.com/toeverything/AFFiNE/pull/2170,merged,2023-04-27T05:59:01Z,2023-04-27T18:06:18Z
+2171,chore: update shadow and color,https://github.com/toeverything/AFFiNE/pull/2171,merged,2023-04-27T08:10:09Z,2023-04-27T17:57:25Z
+2183,chore: update menu placement,https://github.com/toeverything/AFFiNE/pull/2183,merged,2023-04-28T05:26:22Z,2023-04-28T05:40:38Z
+2235,chore: optimize onboarding component style,https://github.com/toeverything/AFFiNE/pull/2235,merged,2023-05-05T02:33:29Z,2023-05-05T03:26:40Z
+2238,fix: wrong menu position,https://github.com/toeverything/AFFiNE/pull/2238,merged,2023-05-05T04:54:46Z,2023-05-06T23:58:42Z
+2239,chore: add border for header when in edgeless page,https://github.com/toeverything/AFFiNE/pull/2239,merged,2023-05-05T05:35:00Z,2023-05-07T00:00:04Z
+2242,chore: update theme color,https://github.com/toeverything/AFFiNE/pull/2242,merged,2023-05-05T07:57:43Z,2023-05-05T20:34:02Z
+2243,chore: disable navigation path,https://github.com/toeverything/AFFiNE/pull/2243,merged,2023-05-05T09:03:24Z,2023-05-05T20:33:37Z
+2244,chore: update the style of help island in edgeless mode,https://github.com/toeverything/AFFiNE/pull/2244,merged,2023-05-05T10:00:11Z,2023-05-05T20:35:06Z
+2281,chore: replace lang icon and update translation,https://github.com/toeverything/AFFiNE/pull/2281,merged,2023-05-09T07:56:07Z,2023-05-09T15:27:06Z
+2297,refactor: tour modal,https://github.com/toeverything/AFFiNE/pull/2297,merged,2023-05-10T06:51:47Z,2023-05-10T08:11:43Z
+2321,chore: update AFFiNE Cloud prompt,https://github.com/toeverything/AFFiNE/pull/2321,merged,2023-05-11T04:57:00Z,2023-05-11T05:18:13Z
+2322,fix: delete modal on confirm does not close,https://github.com/toeverything/AFFiNE/pull/2322,merged,2023-05-11T05:11:08Z,2023-05-11T05:19:12Z
+2365,chore: add animation for tour modal,https://github.com/toeverything/AFFiNE/pull/2365,merged,2023-05-15T08:32:06Z,2023-05-15T08:48:52Z
+2372,chore: remove favorite page,https://github.com/toeverything/AFFiNE/pull/2372,merged,2023-05-15T10:07:50Z,2023-05-15T15:41:39Z
+2375,chore: remove quick search tips,https://github.com/toeverything/AFFiNE/pull/2375,merged,2023-05-15T13:12:12Z,2023-05-15T15:41:10Z
+2388,feat: add Japanese support and update translation,https://github.com/toeverything/AFFiNE/pull/2388,merged,2023-05-16T04:06:01Z,2023-05-16T06:21:51Z
+2390,chore: add responsive styles for workspace card,https://github.com/toeverything/AFFiNE/pull/2390,merged,2023-05-16T06:51:14Z,2023-05-16T08:51:47Z
+2393,fix: text overflows in the header option menu ,https://github.com/toeverything/AFFiNE/pull/2393,merged,2023-05-16T07:29:26Z,2023-05-16T09:35:58Z
+2409,chore: update preloading page,https://github.com/toeverything/AFFiNE/pull/2409,merged,2023-05-17T08:18:46Z,2023-05-17T09:16:08Z
+2410,chore: update prompt,https://github.com/toeverything/AFFiNE/pull/2410,merged,2023-05-17T08:50:31Z,2023-05-17T09:52:58Z
+2428,chore: adjust copywriting for onboarding,https://github.com/toeverything/AFFiNE/pull/2428,merged,2023-05-18T04:51:55Z,2023-05-18T05:15:02Z
+2435,fix: create workspace card responsive,https://github.com/toeverything/AFFiNE/pull/2435,merged,2023-05-18T08:21:54Z,2023-05-18T09:11:15Z
+2437,chore: adjust delete description style,https://github.com/toeverything/AFFiNE/pull/2437,merged,2023-05-18T09:01:44Z,2023-05-18T09:17:38Z
+2441,chore: bump icon version,https://github.com/toeverything/AFFiNE/pull/2441,merged,2023-05-18T10:23:28Z,2023-05-18T17:37:41Z
+2451,chore: remove unused i18n key,https://github.com/toeverything/AFFiNE/pull/2451,merged,2023-05-19T03:23:38Z,2023-05-19T03:38:48Z
+2509,chore: update download tip link,https://github.com/toeverything/AFFiNE/pull/2509,merged,2023-05-24T08:16:03Z,2023-05-24T08:43:46Z
+2512,chore: update download tip link,https://github.com/toeverything/AFFiNE/pull/2512,merged,2023-05-24T09:24:54Z,2023-05-24T09:25:04Z
+2516,chore: bump electron,https://github.com/toeverything/AFFiNE/pull/2516,merged,2023-05-25T03:23:18Z,2023-05-25T03:46:35Z
+2536,chore: update user guide style,https://github.com/toeverything/AFFiNE/pull/2536,merged,2023-05-26T02:53:49Z,2023-05-26T04:55:06Z
+2570,chore: adjust switch style,https://github.com/toeverything/AFFiNE/pull/2570,merged,2023-05-29T07:34:20Z,2023-05-29T10:40:48Z
+2571,fix: updater button text overflow,https://github.com/toeverything/AFFiNE/pull/2571,merged,2023-05-29T07:52:03Z,2023-05-29T10:39:48Z
+2594,fix: quick search result missing title,https://github.com/toeverything/AFFiNE/pull/2594,merged,2023-05-30T08:16:48Z,2023-05-30T08:45:01Z
+2617,chore: update filter style,https://github.com/toeverything/AFFiNE/pull/2617,merged,2023-05-31T06:43:14Z,2023-05-31T07:41:17Z
+2625,chore: update filter style,https://github.com/toeverything/AFFiNE/pull/2625,merged,2023-05-31T09:00:48Z,2023-05-31T09:20:19Z
+2638,chore: update all page style,https://github.com/toeverything/AFFiNE/pull/2638,merged,2023-06-01T03:14:27Z,2023-06-01T04:38:15Z
+2644,feat: add date picker,https://github.com/toeverything/AFFiNE/pull/2644,merged,2023-06-01T08:13:53Z,2023-06-08T09:55:17Z
+2651,chore: update whats new link,https://github.com/toeverything/AFFiNE/pull/2651,merged,2023-06-01T09:26:18Z,2023-06-01T09:59:30Z
+2686,fix: empty icon color error,https://github.com/toeverything/AFFiNE/pull/2686,merged,2023-06-05T09:49:04Z,2023-06-05T10:06:18Z
+2692,fix: empty svg color missing,https://github.com/toeverything/AFFiNE/pull/2692,merged,2023-06-06T04:23:38Z,2023-06-06T04:45:34Z
+2740,chore: remove en.json code owner,https://github.com/toeverything/AFFiNE/pull/2740,merged,2023-06-09T04:40:07Z,2023-06-09T05:24:26Z
+2775,test: add basic test for link page and database,https://github.com/toeverything/AFFiNE/pull/2775,merged,2023-06-14T15:12:55Z,2023-06-15T05:58:44Z
+2779,fix: add guide to the other page,https://github.com/toeverything/AFFiNE/pull/2779,merged,2023-06-15T02:43:10Z,2023-06-15T04:46:57Z
+2784,fix: electron cannot be started in Windows,https://github.com/toeverything/AFFiNE/pull/2784,merged,2023-06-15T03:49:46Z,2023-06-15T06:16:28Z
+2790,fix: window control not work,https://github.com/toeverything/AFFiNE/pull/2790,merged,2023-06-15T05:45:28Z,2023-06-15T06:09:46Z
+2804,style: temporarily adjust the style of the co-pilot,https://github.com/toeverything/AFFiNE/pull/2804,merged,2023-06-16T04:30:13Z,2023-06-16T07:12:59Z
+2826,style: add scrollbar,https://github.com/toeverything/AFFiNE/pull/2826,merged,2023-06-20T04:40:42Z,2023-06-26T07:12:44Z
+2867,style: add hover style for scrollbar,https://github.com/toeverything/AFFiNE/pull/2867,merged,2023-06-27T06:36:29Z,2023-06-27T07:26:14Z
+2868,style: add hover style for filter item,https://github.com/toeverything/AFFiNE/pull/2868,merged,2023-06-27T08:28:44Z,2023-06-27T11:02:47Z
+2869,fix: incorrect scrollbar position when opening full width layout,https://github.com/toeverything/AFFiNE/pull/2869,merged,2023-06-27T08:47:53Z,2023-06-27T14:15:34Z
+2890,style: remove switch button shadow,https://github.com/toeverything/AFFiNE/pull/2890,merged,2023-06-28T04:41:57Z,2023-06-28T05:07:33Z
+2915,style: adjust copilot chat style,https://github.com/toeverything/AFFiNE/pull/2915,merged,2023-06-29T03:27:14Z,2023-07-03T06:11:41Z
+2916,chore: update translation,https://github.com/toeverything/AFFiNE/pull/2916,merged,2023-06-29T05:04:31Z,2023-06-29T08:38:30Z
+2918,chore: update changelog link and remove obsolete changelog components,https://github.com/toeverything/AFFiNE/pull/2918,merged,2023-06-29T08:29:28Z,2023-06-29T10:39:16Z
+2968,i18n: update translation resources,https://github.com/toeverything/AFFiNE/pull/2968,merged,2023-07-03T05:07:33Z,2023-07-03T05:24:54Z
+2976,style: adjust icon button hover color,https://github.com/toeverything/AFFiNE/pull/2976,merged,2023-07-03T08:35:41Z,2023-07-03T08:57:39Z
+2981,chore: add import to sidebar,https://github.com/toeverything/AFFiNE/pull/2981,merged,2023-07-03T10:13:27Z,2023-07-03T11:04:28Z
+3000,chore: update setting text,https://github.com/toeverything/AFFiNE/pull/3000,merged,2023-07-04T06:43:34Z,2023-07-04T18:07:32Z
+3044,chore: temporary fix sync script error,https://github.com/toeverything/AFFiNE/pull/3044,merged,2023-07-06T03:15:38Z,2023-07-06T04:30:02Z
+3045,fix: date-picker hidden in update collection,https://github.com/toeverything/AFFiNE/pull/3045,merged,2023-07-06T04:38:01Z,2023-07-06T06:32:32Z
+3052,chore: update communities link and icon,https://github.com/toeverything/AFFiNE/pull/3052,merged,2023-07-06T07:03:34Z,2023-07-06T07:36:02Z
+3083,style: adjust settings style,https://github.com/toeverything/AFFiNE/pull/3083,merged,2023-07-07T03:07:11Z,2023-07-07T05:48:17Z
+3084,chore: add new item for share component,https://github.com/toeverything/AFFiNE/pull/3084,merged,2023-07-07T03:58:15Z,2023-07-07T13:33:27Z
+3088,style: temporarily modify user card,https://github.com/toeverything/AFFiNE/pull/3088,merged,2023-07-07T07:07:55Z,2023-07-07T09:23:19Z
+3121,test: fix incorrect day suffix,https://github.com/toeverything/AFFiNE/pull/3121,merged,2023-07-10T05:45:37Z,2023-07-10T06:06:06Z
+3123,style: change switch tip color,https://github.com/toeverything/AFFiNE/pull/3123,merged,2023-07-10T06:46:31Z,2023-07-10T07:12:16Z
+3133,style: add member setting style,https://github.com/toeverything/AFFiNE/pull/3133,merged,2023-07-10T12:36:05Z,2023-07-11T04:55:02Z
+3143,style: modify the style of community item,https://github.com/toeverything/AFFiNE/pull/3143,merged,2023-07-11T06:28:24Z,2023-07-11T06:56:32Z
+3180,style: update delete button style,https://github.com/toeverything/AFFiNE/pull/3180,merged,2023-07-12T06:35:58Z,2023-07-12T09:40:21Z
+3255,chore: upadete onboarding video and changlog link,https://github.com/toeverything/AFFiNE/pull/3255,merged,2023-07-17T03:39:55Z,2023-07-17T04:48:17Z
+3259,feat: move plugins config to setting,https://github.com/toeverything/AFFiNE/pull/3259,merged,2023-07-17T06:00:40Z,2023-07-17T09:46:25Z
+3264,chore: increase the frequency of the banner,https://github.com/toeverything/AFFiNE/pull/3264,merged,2023-07-17T06:55:16Z,2023-07-17T09:59:42Z
+3269,fix: temporarily handle all page scroll bar styles,https://github.com/toeverything/AFFiNE/pull/3269,merged,2023-07-17T07:49:28Z,2023-07-17T08:18:22Z
+3292,style: add text overflow style for collections,https://github.com/toeverything/AFFiNE/pull/3292,merged,2023-07-18T10:23:04Z,2023-07-21T04:12:07Z
+3301,fix: banner blocking new page button issue,https://github.com/toeverything/AFFiNE/pull/3301,merged,2023-07-19T03:47:10Z,2023-07-19T05:05:59Z
+3309,chore: increase the frequency of the banner (#3264),https://github.com/toeverything/AFFiNE/pull/3309,merged,2023-07-19T05:26:50Z,2023-07-19T05:52:45Z
+3350,chore: update icon size,https://github.com/toeverything/AFFiNE/pull/3350,merged,2023-07-24T03:22:54Z,2023-07-24T23:48:06Z
+3352,style: move trash button group to page bottom,https://github.com/toeverything/AFFiNE/pull/3352,merged,2023-07-24T06:16:10Z,2023-07-25T05:35:54Z
+3369,feat: add new collection button to slider bar,https://github.com/toeverything/AFFiNE/pull/3369,merged,2023-07-25T09:01:15Z,2023-07-26T05:15:05Z
+3380,fix: filter button conflicts with electron header drag event,https://github.com/toeverything/AFFiNE/pull/3380,merged,2023-07-26T05:15:14Z,2023-07-26T10:09:55Z
+3389,feat: support gif toast,https://github.com/toeverything/AFFiNE/pull/3389,merged,2023-07-26T11:45:44Z,2023-07-27T05:37:19Z
+3397,chore: adjust sidebar padding,https://github.com/toeverything/AFFiNE/pull/3397,merged,2023-07-27T03:44:19Z,2023-07-27T05:36:46Z
+3405,fix: unable to add a second collection,https://github.com/toeverything/AFFiNE/pull/3405,merged,2023-07-27T05:11:05Z,2023-07-27T05:37:43Z
+3406,refactor: create collection,https://github.com/toeverything/AFFiNE/pull/3406,merged,2023-07-27T06:32:55Z,2023-07-27T20:46:53Z
+3407,style: adjust collection modal style,https://github.com/toeverything/AFFiNE/pull/3407,merged,2023-07-27T07:02:03Z,2023-07-27T20:51:49Z
+3434,fix: bring back the lost WorkspaceDeleteModal style,https://github.com/toeverything/AFFiNE/pull/3434,merged,2023-07-28T04:03:49Z,2023-07-28T04:32:46Z
+3435,chore: update change log link,https://github.com/toeverything/AFFiNE/pull/3435,merged,2023-07-28T04:57:34Z,2023-07-28T15:26:58Z
+3440,feat: add read only mode for page in trash,https://github.com/toeverything/AFFiNE/pull/3440,merged,2023-07-28T07:42:08Z,2023-07-28T15:26:58Z
+3455,chore: adjustment options menu,https://github.com/toeverything/AFFiNE/pull/3455,merged,2023-07-29T04:26:20Z,2023-07-31T08:22:00Z
+3458,style: adjust active slider bar collection item active style,https://github.com/toeverything/AFFiNE/pull/3458,merged,2023-07-29T05:40:04Z,2023-07-29T15:44:20Z
+3496,feat: brand new version of icons,https://github.com/toeverything/AFFiNE/pull/3496,merged,2023-08-01T05:29:38Z,2023-08-01T06:14:35Z
+3538,fix: scrollbar position offset,https://github.com/toeverything/AFFiNE/pull/3538,merged,2023-08-03T03:34:48Z,2023-08-03T09:05:58Z
+3550,feat: modify sidebar floating logic and header responsive style,https://github.com/toeverything/AFFiNE/pull/3550,merged,2023-08-03T10:45:13Z,2023-08-05T00:29:03Z
+3599,style: adjust page list header style,https://github.com/toeverything/AFFiNE/pull/3599,merged,2023-08-07T04:02:03Z,2023-08-07T16:17:20Z
+3615,refactor: header options menu,https://github.com/toeverything/AFFiNE/pull/3615,merged,2023-08-08T05:51:26Z,2023-08-08T17:46:49Z
+3621,refactor: optimize the use of notification center,https://github.com/toeverything/AFFiNE/pull/3621,merged,2023-08-08T08:25:32Z,2023-08-08T19:22:55Z
+3640,chore: bump icon version and change plugins icon,https://github.com/toeverything/AFFiNE/pull/3640,merged,2023-08-09T06:59:38Z,2023-08-09T11:56:59Z
+3643,feat: adjust email style,https://github.com/toeverything/AFFiNE/pull/3643,merged,2023-08-09T09:21:29Z,2023-08-11T06:16:21Z
+3675,feat: add duplicate feature,https://github.com/toeverything/AFFiNE/pull/3675,merged,2023-08-10T16:07:40Z,2023-08-11T14:12:06Z
+3686,fix: test case,https://github.com/toeverything/AFFiNE/pull/3686,merged,2023-08-11T04:18:15Z,2023-08-11T06:59:07Z
+3718,fix: get back the missing scrollbar,https://github.com/toeverything/AFFiNE/pull/3718,merged,2023-08-13T12:15:54Z,2023-08-13T13:47:11Z
+3734,chore: adjust translation,https://github.com/toeverything/AFFiNE/pull/3734,merged,2023-08-14T07:29:00Z,2023-08-14T14:44:59Z
+3753,chore: adjust preloading page,https://github.com/toeverything/AFFiNE/pull/3753,merged,2023-08-15T03:55:54Z,2023-08-15T06:06:17Z
+3754,chore: update en.json,https://github.com/toeverything/AFFiNE/pull/3754,merged,2023-08-15T03:57:12Z,2023-08-15T05:20:24Z
+3757,fix: en.json for login branch,https://github.com/toeverything/AFFiNE/pull/3757,merged,2023-08-15T05:38:57Z,2023-08-15T17:53:30Z
+3800,fix: wrong cascading relationship,https://github.com/toeverything/AFFiNE/pull/3800,merged,2023-08-17T05:16:39Z,2023-08-18T00:59:38Z
+3803,chore: adjust preloading tags,https://github.com/toeverything/AFFiNE/pull/3803,merged,2023-08-17T07:57:20Z,2023-08-18T00:58:50Z
+3826,chore: change divider style,https://github.com/toeverything/AFFiNE/pull/3826,merged,2023-08-18T05:40:32Z,2023-08-18T07:31:11Z
+3879,feat: init share page menu,https://github.com/toeverything/AFFiNE/pull/3879,merged,2023-08-21T18:07:34Z,2023-08-23T03:02:46Z
+3908,chore: remove global line-height,https://github.com/toeverything/AFFiNE/pull/3908,merged,2023-08-23T06:31:05Z,2023-08-23T14:26:57Z
+3909,chore: update preloading page,https://github.com/toeverything/AFFiNE/pull/3909,merged,2023-08-23T08:51:59Z,2023-08-23T14:22:23Z
+3918,refactor: add content to be selectable  and remove swipe gesture,https://github.com/toeverything/AFFiNE/pull/3918,merged,2023-08-23T15:20:39Z,2023-08-23T16:45:56Z
+3942,chore: bump version,https://github.com/toeverything/AFFiNE/pull/3942,merged,2023-08-24T08:51:23Z,2023-08-24T10:05:10Z
+3943,chore: update preload page,https://github.com/toeverything/AFFiNE/pull/3943,merged,2023-08-24T11:31:20Z,2023-08-24T16:21:17Z
+4040,fix: the web version should not display client borders,https://github.com/toeverything/AFFiNE/pull/4040,merged,2023-08-30T05:54:40Z,2023-08-31T18:15:23Z
+4045,feat: add worksapce type label,https://github.com/toeverything/AFFiNE/pull/4045,merged,2023-08-30T09:54:39Z,2023-08-31T18:16:59Z
+4062,chore: adjust preloading page,https://github.com/toeverything/AFFiNE/pull/4062,merged,2023-08-31T06:44:35Z,2023-08-31T17:47:46Z
+4098,chore: optimized style,https://github.com/toeverything/AFFiNE/pull/4098,merged,2023-09-01T07:16:30Z,2023-09-01T19:41:45Z
+4193,style: add hover style to the setting button in workspace card,https://github.com/toeverything/AFFiNE/pull/4193,merged,2023-09-05T09:07:34Z,2023-09-07T05:32:18Z
+4225,chore: adjust preloading page,https://github.com/toeverything/AFFiNE/pull/4225,merged,2023-09-06T10:19:52Z,2023-09-11T06:59:32Z
+4287,fix: menu style,https://github.com/toeverything/AFFiNE/pull/4287,merged,2023-09-08T09:54:36Z,2023-09-11T06:41:37Z
+4316,fix: unexpected react warning,https://github.com/toeverything/AFFiNE/pull/4316,merged,2023-09-12T08:31:39Z,2023-09-12T22:49:53Z
+4317,feat: add animation for add favorites,https://github.com/toeverything/AFFiNE/pull/4317,merged,2023-09-12T08:33:02Z,2023-09-12T16:24:45Z
+4336,fix: wrong share status display,https://github.com/toeverything/AFFiNE/pull/4336,merged,2023-09-13T04:28:49Z,2023-09-13T05:31:21Z
+4347,refactor: delete page style,https://github.com/toeverything/AFFiNE/pull/4347,merged,2023-09-13T10:57:10Z,2023-09-16T00:55:56Z
+4371,chore: adjust workspace card style,https://github.com/toeverything/AFFiNE/pull/4371,merged,2023-09-15T06:10:54Z,2023-09-15T06:19:39Z
+4403,chore: add back&forward for web​,https://github.com/toeverything/AFFiNE/pull/4403,merged,2023-09-18T06:28:01Z,2023-09-19T18:09:24Z
+4432,refactor: workspace list,https://github.com/toeverything/AFFiNE/pull/4432,merged,2023-09-20T10:09:22Z,2023-09-22T07:02:32Z
+4468,fix: unexpected pop ups,https://github.com/toeverything/AFFiNE/pull/4468,merged,2023-09-23T05:22:10Z,2023-09-26T03:00:02Z
+4477,feat: add commands,https://github.com/toeverything/AFFiNE/pull/4477,merged,2023-09-25T01:30:07Z,2023-09-25T10:26:54Z
+4489,chore(core): temporarily remove set-syncing-mode,https://github.com/toeverything/AFFiNE/pull/4489,merged,2023-09-25T09:15:53Z,2023-09-26T14:29:35Z
+4490,fix: unexpected hover behavior of collection sidebar,https://github.com/toeverything/AFFiNE/pull/4490,merged,2023-09-25T09:44:03Z,2023-09-25T10:40:28Z
+4491,fix: adjust 404 page style,https://github.com/toeverything/AFFiNE/pull/4491,merged,2023-09-25T10:00:43Z,2023-09-26T03:09:27Z
+4508,feat(component): add private copy link button,https://github.com/toeverything/AFFiNE/pull/4508,merged,2023-09-26T06:14:51Z,2023-09-27T04:54:03Z
+4514,feat(core): add editor commanads,https://github.com/toeverything/AFFiNE/pull/4514,merged,2023-09-26T10:26:08Z,2023-10-02T03:39:24Z
+4566,fix(component): adjust dialog and input style,https://github.com/toeverything/AFFiNE/pull/4566,merged,2023-10-09T07:49:29Z,2023-10-12T06:10:45Z
+4568,feat(core): add setting commands,https://github.com/toeverything/AFFiNE/pull/4568,merged,2023-10-09T13:24:12Z,2023-10-11T03:51:42Z
+4584,feat(core): adjust share menu style,https://github.com/toeverything/AFFiNE/pull/4584,merged,2023-10-11T11:00:45Z,2023-10-12T03:47:04Z
+4592,feat(core): add sign out confirm modal,https://github.com/toeverything/AFFiNE/pull/4592,merged,2023-10-12T09:41:47Z,2023-10-16T09:03:50Z
+4595,feat(core): add history shortcut,https://github.com/toeverything/AFFiNE/pull/4595,merged,2023-10-12T12:09:24Z,2023-10-16T13:11:27Z
+4602,chore: bump playwright version,https://github.com/toeverything/AFFiNE/pull/4602,merged,2023-10-13T10:09:06Z,2023-10-13T19:37:18Z
+4657,fix: wrong confirm button position,https://github.com/toeverything/AFFiNE/pull/4657,merged,2023-10-19T02:50:18Z,2023-10-19T03:40:00Z
+4667,feat(core): add search result highlighting,https://github.com/toeverything/AFFiNE/pull/4667,merged,2023-10-19T15:20:32Z,2023-10-24T06:16:29Z
+4707,feat(core): add account subscription status,https://github.com/toeverything/AFFiNE/pull/4707,merged,2023-10-24T08:08:02Z,2023-10-24T10:05:56Z
+4713,feat(core): adapt storage progress to payment system,https://github.com/toeverything/AFFiNE/pull/4713,merged,2023-10-24T10:46:17Z,2023-10-25T08:18:31Z
+4718,fix(core): retrieve missing search result titles,https://github.com/toeverything/AFFiNE/pull/4718,merged,2023-10-25T03:27:21Z,2023-10-25T11:09:22Z
+4719,chore(core): update communities icon,https://github.com/toeverything/AFFiNE/pull/4719,merged,2023-10-25T07:06:06Z,2023-10-25T11:09:22Z
+4723,feat(core): add translation key for payment,https://github.com/toeverything/AFFiNE/pull/4723,merged,2023-10-25T15:58:34Z,2023-10-26T08:15:13Z
+4737,feat(core): adjust member tips,https://github.com/toeverything/AFFiNE/pull/4737,merged,2023-10-27T04:11:59Z,2023-10-27T06:25:48Z
+4738,feat(core): add upgrade success page,https://github.com/toeverything/AFFiNE/pull/4738,merged,2023-10-27T06:23:38Z,2023-10-27T07:49:32Z
+4765,feat(core): support fuzzy highlighting,https://github.com/toeverything/AFFiNE/pull/4765,merged,2023-10-30T07:50:37Z,2023-10-31T03:22:13Z
+4771,feat(i18n): add new key for billing,https://github.com/toeverything/AFFiNE/pull/4771,merged,2023-10-30T09:48:36Z,2023-10-30T11:12:54Z
+4773,fix(component): adjust autofill style,https://github.com/toeverything/AFFiNE/pull/4773,merged,2023-10-30T10:18:35Z,2023-10-31T15:52:21Z
+4797,fix(core): adjust payment related text,https://github.com/toeverything/AFFiNE/pull/4797,merged,2023-11-01T03:54:37Z,2023-11-02T08:35:36Z
+4802,feat(core): add jump to block for cmdk,https://github.com/toeverything/AFFiNE/pull/4802,merged,2023-11-01T06:45:25Z,2023-11-02T12:08:06Z
+4829,chore(i18n): add new key for empty trash page,https://github.com/toeverything/AFFiNE/pull/4829,merged,2023-11-03T04:24:17Z,2023-11-03T06:32:10Z
+4831,feat(core): adjust filter logic,https://github.com/toeverything/AFFiNE/pull/4831,merged,2023-11-03T07:05:16Z,2023-11-06T07:02:32Z
+4832,chore(i18n): adjust text,https://github.com/toeverything/AFFiNE/pull/4832,merged,2023-11-03T07:16:00Z,2023-11-06T07:01:21Z
+4833,feat(core): temporary expansion files are limited to 100M,https://github.com/toeverything/AFFiNE/pull/4833,merged,2023-11-03T07:56:48Z,2023-11-06T07:02:32Z
+4847,fix(core): adjust discount display,https://github.com/toeverything/AFFiNE/pull/4847,merged,2023-11-06T10:04:44Z,2023-11-06T10:30:08Z
+4856,feat(core): support share edgeless mode,https://github.com/toeverything/AFFiNE/pull/4856,merged,2023-11-07T05:52:07Z,2023-11-15T07:50:49Z
+4858,feat(core): auto select block when jump to block,https://github.com/toeverything/AFFiNE/pull/4858,merged,2023-11-07T07:59:39Z,2023-11-10T03:17:13Z
+4864,fix(core): duplicate registration in edgeless,https://github.com/toeverything/AFFiNE/pull/4864,merged,2023-11-07T18:30:14Z,2023-11-08T03:11:04Z
+4923,feat(i18n): update translation,https://github.com/toeverything/AFFiNE/pull/4923,merged,2023-11-13T08:20:01Z,2023-11-17T09:39:33Z
+4947,fix(core): escape cmdk value,https://github.com/toeverything/AFFiNE/pull/4947,merged,2023-11-15T06:41:14Z,2023-11-20T02:49:32Z
+4957,feat(core): add manual check for updates,https://github.com/toeverything/AFFiNE/pull/4957,merged,2023-11-16T04:00:14Z,2023-11-29T13:50:38Z
+4961,feat(core): keep the latest toast showing when multiple call,https://github.com/toeverything/AFFiNE/pull/4961,merged,2023-11-16T08:11:21Z,2023-11-20T02:47:10Z
+4972,fix(core): adjust cmdk list scroll padding block,https://github.com/toeverything/AFFiNE/pull/4972,merged,2023-11-17T06:56:02Z,2023-11-20T02:39:46Z
+5008,fix(core): cmdk crash when entering double quotes,https://github.com/toeverything/AFFiNE/pull/5008,merged,2023-11-20T15:47:25Z,2023-11-21T13:25:22Z
+5023,feat(core): add download app button to web,https://github.com/toeverything/AFFiNE/pull/5023,merged,2023-11-22T07:35:36Z,2023-11-23T06:33:25Z
+5042,chore: bump icons version,https://github.com/toeverything/AFFiNE/pull/5042,merged,2023-11-23T09:21:23Z,2023-11-23T12:21:39Z
+5044,feat(core): add responsive styles to registration page,https://github.com/toeverything/AFFiNE/pull/5044,merged,2023-11-23T09:49:45Z,2023-12-06T10:52:49Z
+5073,feat(core): show searched result with results group and add duplicate commands,https://github.com/toeverything/AFFiNE/pull/5073,merged,2023-11-27T08:46:22Z,2023-11-29T03:11:46Z
+5077,feat(component): default collapse and float sidebar on mobile,https://github.com/toeverything/AFFiNE/pull/5077,merged,2023-11-27T09:46:57Z,2023-11-29T02:29:52Z
+5094,fix(core): adjust ui styles,https://github.com/toeverything/AFFiNE/pull/5094,merged,2023-11-28T08:23:26Z,2023-11-30T04:23:57Z
+5132,feat(core): support sidebar page item dnd,https://github.com/toeverything/AFFiNE/pull/5132,merged,2023-11-29T09:13:24Z,2023-12-12T16:14:40Z
+5140,feat(core): add present to edgeless sharing,https://github.com/toeverything/AFFiNE/pull/5140,merged,2023-11-30T05:04:40Z,2023-12-08T04:53:36Z
+5153,chore: adjust banner content text,https://github.com/toeverything/AFFiNE/pull/5153,merged,2023-12-01T07:42:05Z,2023-12-06T08:25:43Z
+5175,fix(core): unable to create share page link,https://github.com/toeverything/AFFiNE/pull/5175,merged,2023-12-04T08:17:32Z,2023-12-05T08:24:20Z
+5239,feat(core): adjust empty collection style,https://github.com/toeverything/AFFiNE/pull/5239,merged,2023-12-08T10:24:45Z,2023-12-11T06:39:41Z
+5257,fix(cli): fix storybook build error,https://github.com/toeverything/AFFiNE/pull/5257,merged,2023-12-11T07:49:06Z,2023-12-11T08:16:33Z
+5263,fix(core): adjust share edgeless display error,https://github.com/toeverything/AFFiNE/pull/5263,merged,2023-12-11T10:46:40Z,2023-12-11T11:04:45Z
+5269,fix(core): fix window cannot be dragged on the collection page,https://github.com/toeverything/AFFiNE/pull/5269,merged,2023-12-12T06:42:40Z,2023-12-13T07:13:39Z
+5292,fix(component): fix incorrect input component width and height styling,https://github.com/toeverything/AFFiNE/pull/5292,merged,2023-12-13T08:50:24Z,2023-12-19T08:36:35Z
+5314,chore(server): remove early access tips from invitation emails,https://github.com/toeverything/AFFiNE/pull/5314,merged,2023-12-15T07:15:36Z,2023-12-19T07:05:41Z
+5323,feat(core): adjust empty favourites style,https://github.com/toeverything/AFFiNE/pull/5323,merged,2023-12-18T06:57:07Z,2023-12-19T08:46:35Z
+5325,fix(storybook): fix test,https://github.com/toeverything/AFFiNE/pull/5325,merged,2023-12-18T07:48:21Z,2023-12-18T13:45:36Z
+5353,fix(core): escape special characters for cmdk item values,https://github.com/toeverything/AFFiNE/pull/5353,merged,2023-12-20T07:01:06Z,2023-12-20T08:33:48Z
+5364,chore(core): temporarily hide export png and pdf in edgeless,https://github.com/toeverything/AFFiNE/pull/5364,merged,2023-12-21T06:44:49Z,2023-12-21T07:22:37Z
+5366,feat: add useBlocksuiteEditor hooks,https://github.com/toeverything/AFFiNE/pull/5366,merged,2023-12-21T07:27:53Z,2023-12-28T08:44:41Z
+5396,chore(core): add background color to questionnaire,https://github.com/toeverything/AFFiNE/pull/5396,merged,2023-12-26T03:15:26Z,2023-12-26T07:23:44Z
+5404,fix(core): avatars are not aligned,https://github.com/toeverything/AFFiNE/pull/5404,merged,2023-12-26T07:45:16Z,2023-12-26T12:23:28Z
+5409,fix(core): disable quick search when the link-popup is visitable,https://github.com/toeverything/AFFiNE/pull/5409,merged,2023-12-26T10:12:55Z,2024-01-04T13:31:41Z
+5422,chore: adjust side bar empty item color,https://github.com/toeverything/AFFiNE/pull/5422,merged,2023-12-28T06:51:13Z,2023-12-28T13:58:35Z
+5500,feat(core): add cloud workspace member limit,https://github.com/toeverything/AFFiNE/pull/5500,merged,2024-01-03T08:58:43Z,2024-01-03T15:05:35Z
+5514,refactor(component): adapt the questionnaire component to the desktop client,https://github.com/toeverything/AFFiNE/pull/5514,merged,2024-01-05T07:05:08Z,2024-01-19T10:16:32Z
+5518,feat(core): get cloud workspace usage limit from user quota,https://github.com/toeverything/AFFiNE/pull/5518,merged,2024-01-05T08:25:52Z,2024-01-16T08:10:36Z
+5535,feat(workspace): add blob and storage limit,https://github.com/toeverything/AFFiNE/pull/5535,merged,2024-01-08T03:56:30Z,2024-01-24T07:45:50Z
+5537,refactor(core): replace WorkspaceSubPath in env package with the one in core package,https://github.com/toeverything/AFFiNE/pull/5537,merged,2024-01-08T08:47:10Z,2024-01-16T08:41:44Z
+5567,feat(core): add collection and tag filters to all pages,https://github.com/toeverything/AFFiNE/pull/5567,merged,2024-01-10T13:14:50Z,2024-01-26T07:55:04Z
+5625,fix(core): reserve space for the editor scrollbar,https://github.com/toeverything/AFFiNE/pull/5625,merged,2024-01-18T07:48:26Z,2024-01-18T12:53:48Z
+5685,feat(core): adjust member order,https://github.com/toeverything/AFFiNE/pull/5685,merged,2024-01-24T07:37:04Z,2024-01-24T12:53:36Z
+5718,feat(core): add starAFFiNE and issueFeedback modal,https://github.com/toeverything/AFFiNE/pull/5718,merged,2024-01-26T05:43:33Z,2024-02-20T13:04:13Z
+5733,feat(core): add history tips modal,https://github.com/toeverything/AFFiNE/pull/5733,merged,2024-01-29T07:27:27Z,2024-02-20T13:04:52Z
+5752,refactor(core): use custom scrollbar for editor and adjust shared page style,https://github.com/toeverything/AFFiNE/pull/5752,merged,2024-01-31T06:15:49Z,2024-02-26T09:03:40Z
+5761,"chore: replace ambiguous ""page"" with ""doc""",https://github.com/toeverything/AFFiNE/pull/5761,merged,2024-02-01T03:29:08Z,2024-02-21T12:56:45Z
+5771,feat(core): support create cloud workspace,https://github.com/toeverything/AFFiNE/pull/5771,merged,2024-02-01T08:27:10Z,2024-02-23T06:28:47Z
+5785,feat(core): add loading to quick search modal,https://github.com/toeverything/AFFiNE/pull/5785,merged,2024-02-02T06:53:58Z,2024-02-20T13:13:37Z
+5840,fix(core): match page preview and page title in page list,https://github.com/toeverything/AFFiNE/pull/5840,merged,2024-02-20T04:52:02Z,2024-02-20T09:35:34Z
+5854,chore: remove preloading pages,https://github.com/toeverything/AFFiNE/pull/5854,merged,2024-02-21T08:00:07Z,2024-02-21T13:08:47Z
+5886,chore: replace pricing plan link,https://github.com/toeverything/AFFiNE/pull/5886,merged,2024-02-23T07:43:54Z,2024-02-23T08:38:57Z
+5894,fix(core): handling error message when sending verify change email,https://github.com/toeverything/AFFiNE/pull/5894,merged,2024-02-23T10:14:34Z,2024-02-26T08:42:36Z
+5906,chore: update i18n resources,https://github.com/toeverything/AFFiNE/pull/5906,merged,2024-02-26T06:24:12Z,2024-02-26T08:02:41Z
+5974,fix(core): update src in video tag to correct URL,https://github.com/toeverything/AFFiNE/pull/5974,merged,2024-03-01T03:41:25Z,2024-03-01T04:45:39Z
+5976,feat(core): separate runtimeConfig for e2e tests and deployment,https://github.com/toeverything/AFFiNE/pull/5976,merged,2024-03-01T05:44:25Z,2024-03-03T12:08:35Z
+5998,feat(core): add tag operation to tag list,https://github.com/toeverything/AFFiNE/pull/5998,merged,2024-03-04T07:04:32Z,2024-03-11T08:45:42Z
+6019,fix(core): unexpected line breaks,https://github.com/toeverything/AFFiNE/pull/6019,merged,2024-03-05T08:34:10Z,2024-03-05T10:10:53Z
+6033,fix(core): disable doc info and backlinks in readonly mode,https://github.com/toeverything/AFFiNE/pull/6033,merged,2024-03-06T07:50:45Z,2024-03-06T10:16:41Z
+6065,fix(electron): invalid isLinux function,https://github.com/toeverything/AFFiNE/pull/6065,merged,2024-03-11T12:58:26Z,2024-03-12T02:17:53Z
+6070,fix(core): cannot scroll when dragging,https://github.com/toeverything/AFFiNE/pull/6070,merged,2024-03-12T04:12:53Z,2024-03-12T05:52:53Z
+6079,refactor(core): refactor tag to use di,https://github.com/toeverything/AFFiNE/pull/6079,merged,2024-03-12T08:54:56Z,2024-03-19T08:48:59Z
+6228,feat(core): add page group and display properties,https://github.com/toeverything/AFFiNE/pull/6228,merged,2024-03-20T09:30:07Z,2024-03-25T08:04:51Z
+6265,feat(core): add remove from collection to collection page list,https://github.com/toeverything/AFFiNE/pull/6265,merged,2024-03-22T05:56:18Z,2024-03-25T08:43:47Z
+6268,feat(core): add confirm modal for delete tag action,https://github.com/toeverything/AFFiNE/pull/6268,merged,2024-03-22T08:43:08Z,2024-03-23T12:14:20Z
+6296,fix(core): edit tag input autofocus,https://github.com/toeverything/AFFiNE/pull/6296,merged,2024-03-25T06:35:40Z,2024-03-25T08:19:45Z
+6315,fix(core): tag color should use palette-line-color,https://github.com/toeverything/AFFiNE/pull/6315,merged,2024-03-26T04:44:05Z,2024-03-26T05:09:53Z
+6362,feat(core): update i18n resources,https://github.com/toeverything/AFFiNE/pull/6362,merged,2024-03-28T07:57:55Z,2024-03-28T10:23:34Z
+6383,fix(core): unexpected response style of shared page,https://github.com/toeverything/AFFiNE/pull/6383,merged,2024-03-29T03:12:52Z,2024-03-29T05:39:50Z
+6398,fix(core): edit button missing in shared page,https://github.com/toeverything/AFFiNE/pull/6398,merged,2024-03-29T07:23:35Z,2024-04-01T07:03:45Z
+6423,feat(core): add new doc button to collection page,https://github.com/toeverything/AFFiNE/pull/6423,merged,2024-04-01T05:56:29Z,2024-04-01T08:15:36Z
+6428,feat(core): add favorite operation to all collection,https://github.com/toeverything/AFFiNE/pull/6428,merged,2024-04-01T06:48:59Z,2024-04-02T08:46:38Z
+6433,fix(core): unexpected editable state after trash page refresh,https://github.com/toeverything/AFFiNE/pull/6433,merged,2024-04-01T07:40:20Z,2024-04-01T08:25:41Z
+6436,feat(core): add confirm modal to add new doc button,https://github.com/toeverything/AFFiNE/pull/6436,merged,2024-04-01T09:59:59Z,2024-04-03T03:25:37Z
+6442,fix(core): add max-height to tag filter,https://github.com/toeverything/AFFiNE/pull/6442,merged,2024-04-02T09:03:42Z,2024-04-03T04:16:38Z
+6443,fix(core): unexpected collection item drag event,https://github.com/toeverything/AFFiNE/pull/6443,merged,2024-04-02T09:06:17Z,2024-04-02T14:37:39Z
+6475,fix(core): unexpected horizontal scrolling after jump to block,https://github.com/toeverything/AFFiNE/pull/6475,merged,2024-04-08T05:45:50Z,2024-04-09T15:28:50Z
+6477,fix(core): remove unexpected duplicate notification,https://github.com/toeverything/AFFiNE/pull/6477,merged,2024-04-08T06:07:43Z,2024-04-09T04:39:01Z
+6480,fix(core): remove duplicate windows controls when right sidebar is expanded,https://github.com/toeverything/AFFiNE/pull/6480,merged,2024-04-08T06:24:23Z,2024-04-09T04:27:41Z
+6486,feat(core): add responsive styles to collection filter,https://github.com/toeverything/AFFiNE/pull/6486,merged,2024-04-08T09:08:43Z,2024-04-09T04:16:12Z
+6492,chore(core): update description of the workspace member,https://github.com/toeverything/AFFiNE/pull/6492,merged,2024-04-09T06:31:52Z,2024-04-11T10:03:57Z
+6496,feat(core): add sign in to not found page,https://github.com/toeverything/AFFiNE/pull/6496,merged,2024-04-09T08:30:10Z,2024-04-10T07:37:47Z
+6502,feat(core): adjust the display settings to be independent for each workspace,https://github.com/toeverything/AFFiNE/pull/6502,merged,2024-04-10T08:34:42Z,2024-04-12T06:44:03Z
+6503,feat(core): set the right sidebar to display TOC by default,https://github.com/toeverything/AFFiNE/pull/6503,merged,2024-04-10T08:58:39Z,2024-04-11T10:16:40Z
+6520,fix(core): restore lost activation state of sidebar menu items,https://github.com/toeverything/AFFiNE/pull/6520,merged,2024-04-11T07:55:50Z,2024-04-12T10:46:53Z
+6521,feat(core): add new doc button to collection item,https://github.com/toeverything/AFFiNE/pull/6521,merged,2024-04-11T08:46:25Z,2024-04-12T06:31:46Z
+6524,fix(core): unexpected routing jump behavior,https://github.com/toeverything/AFFiNE/pull/6524,merged,2024-04-11T09:42:08Z,2024-04-11T10:42:54Z
+6533,chore(core): update i18n resources,https://github.com/toeverything/AFFiNE/pull/6533,merged,2024-04-12T06:44:09Z,2024-04-15T06:07:57Z
+6555,feat(core): copy to the clipboard whilst creating a shared link,https://github.com/toeverything/AFFiNE/pull/6555,merged,2024-04-15T04:41:34Z,2024-04-15T06:19:45Z
+6557,fix(core): the page flashes when click the share button,https://github.com/toeverything/AFFiNE/pull/6557,merged,2024-04-15T06:29:38Z,2024-04-15T07:49:35Z
+6578,feat(component): adjust notify styles,https://github.com/toeverything/AFFiNE/pull/6578,merged,2024-04-16T07:18:06Z,2024-04-17T12:47:37Z
+6582,fix(core): signIn page style,https://github.com/toeverything/AFFiNE/pull/6582,merged,2024-04-16T09:21:15Z,2024-04-16T13:06:54Z
+6597,fix(component): retrieve lost scroll bars in editor,https://github.com/toeverything/AFFiNE/pull/6597,merged,2024-04-17T09:29:42Z,2024-04-17T12:09:33Z
+6630,fix(core): drag and drop files into doc,https://github.com/toeverything/AFFiNE/pull/6630,merged,2024-04-19T06:14:53Z,2024-04-19T06:35:50Z
+6672,feat(core): add fallback component to member list,https://github.com/toeverything/AFFiNE/pull/6672,merged,2024-04-23T07:34:08Z,2024-04-25T02:38:01Z
+6675,feat(core): optimize the shift multi-selection function of doc list,https://github.com/toeverything/AFFiNE/pull/6675,merged,2024-04-23T11:05:11Z,2024-04-24T08:08:28Z
+6767,feat(i18n): update language resources,https://github.com/toeverything/AFFiNE/pull/6767,merged,2024-05-06T06:12:56Z,2024-05-06T10:57:35Z
+6798,feat(core): add multiDelete to trash page,https://github.com/toeverything/AFFiNE/pull/6798,merged,2024-05-07T05:34:46Z,2024-05-07T07:06:40Z
+6835,fix(core): member list does not display names correctly,https://github.com/toeverything/AFFiNE/pull/6835,merged,2024-05-08T07:56:32Z,2024-05-08T09:05:56Z
+6836,fix(core): keep the delete button from being blocked,https://github.com/toeverything/AFFiNE/pull/6836,merged,2024-05-08T08:36:34Z,2024-05-09T08:36:36Z
+6837,feat(core): add untagged group to GroupBy view,https://github.com/toeverything/AFFiNE/pull/6837,merged,2024-05-08T10:05:30Z,2024-05-09T02:43:35Z
+6865,feat(core): tag groups sorted alphabetically,https://github.com/toeverything/AFFiNE/pull/6865,merged,2024-05-10T08:14:05Z,2024-05-13T03:59:49Z
+6867,fix(core): add margin to scrollbar when clientBorder has no style,https://github.com/toeverything/AFFiNE/pull/6867,merged,2024-05-10T09:51:57Z,2024-05-11T05:55:57Z
+6902,fix(core): page does not fully stretch the entire screen,https://github.com/toeverything/AFFiNE/pull/6902,merged,2024-05-13T05:01:00Z,2024-05-13T06:35:39Z
+6903,fix(core): navigation shortcut keys can't be used when the sidebar is collapsed,https://github.com/toeverything/AFFiNE/pull/6903,merged,2024-05-13T06:14:35Z,2024-05-13T07:25:34Z
+6906,chore: adjust quick search style,https://github.com/toeverything/AFFiNE/pull/6906,merged,2024-05-13T08:07:15Z,2024-05-14T07:38:38Z
+6907,fix(core): the loading of cmdk flashes during synchronization,https://github.com/toeverything/AFFiNE/pull/6907,merged,2024-05-13T08:36:05Z,2024-05-13T09:22:52Z
+6924,fix(core): unexpected toast style in editor,https://github.com/toeverything/AFFiNE/pull/6924,merged,2024-05-14T06:34:24Z,2024-05-14T07:50:59Z
+6925,refactor(core): replace the loading state written in useState with useDebouncedValue,https://github.com/toeverything/AFFiNE/pull/6925,merged,2024-05-14T07:36:14Z,2024-05-16T08:22:39Z
+6943,fix(core): add affine.pro to trustedDomain,https://github.com/toeverything/AFFiNE/pull/6943,merged,2024-05-15T04:48:05Z,2024-05-15T09:11:54Z
+6944,fix(core): unexpected history preview style,https://github.com/toeverything/AFFiNE/pull/6944,merged,2024-05-15T05:54:48Z,2024-05-15T08:59:35Z
+6966,feat(core): add private anchor link for sharing,https://github.com/toeverything/AFFiNE/pull/6966,merged,2024-05-16T09:42:45Z,2024-05-16T13:49:47Z
+6972,refactor(core): replace history to ViewService.history,https://github.com/toeverything/AFFiNE/pull/6972,merged,2024-05-17T07:51:21Z,2024-05-22T04:11:53Z
+7032,fix(core): unable to create blank lines correctly,https://github.com/toeverything/AFFiNE/pull/7032,merged,2024-05-22T10:16:17Z,2024-05-27T07:51:36Z
+7040,feat(core): cmd+f search in doc function,https://github.com/toeverything/AFFiNE/pull/7040,merged,2024-05-23T05:12:57Z,2024-05-28T06:31:01Z
+7076,fix(core): clear input value after selecting a tag in page info,https://github.com/toeverything/AFFiNE/pull/7076,merged,2024-05-27T06:10:04Z,2024-05-27T08:40:43Z
+7087,chore: adjust find in page modal style,https://github.com/toeverything/AFFiNE/pull/7087,merged,2024-05-28T04:51:40Z,2024-05-28T06:32:41Z
+7090,fix(core): block sharing link cannot be created when selecting inline,https://github.com/toeverything/AFFiNE/pull/7090,merged,2024-05-28T06:34:46Z,2024-06-04T02:49:48Z
+7115,feat(core): add admin panel page,https://github.com/toeverything/AFFiNE/pull/7115,merged,2024-05-31T03:41:38Z,2024-05-31T09:53:06Z
+7124,fix(core): listFloatingToolbar does not appear as expected,https://github.com/toeverything/AFFiNE/pull/7124,merged,2024-05-31T09:49:41Z,2024-05-31T10:27:44Z
+7130,fix(core): unexpected autofill style in dark mode,https://github.com/toeverything/AFFiNE/pull/7130,merged,2024-06-03T09:35:49Z,2024-06-04T02:37:49Z
+7149,refactor(core): replace the Modal of the FindInPage component with Dialog,https://github.com/toeverything/AFFiNE/pull/7149,merged,2024-06-04T11:43:29Z,2024-06-18T07:58:05Z
+7247,feat(i18n): update resources and add Swedish language,https://github.com/toeverything/AFFiNE/pull/7247,merged,2024-06-18T08:53:15Z,2024-06-19T03:00:32Z
+7337,chore(core): removed obsolete TODO,https://github.com/toeverything/AFFiNE/pull/7337,merged,2024-06-26T06:12:49Z,2024-06-27T06:43:35Z
+7339,refactor(core): remove the automatic URL change feature,https://github.com/toeverything/AFFiNE/pull/7339,merged,2024-06-26T07:47:09Z,2024-06-27T06:03:34Z
+7345,fix(core): unexpected text overflow style in dialog,https://github.com/toeverything/AFFiNE/pull/7345,merged,2024-06-26T11:24:57Z,2024-06-26T13:32:33Z
+7409,feat(core): add doc info modal,https://github.com/toeverything/AFFiNE/pull/7409,merged,2024-07-02T11:10:49Z,2024-07-09T07:23:01Z
+7465,fix(core): values in edit not saved when closing info modal,https://github.com/toeverything/AFFiNE/pull/7465,merged,2024-07-10T09:09:26Z,2024-07-22T03:37:39Z
+7474,feat(component): add animations to modal,https://github.com/toeverything/AFFiNE/pull/7474,merged,2024-07-11T10:36:49Z,2024-07-22T03:38:14Z
+7518,feat(templates): add arrows stickers,https://github.com/toeverything/AFFiNE/pull/7518,merged,2024-07-16T08:20:26Z,2024-07-19T06:40:34Z
+7537,feat(admin): add self-host setup and user management page,https://github.com/toeverything/AFFiNE/pull/7537,merged,2024-07-18T09:00:52Z,2024-08-13T06:11:04Z
+7538,fix(core): cmdk unexpected highlighting style,https://github.com/toeverything/AFFiNE/pull/7538,merged,2024-07-18T09:22:39Z,2024-07-19T05:54:33Z
+7540,fix(core): bi-directional links responsive style,https://github.com/toeverything/AFFiNE/pull/7540,merged,2024-07-18T10:08:22Z,2024-07-19T05:37:40Z
+7611,feat(admin): add prompt management page,https://github.com/toeverything/AFFiNE/pull/7611,merged,2024-07-26T06:51:16Z,2024-08-13T07:04:38Z
+7618,feat(admin): add server runtime config settings,https://github.com/toeverything/AFFiNE/pull/7618,merged,2024-07-26T13:04:38Z,2024-08-13T06:51:31Z
+7619,feat(admin): add config page to admin,https://github.com/toeverything/AFFiNE/pull/7619,merged,2024-07-26T14:29:20Z,2024-08-13T06:38:39Z
+7646,fix(admin): handle error login status,https://github.com/toeverything/AFFiNE/pull/7646,merged,2024-07-30T04:57:32Z,2024-08-13T07:24:09Z
+7661,feat(core): add track events for editor header,https://github.com/toeverything/AFFiNE/pull/7661,merged,2024-07-30T11:00:12Z,2024-08-07T06:05:45Z
+7664,feat(core): add track events for page option,https://github.com/toeverything/AFFiNE/pull/7664,merged,2024-07-30T15:37:43Z,2024-08-07T06:06:47Z
+7667,feat(core): add track events for page info,https://github.com/toeverything/AFFiNE/pull/7667,merged,2024-07-30T17:13:19Z,2024-08-07T06:07:21Z
+7668,feat(core): add track events for cmdk,https://github.com/toeverything/AFFiNE/pull/7668,merged,2024-07-30T17:13:25Z,2024-08-07T06:07:49Z
+7687,chore: add test for all collection and all tag,https://github.com/toeverything/AFFiNE/pull/7687,merged,2024-08-01T03:42:59Z,2024-08-13T08:32:06Z
+7699,feat(core): add configuration for experimental features,https://github.com/toeverything/AFFiNE/pull/7699,merged,2024-08-02T04:29:42Z,2024-08-13T02:37:34Z
+7733,fix(core): canvas text adapts to input scrolling,https://github.com/toeverything/AFFiNE/pull/7733,merged,2024-08-05T07:42:45Z,2024-08-05T09:38:49Z
+7771,feat(i18n): add Spanish(Argentina) and Urdu,https://github.com/toeverything/AFFiNE/pull/7771,merged,2024-08-07T04:06:20Z,2024-08-07T09:09:32Z
+7800,chore: adjust i18n,https://github.com/toeverything/AFFiNE/pull/7800,merged,2024-08-09T02:51:03Z,2024-08-09T04:22:33Z
+7838,feat(core): new share menu,https://github.com/toeverything/AFFiNE/pull/7838,merged,2024-08-12T10:02:25Z,2024-08-19T06:02:31Z
+7854,fix(admin): frequent query requests in the search,https://github.com/toeverything/AFFiNE/pull/7854,merged,2024-08-13T10:51:22Z,2024-08-14T04:01:33Z
+7858,fix(admin): user form not dynamically updating as expected,https://github.com/toeverything/AFFiNE/pull/7858,merged,2024-08-13T17:06:42Z,2024-08-14T04:41:30Z
+7870,fix(admin): nav bar incorrectly active state,https://github.com/toeverything/AFFiNE/pull/7870,merged,2024-08-14T06:50:49Z,2024-09-05T09:49:08Z
+7878,feat(core): init editor setting ui,https://github.com/toeverything/AFFiNE/pull/7878,merged,2024-08-14T15:21:29Z,2024-08-22T04:38:49Z
+7879,feat(component): add slider ui component,https://github.com/toeverything/AFFiNE/pull/7879,merged,2024-08-15T02:26:07Z,2024-08-22T04:36:37Z
+7924,feat(core): add custom font family setting,https://github.com/toeverything/AFFiNE/pull/7924,merged,2024-08-19T14:30:55Z,2024-08-22T04:39:23Z
+7931,feat(core): adjust share menu ui,https://github.com/toeverything/AFFiNE/pull/7931,merged,2024-08-21T03:25:58Z,2024-08-23T02:19:36Z
+7952,feat(core): add sign in button to shared doc,https://github.com/toeverything/AFFiNE/pull/7952,merged,2024-08-23T03:33:14Z,2024-08-29T02:55:33Z
+7954,chore(core): add Display bi-directional links setting row ui,https://github.com/toeverything/AFFiNE/pull/7954,merged,2024-08-23T05:02:13Z,2024-08-26T06:38:39Z
+7955,feat(core): add outgoing links to doc info,https://github.com/toeverything/AFFiNE/pull/7955,merged,2024-08-23T05:24:33Z,2024-08-29T06:53:33Z
+7984,chore(core): disable expand database block,https://github.com/toeverything/AFFiNE/pull/7984,merged,2024-08-27T03:49:25Z,2024-08-27T12:36:33Z
+7988,refactor(core): move fontFamily and fullWidthLayout to editor settings,https://github.com/toeverything/AFFiNE/pull/7988,merged,2024-08-27T07:45:24Z,2024-08-28T02:47:40Z
+7989,chore: adjust font menu and slider style,https://github.com/toeverything/AFFiNE/pull/7989,merged,2024-08-27T07:45:28Z,2024-08-28T02:48:12Z
+7990,feat(core): add new doc default mode setting,https://github.com/toeverything/AFFiNE/pull/7990,merged,2024-08-27T07:45:32Z,2024-08-28T02:48:45Z
+7991,feat(core): impl the Doc Info and Bi-Directional Links display settings,https://github.com/toeverything/AFFiNE/pull/7991,merged,2024-08-27T07:45:36Z,2024-08-28T02:49:08Z
+8018,feat(core): impl AI switch,https://github.com/toeverything/AFFiNE/pull/8018,merged,2024-08-29T09:23:57Z,2024-09-04T08:56:37Z
+8024,feat(core): bump blocksuite/icons,https://github.com/toeverything/AFFiNE/pull/8024,merged,2024-08-30T03:22:00Z,2024-08-30T03:54:32Z
+8026,chore: modify the text content of share menu,https://github.com/toeverything/AFFiNE/pull/8026,merged,2024-08-30T04:16:20Z,2024-09-02T10:07:35Z
+8040,chore: adjust custom font family style,https://github.com/toeverything/AFFiNE/pull/8040,merged,2024-09-02T05:09:53Z,2024-09-02T15:24:35Z
+8044,chore: adjust experimental features text,https://github.com/toeverything/AFFiNE/pull/8044,merged,2024-09-02T07:29:32Z,2024-09-02T07:52:35Z
+8053,feat(core): add color picker ui to editor settings,https://github.com/toeverything/AFFiNE/pull/8053,merged,2024-09-02T16:21:14Z,2024-09-03T03:26:33Z
+8089,feat(core): add enable url preview to workspace settings,https://github.com/toeverything/AFFiNE/pull/8089,merged,2024-09-04T09:11:43Z,2024-09-10T04:17:02Z
+8090,feat(core): temporarily add page mode editor settings to appearance settings,https://github.com/toeverything/AFFiNE/pull/8090,merged,2024-09-04T10:18:36Z,2024-09-05T08:42:29Z
+8091,fix(core): hide the footer that blocks the toolbar in shared page,https://github.com/toeverything/AFFiNE/pull/8091,merged,2024-09-04T10:57:25Z,2024-09-05T07:26:52Z
+8116,chore: add i18n support for ai confirm modal,https://github.com/toeverything/AFFiNE/pull/8116,merged,2024-09-05T08:59:21Z,2024-09-05T14:32:51Z
+8117,fix(core): remove joined workspace icon from current worksapce card,https://github.com/toeverything/AFFiNE/pull/8117,merged,2024-09-05T09:24:09Z,2024-09-05T15:10:50Z
+8119,feat(core): update i18n resources,https://github.com/toeverything/AFFiNE/pull/8119,merged,2024-09-05T09:43:02Z,2024-09-05T13:04:41Z
+8120,chore: remove deprecated admin panel,https://github.com/toeverything/AFFiNE/pull/8120,merged,2024-09-05T10:02:09Z,2024-09-05T14:19:50Z
+8139,fix(core): some fonts are unavailable,https://github.com/toeverything/AFFiNE/pull/8139,merged,2024-09-06T04:54:05Z,2024-09-06T05:21:35Z
+8143,fix(core): deleted doc should not appear in tag pages,https://github.com/toeverything/AFFiNE/pull/8143,merged,2024-09-06T07:26:33Z,2024-09-06T10:52:34Z
+8146,fix(core): adjust editor settings preview style,https://github.com/toeverything/AFFiNE/pull/8146,merged,2024-09-06T09:32:30Z,2024-09-06T10:17:41Z
+8151,chore: sort font weight options,https://github.com/toeverything/AFFiNE/pull/8151,merged,2024-09-06T10:50:06Z,2024-09-06T11:53:42Z
+8152,fix(core): disable border thickness setting when no border is selected,https://github.com/toeverything/AFFiNE/pull/8152,merged,2024-09-06T11:25:36Z,2024-09-09T03:36:33Z
+8171,fix(core): unexpected jump when clicking save tag,https://github.com/toeverything/AFFiNE/pull/8171,merged,2024-09-09T06:57:31Z,2024-09-09T08:07:39Z
+8176,fix(component): windows client does not have app controls on some pages,https://github.com/toeverything/AFFiNE/pull/8176,merged,2024-09-09T10:30:11Z,2024-09-12T06:47:40Z
+8182,fix(core): page jumps unexpectedly when clicking the collection operation,https://github.com/toeverything/AFFiNE/pull/8182,merged,2024-09-10T06:12:25Z,2024-09-10T06:53:33Z
+8184,chore: bump theme version,https://github.com/toeverything/AFFiNE/pull/8184,merged,2024-09-10T06:34:35Z,2024-09-10T09:20:42Z
+8185,chore: adjust the border color of Point component,https://github.com/toeverything/AFFiNE/pull/8185,merged,2024-09-10T06:34:39Z,2024-09-10T09:33:38Z
+8203,fix(core): title could not be changed when creating a new doc,https://github.com/toeverything/AFFiNE/pull/8203,merged,2024-09-11T10:05:24Z,2024-09-12T08:06:37Z
+8234,refactor(core): adjust error detail and add error component to routes,https://github.com/toeverything/AFFiNE/pull/8234,merged,2024-09-13T03:27:04Z,2024-09-19T02:23:37Z
+8285,fix(core): workspace sharing settings should not be displayed when there is no permission,https://github.com/toeverything/AFFiNE/pull/8285,merged,2024-09-18T07:12:36Z,2024-09-18T07:46:34Z
+8289,fix(core): adjust app updater button style,https://github.com/toeverything/AFFiNE/pull/8289,merged,2024-09-18T07:44:35Z,2024-09-18T08:31:35Z
+8295,chore: adjust modal background color for peek view,https://github.com/toeverything/AFFiNE/pull/8295,merged,2024-09-18T09:04:05Z,2024-09-18T09:34:34Z
+8301,chore: update i18n rescources,https://github.com/toeverything/AFFiNE/pull/8301,merged,2024-09-18T13:06:17Z,2024-09-19T02:24:10Z
+8350,chore: remove page settings from appearance settings,https://github.com/toeverything/AFFiNE/pull/8350,merged,2024-09-23T05:53:06Z,2024-09-24T04:37:31Z
+8351,fix(core): handle composition event for Input component,https://github.com/toeverything/AFFiNE/pull/8351,merged,2024-09-23T06:48:39Z,2024-09-25T02:12:35Z
+8356,fix(core): unexpected routing history appears on the shared page,https://github.com/toeverything/AFFiNE/pull/8356,merged,2024-09-23T10:18:54Z,2024-09-24T04:14:44Z
+8359,feat(core): set doc mode and primary doc mode separately,https://github.com/toeverything/AFFiNE/pull/8359,merged,2024-09-23T17:34:13Z,2024-10-17T14:01:35Z
+8370,fix(core): can not scroll when backlink list is too long,https://github.com/toeverything/AFFiNE/pull/8370,merged,2024-09-24T09:02:50Z,2024-09-25T04:38:36Z
+8374,feat(core): make AI functions follow server configuration,https://github.com/toeverything/AFFiNE/pull/8374,merged,2024-09-24T09:53:46Z,2024-10-16T05:03:56Z
+8385,refactor(core): refactor left sidebar to use di,https://github.com/toeverything/AFFiNE/pull/8385,merged,2024-09-25T07:45:18Z,2024-09-27T09:43:33Z
+8393,feat(core): show floating sidebar when hovering sidebar swtich,https://github.com/toeverything/AFFiNE/pull/8393,merged,2024-09-25T18:31:35Z,2024-10-09T03:59:35Z
+8395,fix(core): adjust the tracking point for copy sharing link,https://github.com/toeverything/AFFiNE/pull/8395,merged,2024-09-26T02:32:54Z,2024-09-26T03:37:31Z
+8444,chore: update app updater button style,https://github.com/toeverything/AFFiNE/pull/8444,merged,2024-10-08T02:54:29Z,2024-10-08T04:49:35Z
+8461,fix(core): unexpected double-click behavior when selecting multiple options on all doc pages,https://github.com/toeverything/AFFiNE/pull/8461,merged,2024-10-09T06:03:36Z,2024-10-17T14:27:34Z
+8475,fix(core): sidebar can not be collapsed on mobile,https://github.com/toeverything/AFFiNE/pull/8475,merged,2024-10-11T04:21:50Z,2024-10-11T08:27:32Z
+8477,fix(core): prevent floating sidebar from disappearing unexpectedly,https://github.com/toeverything/AFFiNE/pull/8477,merged,2024-10-11T04:45:39Z,2024-10-19T13:36:39Z
+8506,fix(core): sidebar shakes unexpectedly during init on mobile,https://github.com/toeverything/AFFiNE/pull/8506,merged,2024-10-16T05:44:32Z,2024-10-21T05:25:35Z
+8515,chore: format readme.md,https://github.com/toeverything/AFFiNE/pull/8515,merged,2024-10-16T10:10:53Z,2024-10-16T10:37:39Z
+8531,feat(core): prevent the floating sidebar from showing immediately after the sidebar is closed,https://github.com/toeverything/AFFiNE/pull/8531,merged,2024-10-17T06:17:37Z,2024-10-21T05:38:35Z
+8535,feat(core): close the floating sidebar when creating and opening a doc,https://github.com/toeverything/AFFiNE/pull/8535,merged,2024-10-17T06:38:00Z,2024-10-17T14:14:39Z
+8548,chore: adjust style of CloudUserAvatar,https://github.com/toeverything/AFFiNE/pull/8548,merged,2024-10-18T09:59:40Z,2024-10-19T13:50:37Z
+8560,feat(core): keep the sidebar instance when the sidebar is collapsed,https://github.com/toeverything/AFFiNE/pull/8560,merged,2024-10-21T05:57:22Z,2024-10-21T06:41:32Z
+8562,fix(core): clicking change mode in the menu should switch both view and mode,https://github.com/toeverything/AFFiNE/pull/8562,merged,2024-10-21T06:40:26Z,2024-10-22T03:42:35Z
+8564,feat(core): add tooltips to PropertyItem,https://github.com/toeverything/AFFiNE/pull/8564,merged,2024-10-21T08:36:18Z,2024-10-22T07:12:33Z
+8567,refactor(core): improve editor gap appendParagraph function,https://github.com/toeverything/AFFiNE/pull/8567,merged,2024-10-21T10:16:54Z,2024-10-24T11:07:35Z
+8574,chore: adjust hover tooltips for sidebar switch,https://github.com/toeverything/AFFiNE/pull/8574,merged,2024-10-22T04:27:07Z,2024-10-22T05:35:33Z
+8582,chore: add track event to toggle sidebar switch,https://github.com/toeverything/AFFiNE/pull/8582,merged,2024-10-23T05:42:21Z,2024-10-24T03:52:34Z
+8614,feat(core): add edgelessTheme property and edgelessDefault theme setting,https://github.com/toeverything/AFFiNE/pull/8614,merged,2024-10-28T06:28:54Z,2024-11-01T04:45:30Z
+8619,chore: adjust floating sidebar style,https://github.com/toeverything/AFFiNE/pull/8619,merged,2024-10-28T09:40:06Z,2024-10-29T05:09:33Z
+8631,feat(core): remember the scroll position of doc when routing forward and backward,https://github.com/toeverything/AFFiNE/pull/8631,merged,2024-10-29T14:54:18Z,2024-11-05T07:15:38Z
+8640,chore: adjust tooltips side of doc properties,https://github.com/toeverything/AFFiNE/pull/8640,merged,2024-10-31T02:18:00Z,2024-10-31T03:50:03Z
+8641,chore: adjust right sidebar style,https://github.com/toeverything/AFFiNE/pull/8641,merged,2024-10-31T02:26:19Z,2024-10-31T09:51:40Z
+8642,feat(core): add createdBy property to default property,https://github.com/toeverything/AFFiNE/pull/8642,merged,2024-10-31T02:34:32Z,2024-10-31T05:17:36Z
+8658,fix(core): unable to hide doc info,https://github.com/toeverything/AFFiNE/pull/8658,merged,2024-11-01T06:04:30Z,2024-11-01T07:04:35Z
+8662,fix(core): dropdown menu cannot be hovered when it is at the bottom of doc,https://github.com/toeverything/AFFiNE/pull/8662,merged,2024-11-01T06:35:53Z,2024-11-01T07:55:33Z
+8663,fix(core): handle uncaught ai flag,https://github.com/toeverything/AFFiNE/pull/8663,merged,2024-11-01T06:55:26Z,2024-11-01T09:18:21Z
+8684,feat(core): add tooltips to the doc properties in the sidebar,https://github.com/toeverything/AFFiNE/pull/8684,merged,2024-11-04T07:04:58Z,2024-11-04T07:34:36Z
+8687,fix(core): the full width layout feature does not work,https://github.com/toeverything/AFFiNE/pull/8687,merged,2024-11-04T08:15:48Z,2024-11-04T08:29:48Z
+8698,fix(core): temporarily make AI functions not follow server configuration,https://github.com/toeverything/AFFiNE/pull/8698,merged,2024-11-04T17:25:51Z,2024-11-05T08:33:33Z
+8717,feat(core): add tooltips to sidebar resize handle,https://github.com/toeverything/AFFiNE/pull/8717,merged,2024-11-06T04:50:57Z,2024-11-06T06:35:34Z
+8775,feat(core): add page width property,https://github.com/toeverything/AFFiNE/pull/8775,merged,2024-11-11T06:33:52Z,2024-11-12T03:15:38Z
+8788,feat(core): add i18n to descriptions of experimental feature,https://github.com/toeverything/AFFiNE/pull/8788,merged,2024-11-12T06:01:50Z,2024-11-12T07:10:32Z
+8789,chore: fix typos,https://github.com/toeverything/AFFiNE/pull/8789,merged,2024-11-12T07:43:18Z,2024-11-12T08:52:33Z
+8818,chore: remove community link from header,https://github.com/toeverything/AFFiNE/pull/8818,merged,2024-11-14T06:23:58Z,2024-11-14T08:29:36Z
+8908,fix(core): image block size limits were not enforced as expected,https://github.com/toeverything/AFFiNE/pull/8908,merged,2024-11-25T04:15:13Z,2024-11-25T07:31:33Z
+8915,fix(core): handle the situation where the app cannot be opened after logging in,https://github.com/toeverything/AFFiNE/pull/8915,merged,2024-11-25T09:17:02Z,2024-11-25T11:20:35Z
+8920,feat(core): impl team workspace,https://github.com/toeverything/AFFiNE/pull/8920,merged,2024-11-25T14:12:45Z,2024-12-10T06:46:39Z
+8924,fix(core): multiple settings dialog should not appear when click user plan button repeatedly,https://github.com/toeverything/AFFiNE/pull/8924,merged,2024-11-26T05:19:18Z,2024-11-26T06:04:33Z
+9006,feat(core): support creating cloud workspaces to different servers,https://github.com/toeverything/AFFiNE/pull/9006,merged,2024-12-04T00:51:26Z,2024-12-04T06:55:37Z
+9026,feat(core): impl team workspace,https://github.com/toeverything/AFFiNE/pull/9026,merged,2024-12-05T04:50:29Z,2024-12-06T02:08:27Z
+9043,feat(core): add workspace billing,https://github.com/toeverything/AFFiNE/pull/9043,merged,2024-12-06T03:55:02Z,2024-12-10T06:48:34Z
+9085,feat(core): add workspace quota panel for team workspace,https://github.com/toeverything/AFFiNE/pull/9085,merged,2024-12-10T06:33:44Z,2024-12-10T12:46:36Z
+9091,fix(core): workspace billing cannot be opened,https://github.com/toeverything/AFFiNE/pull/9091,merged,2024-12-10T08:26:47Z,2024-12-10T12:31:36Z
+9099,fix(core):  optimize upgrade to team page,https://github.com/toeverything/AFFiNE/pull/9099,merged,2024-12-11T03:33:05Z,2024-12-11T09:59:46Z
+9101,feat(core): add app version to request header,https://github.com/toeverything/AFFiNE/pull/9101,merged,2024-12-11T07:11:22Z,2024-12-19T02:51:33Z
+9111,feat(core): improve invite link,https://github.com/toeverything/AFFiNE/pull/9111,merged,2024-12-12T02:48:19Z,2024-12-12T09:43:19Z
+9115,fix(core): the member list is not refreshed after operating the member status,https://github.com/toeverything/AFFiNE/pull/9115,merged,2024-12-12T04:03:25Z,2024-12-12T06:50:33Z
+9117,fix(core): wrong billing information display,https://github.com/toeverything/AFFiNE/pull/9117,merged,2024-12-12T04:28:42Z,2024-12-12T06:32:33Z
+9135,feat(core): add sync paused dialog,https://github.com/toeverything/AFFiNE/pull/9135,merged,2024-12-13T03:14:42Z,2024-12-17T06:09:34Z
+9150,fix(core): should log in before accepting the invitation,https://github.com/toeverything/AFFiNE/pull/9150,merged,2024-12-13T07:58:37Z,2024-12-13T09:58:32Z
+9167,fix(core): handle errors on the invite page,https://github.com/toeverything/AFFiNE/pull/9167,merged,2024-12-16T02:51:19Z,2024-12-16T03:43:32Z
+9186,fix(core): add visit workspace button to team upgrade success page,https://github.com/toeverything/AFFiNE/pull/9186,merged,2024-12-17T07:03:01Z,2024-12-17T11:21:34Z
+9193,chore: temporarily hide link invitation,https://github.com/toeverything/AFFiNE/pull/9193,merged,2024-12-18T05:13:06Z,2024-12-18T07:40:31Z
+9195,fix(core): adjust member limit dialog,https://github.com/toeverything/AFFiNE/pull/9195,merged,2024-12-18T07:04:00Z,2024-12-19T02:37:31Z
+9204,fix(core): adjust admin permission,https://github.com/toeverything/AFFiNE/pull/9204,merged,2024-12-19T04:07:04Z,2024-12-20T02:42:35Z
+9214,chore: bump theme,https://github.com/toeverything/AFFiNE/pull/9214,merged,2024-12-20T03:03:43Z,2024-12-20T04:16:32Z
+9217,chore: adjust input style,https://github.com/toeverything/AFFiNE/pull/9217,merged,2024-12-20T03:44:36Z,2024-12-20T04:34:33Z
+9219,feat(core): add version check to sign in,https://github.com/toeverything/AFFiNE/pull/9219,merged,2024-12-20T04:27:53Z,2025-02-04T12:55:51Z
+9223,fix(core): quotaCheck dialog should not appear in team workspace,https://github.com/toeverything/AFFiNE/pull/9223,merged,2024-12-20T08:36:55Z,2024-12-23T09:09:34Z
+9270,chore: adjust i18n,https://github.com/toeverything/AFFiNE/pull/9270,merged,2024-12-24T03:10:41Z,2024-12-24T07:19:20Z
+9271,feat(core): add copy link button to local share menu,https://github.com/toeverything/AFFiNE/pull/9271,merged,2024-12-24T03:15:49Z,2025-01-20T02:59:33Z
+9274,fix(core): center peek and history dialog does not display custom fonts,https://github.com/toeverything/AFFiNE/pull/9274,merged,2024-12-24T03:25:39Z,2025-01-20T03:21:33Z
+9326,chore: remove AIOnboardingGeneral,https://github.com/toeverything/AFFiNE/pull/9326,merged,2024-12-26T05:03:31Z,2024-12-26T06:39:31Z
+9539,fix(core): workspace storage rows are displayed unexpectedly,https://github.com/toeverything/AFFiNE/pull/9539,merged,2025-01-06T05:14:09Z,2025-02-05T16:28:58Z
+9569,feat(core): add self host team plan,https://github.com/toeverything/AFFiNE/pull/9569,merged,2025-01-07T09:20:43Z,2025-02-07T03:51:30Z
+9586,fix(core): workspace selector on the upgrade to team page overflows,https://github.com/toeverything/AFFiNE/pull/9586,merged,2025-01-08T08:19:05Z,2025-01-14T10:05:39Z
+9672,feat(core): add doc grant feature to share menu,https://github.com/toeverything/AFFiNE/pull/9672,merged,2025-01-13T15:46:46Z,2025-02-07T13:21:29Z
+9737,feat(core): optimize team workspace member management,https://github.com/toeverything/AFFiNE/pull/9737,merged,2025-01-16T11:56:48Z,2025-02-07T10:23:29Z
+10146,fix(core): show self hosted license seats,https://github.com/toeverything/AFFiNE/pull/10146,merged,2025-02-13T04:32:19Z,2025-02-13T08:21:29Z
+10164,fix(core): adjust share menu,https://github.com/toeverything/AFFiNE/pull/10164,merged,2025-02-13T09:52:51Z,2025-02-14T10:45:30Z
+10181,fix(core): adjust the redirection path for retrying payments when self-hosting,https://github.com/toeverything/AFFiNE/pull/10181,merged,2025-02-14T05:10:53Z,2025-02-14T10:31:30Z
+10215,fix(core): handle unexpected hits to paywalls,https://github.com/toeverything/AFFiNE/pull/10215,merged,2025-02-17T03:05:09Z,2025-02-17T08:18:30Z
+10221,feat(core): add tracking events to doc role management,https://github.com/toeverything/AFFiNE/pull/10221,merged,2025-02-17T08:31:02Z,2025-02-19T08:39:50Z
+10247,fix(core): unexpectedly jump to price plan when selfhosting,https://github.com/toeverything/AFFiNE/pull/10247,merged,2025-02-18T07:36:50Z,2025-02-19T07:01:55Z
+10257,fix(core): unexpected redirect to expired page after accepting invitation,https://github.com/toeverything/AFFiNE/pull/10257,merged,2025-02-18T09:29:20Z,2025-02-19T09:10:13Z
+10269,fix(core): incorrect permissions displayed in member management,https://github.com/toeverything/AFFiNE/pull/10269,merged,2025-02-19T02:47:04Z,2025-02-19T08:58:06Z
+10299,fix(core): adjust share menu and upgrade-to-team page style,https://github.com/toeverything/AFFiNE/pull/10299,merged,2025-02-20T02:42:28Z,2025-02-20T04:24:30Z
+10337,fix(core): adjust copy link button styles,https://github.com/toeverything/AFFiNE/pull/10337,merged,2025-02-21T03:22:01Z,2025-02-21T04:11:30Z
+10387,fix(core): reorder plan card action button conditions,https://github.com/toeverything/AFFiNE/pull/10387,merged,2025-02-24T04:37:04Z,2025-02-25T01:51:10Z
+10388,fix(core): close popover after successful invite in member editor,https://github.com/toeverything/AFFiNE/pull/10388,merged,2025-02-24T04:41:30Z,2025-02-25T01:51:22Z
+10401,fix(core): fix permission checks for export workspace,https://github.com/toeverything/AFFiNE/pull/10401,merged,2025-02-24T09:13:54Z,2025-02-25T01:50:43Z
+10625,fix(core): add missing control of modifyDocDefaultRole track event,https://github.com/toeverything/AFFiNE/pull/10625,merged,2025-03-05T07:30:29Z,2025-03-05T11:17:31Z
+10630,chore: adjust share menu styles,https://github.com/toeverything/AFFiNE/pull/10630,merged,2025-03-05T09:04:32Z,2025-03-05T11:02:28Z
+10645,chore: adjust discord link,https://github.com/toeverything/AFFiNE/pull/10645,merged,2025-03-06T03:47:03Z,2025-03-06T04:22:27Z
+10774,feat(admin): make the left navigation bar collapsable,https://github.com/toeverything/AFFiNE/pull/10774,merged,2025-03-12T03:30:31Z,2025-03-13T10:13:36Z
+10780,feat(admin): add ban user to admin panel,https://github.com/toeverything/AFFiNE/pull/10780,merged,2025-03-12T07:58:20Z,2025-03-13T10:37:22Z
+10810,feat(admin): add import and export users to admin panel,https://github.com/toeverything/AFFiNE/pull/10810,merged,2025-03-13T04:10:28Z,2025-03-13T10:37:45Z
+10813,feat(core): add an entry for admin panel,https://github.com/toeverything/AFFiNE/pull/10813,merged,2025-03-13T04:39:20Z,2025-03-13T11:08:42Z
+10816,feat(admin): add server version check,https://github.com/toeverything/AFFiNE/pull/10816,merged,2025-03-13T05:55:48Z,2025-03-13T10:37:07Z
+10904,fix(core): copy link should not have mode,https://github.com/toeverything/AFFiNE/pull/10904,merged,2025-03-17T02:42:42Z,2025-03-19T02:07:29Z
+10924,refactor(core): split the billing component into a separate file,https://github.com/toeverything/AFFiNE/pull/10924,merged,2025-03-17T08:58:21Z,2025-03-18T10:24:33Z
+10927,feat(core): add no access to share menu,https://github.com/toeverything/AFFiNE/pull/10927,merged,2025-03-17T09:35:14Z,2025-03-20T07:47:32Z
+11065,fix(admin): adjust admin panel style,https://github.com/toeverything/AFFiNE/pull/11065,merged,2025-03-21T08:16:30Z,2025-03-26T03:31:30Z
+11146,fix(admin): show user disabled status in admin panel search results,https://github.com/toeverything/AFFiNE/pull/11146,merged,2025-03-25T02:01:48Z,2025-03-26T10:46:27Z
+11155,fix(admin): unable to select all users in current page,https://github.com/toeverything/AFFiNE/pull/11155,merged,2025-03-25T03:59:55Z,2025-03-26T10:31:30Z
+11181,feat(core): impl invitation link,https://github.com/toeverything/AFFiNE/pull/11181,merged,2025-03-25T11:52:59Z,2025-03-26T02:59:29Z
+11195,fix(core): handle invitation failure,https://github.com/toeverything/AFFiNE/pull/11195,merged,2025-03-26T03:59:05Z,2025-03-26T04:49:28Z
+11199,fix(core): close popup window when upgrade success,https://github.com/toeverything/AFFiNE/pull/11199,merged,2025-03-26T05:56:05Z,2025-03-27T03:39:30Z
+11201,fix(core): improve client-app navigation flow after team workspace upgrade,https://github.com/toeverything/AFFiNE/pull/11201,merged,2025-03-26T06:28:34Z,2025-03-27T03:42:33Z
+11207,fix(core): show SentRequestPage when invitation status is NeedMoreSeat,https://github.com/toeverything/AFFiNE/pull/11207,merged,2025-03-26T08:47:53Z,2025-03-27T03:15:27Z
+11225,fix(core): wrong import path,https://github.com/toeverything/AFFiNE/pull/11225,merged,2025-03-27T04:14:31Z,2025-03-27T07:09:28Z
+11226,chore: adjust CSV template button style,https://github.com/toeverything/AFFiNE/pull/11226,merged,2025-03-27T04:22:07Z,2025-03-27T07:25:39Z
+11291,fix(admin): adjust admin panel settings style,https://github.com/toeverything/AFFiNE/pull/11291,merged,2025-03-31T03:57:35Z,2025-03-31T10:38:28Z
+11336,fix(core): can't open history modal in self-hosting client,https://github.com/toeverything/AFFiNE/pull/11336,merged,2025-04-01T02:57:39Z,2025-04-01T03:32:27Z
+11435,feat(core): upgrade icons package,https://github.com/toeverything/AFFiNE/pull/11435,merged,2025-04-03T04:01:56Z,2025-04-04T05:05:33Z
+11436,fix(admin): adjust import users dialog styles,https://github.com/toeverything/AFFiNE/pull/11436,merged,2025-04-03T04:05:00Z,2025-04-04T05:06:16Z
+11451,fix(admin): unable to log into admin panel,https://github.com/toeverything/AFFiNE/pull/11451,merged,2025-04-03T09:24:27Z,2025-04-04T10:52:28Z
+11489,fix(admin): adjust available upgrade button style,https://github.com/toeverything/AFFiNE/pull/11489,merged,2025-04-07T03:14:23Z,2025-04-07T05:37:29Z
+11501,feat(core): add docRole to inviteUserDocRole tracking event,https://github.com/toeverything/AFFiNE/pull/11501,merged,2025-04-07T08:24:38Z,2025-04-07T09:10:32Z
+11527,fix(core): improve share menu width and member name overflow handling,https://github.com/toeverything/AFFiNE/pull/11527,merged,2025-04-08T04:24:44Z,2025-04-10T07:33:13Z
+11540,fix(core): unexpected style of redeem code button,https://github.com/toeverything/AFFiNE/pull/11540,merged,2025-04-08T08:13:32Z,2025-04-09T14:11:32Z
+11609,fix(server): adjust expire time of invite link,https://github.com/toeverything/AFFiNE/pull/11609,merged,2025-04-10T09:22:12Z,2025-04-10T11:27:40Z
+11610,feat(core): show expiration time in link invitation dialog,https://github.com/toeverything/AFFiNE/pull/11610,merged,2025-04-10T09:24:49Z,2025-04-16T10:43:29Z
+11724,fix(core):  confirm the tag name before creating a new tag,https://github.com/toeverything/AFFiNE/pull/11724,merged,2025-04-16T03:24:20Z,2025-04-18T08:06:33Z
+11725,fix(core): handle incorrect style of the confirm delete button,https://github.com/toeverything/AFFiNE/pull/11725,merged,2025-04-16T03:32:00Z,2025-04-18T04:46:30Z
+11737,feat(core): add new loading doc component,https://github.com/toeverything/AFFiNE/pull/11737,merged,2025-04-16T09:15:34Z,2025-04-17T10:54:38Z
+11754,chore: remove cmd+s toast,https://github.com/toeverything/AFFiNE/pull/11754,merged,2025-04-17T03:58:17Z,2025-04-18T04:20:28Z
+11755,fix(core): add tooltip to cloud server selector,https://github.com/toeverything/AFFiNE/pull/11755,merged,2025-04-17T04:07:30Z,2025-04-18T05:00:28Z
+11757,chore: adjust tag editor style,https://github.com/toeverything/AFFiNE/pull/11757,merged,2025-04-17T04:45:11Z,2025-04-18T05:28:31Z
+11758,chore: adjust rename input font size,https://github.com/toeverything/AFFiNE/pull/11758,merged,2025-04-17T04:57:12Z,2025-04-18T03:53:28Z
+11810,chore: adjust loading doc component style,https://github.com/toeverything/AFFiNE/pull/11810,merged,2025-04-18T09:22:52Z,2025-04-18T09:50:28Z
+11960,fix(core): loadDoc tracking events not tracking correctly,https://github.com/toeverything/AFFiNE/pull/11960,merged,2025-04-24T07:38:42Z,2025-05-29T05:17:42Z
+11980,fix(admin): user count is out of sync and search results are not cached in account management,https://github.com/toeverything/AFFiNE/pull/11980,merged,2025-04-25T03:48:19Z,2025-05-22T07:44:28Z
+12112,feat(admin): create user with password,https://github.com/toeverything/AFFiNE/pull/12112,merged,2025-05-02T09:51:31Z,2025-05-13T02:58:24Z
+12117,refactor(core): use overcapacityMemberCount for quota checking instead of calculating the difference,https://github.com/toeverything/AFFiNE/pull/12117,merged,2025-05-03T06:10:26Z,2025-05-08T10:07:07Z
+12118,refactor(core): use workspace role query instead of isOwner query,https://github.com/toeverything/AFFiNE/pull/12118,merged,2025-05-03T07:29:20Z,2025-05-13T03:33:22Z
+12144,feat(core): add team badge to user info menu,https://github.com/toeverything/AFFiNE/pull/12144,merged,2025-05-06T08:36:15Z,2025-05-19T10:29:30Z
+12287,feat(core): support install license for self hosted client,https://github.com/toeverything/AFFiNE/pull/12287,merged,2025-05-15T01:06:41Z,2025-05-27T05:09:33Z
+12288,fix(core): add loading status to share page button,https://github.com/toeverything/AFFiNE/pull/12288,merged,2025-05-15T01:33:29Z,2025-05-29T07:16:28Z
+12292,chore: remove telegram community,https://github.com/toeverything/AFFiNE/pull/12292,merged,2025-05-15T03:13:05Z,2025-05-19T10:14:27Z
+12295,chore(admin): adjust import user style,https://github.com/toeverything/AFFiNE/pull/12295,merged,2025-05-15T03:44:32Z,2025-05-22T07:28:29Z
+12385,feat(core): add account deletion entry to account settings,https://github.com/toeverything/AFFiNE/pull/12385,merged,2025-05-20T04:45:47Z,2025-05-27T08:16:29Z
+12470,feat(core): highlight the share button,https://github.com/toeverything/AFFiNE/pull/12470,merged,2025-05-23T03:06:42Z,2025-05-26T04:15:28Z
+12476,fix(core): adjust sign in page z-index,https://github.com/toeverything/AFFiNE/pull/12476,merged,2025-05-23T06:13:05Z,2025-05-29T05:31:33Z
+12650,chore: display join button text based on invitation type,https://github.com/toeverything/AFFiNE/pull/12650,merged,2025-05-29T13:28:25Z,2025-05-30T02:32:26Z
+12688,feat(mobile): add delete account function,https://github.com/toeverything/AFFiNE/pull/12688,merged,2025-06-03T09:18:23Z,2025-06-03T10:31:46Z
+12718,chore: adjust general access button styles,https://github.com/toeverything/AFFiNE/pull/12718,merged,2025-06-05T04:37:34Z,2025-06-05T07:12:31Z
