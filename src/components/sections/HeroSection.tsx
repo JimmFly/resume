@@ -1,12 +1,12 @@
-import React, { Suspense } from 'react'
-import { motion } from 'framer-motion'
-import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
+import { motion } from 'framer-motion'
+import React, { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
-import RealisticGlobe from '../three/RealisticGlobe'
 import { GLOBE_CONFIG, PARALLAX_CONFIG } from '../../constants'
 import { useAnimation } from '../../hooks/useAnimation'
 import { useMultiLayerParallax } from '../../hooks/useParallax'
+import RealisticGlobe from '../three/RealisticGlobe'
 
 /**
  * Hero section component - Main display area of the website homepage1
@@ -29,6 +29,7 @@ const HeroSection = React.memo(() => {
   const cta = t('hero.cta')
   const contactMe = t('hero.contactMe')
   const github = t('hero.github')
+  const download = t('hero.download')
 
   return (
     <section className='min-h-screen flex items-center justify-center relative overflow-hidden pt-16 sm:pt-20'>
@@ -108,6 +109,30 @@ const HeroSection = React.memo(() => {
                 variants={fadeInUp}
               >
                 {contactMe}
+              </motion.a>
+              <motion.a
+                href={`${import.meta.env.BASE_URL}resume_cn_onepage.pdf`}
+                download
+                className='button-modern border-2 border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 flex items-center justify-center gap-2 whitespace-nowrap'
+                variants={fadeInUp}
+              >
+                <svg
+                  className='w-5 h-5'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth={2}
+                  viewBox='0 0 24 24'
+                  xmlns='http://www.w3.org/2000/svg'
+                  aria-hidden='true'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    d='M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2'
+                  />
+                  <path strokeLinecap='round' strokeLinejoin='round' d='M7 10l5 5m0 0l5-5m-5 5V4' />
+                </svg>
+                {download}
               </motion.a>
               <motion.a
                 href='https://github.com/jimmfly'
