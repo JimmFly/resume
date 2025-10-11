@@ -15,7 +15,8 @@
     "description": "专注于React技术栈的前端开发工程师，拥有3年丰富经验。熟练掌握TypeScript、GraphQL、Tailwind CSS等现代前端技术，参与AFFiNE开源项目开发。擅长构建高质量、可复用的组件库，致力于打造优秀的用户体验。",
     "cta": "查看我的作品",
     "contactMe": "联系我",
-    "github": "GitHub"
+    "github": "GitHub",
+    "download": "下载PDF简历"
   },
   "skills": {
     "title": "技能专长",
