@@ -16,7 +16,10 @@
     "cta": "私の作品を見る",
     "contactMe": "お問い合わせ",
     "github": "GitHub",
-    "download": "PDF履歴書をダウンロード"
+    "download": "PDF履歴書をダウンロード",
+    "downloadMenuLabel": "履歴書の言語を選択",
+    "downloadEnglish": "英語履歴書",
+    "downloadChinese": "中国語履歴書"
   },
   "skills": {
     "title": "技術スキル",

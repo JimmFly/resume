@@ -16,7 +16,10 @@
     "cta": "View My Work",
     "contactMe": "Contact Me",
     "github": "GitHub",
-    "download": "Download Resume"
+    "download": "Download Resume",
+    "downloadMenuLabel": "Select resume language",
+    "downloadEnglish": "Resume (English)",
+    "downloadChinese": "Resume (Chinese)"
   },
   "skills": {
     "title": "Technical Skills",
