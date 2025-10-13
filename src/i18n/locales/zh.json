@@ -16,7 +16,10 @@
     "cta": "查看我的作品",
     "contactMe": "联系我",
     "github": "GitHub",
-    "download": "下载PDF简历"
+    "download": "下载PDF简历",
+    "downloadMenuLabel": "选择简历语言",
+    "downloadEnglish": "英文简历",
+    "downloadChinese": "中文简历"
   },
   "skills": {
     "title": "技能专长",
