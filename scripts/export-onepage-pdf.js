@@ -23,6 +23,11 @@ const targets = [
     label: 'Resume (English one-page)',
   },
   {
+    input: path.join(ROOT, 'docs', 'resume_cn_arch_onepage.html'),
+    output: path.join(ROOT, 'public', 'resume_cn_arch_onepage.pdf'),
+    label: '简历（中文架构单页）',
+  },
+  {
     input: path.join(ROOT, 'docs', 'letter.html'),
     output: path.join(ROOT, 'public', 'letter.pdf'),
     label: 'Cover Letter (PayPay)',
@@ -52,7 +57,7 @@ async function main() {
       path: output,
       format: 'A4',
       printBackground: true,
-      margin: { top: '12mm', right: '10mm', bottom: '12mm', left: '10mm' },
+      margin: { top: '16mm', right: '14mm', bottom: '16mm', left: '14mm' },
       scale: 0.9,
     })
     console.log(`[ok] 已导出 PDF: ${output} (${label})`)

@@ -6,9 +6,13 @@
     <title>简历｜杨晋飞</title>
     <style>
       :root {
-        --fg: #111;
-        --muted: #555;
-        --accent: #0b5fff;
+        --fg: #1a1a1a;
+        --muted: #666;
+        --accent: #1a5490;
+        --accent-light: #2563eb;
+        --accent-bg: rgba(37, 99, 235, 0.08);
+        --border: #e5e7eb;
+        --border-strong: #d1d5db;
       }
       * {
         box-sizing: border-box;
@@ -19,7 +23,7 @@
         padding: 0;
         color: var(--fg);
         font:
-          14px/1.5 -apple-system,
+          14px/1.6 -apple-system,
           BlinkMacSystemFont,
           'Segoe UI',
           Roboto,
@@ -30,75 +34,107 @@
           'Hiragino Sans GB',
           'Microsoft YaHei',
           sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
       main {
-        max-width: 820px;
-        margin: 24px auto 0px;
-        padding: 0 36px;
+        max-width: 850px;
+        margin: 15px auto 0;
+        padding: 0 38px;
       }
       h1 {
-        font-size: 22px;
-        margin: 0 0 12px;
+        font-size: 25px;
+        font-weight: 700;
+        margin: 0 0 6px;
+        letter-spacing: -0.5px;
+        color: #000;
       }
       h2 {
-        font-size: 16px;
-        margin: 24px 0 12px;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 6px;
+        font-size: 17px;
+        font-weight: 700;
+        margin: 15px 0 8px;
+        border-bottom: 2px solid var(--border-strong);
+        padding-bottom: 4px;
+        padding-top: 16px;
+        letter-spacing: -0.3px;
+        color: #000;
       }
       h3 {
-        font-size: 14.5px;
-        margin: 22px 0 10px;
+        font-size: 14.8px;
+        font-weight: 600;
+        margin: 11px 0 5px;
+        color: var(--fg);
       }
       p,
       li {
-        font-size: 13.5px;
+        font-size: 13.2px;
       }
       p {
-        margin: 14px 0 22px;
-        line-height: 1.65;
+        margin: 6px 0 8px;
+        line-height: 1.56;
       }
       .meta {
         color: var(--muted);
-        margin-bottom: 12px;
+        margin-bottom: 8px;
+        font-size: 13.8px;
       }
       .muted {
         color: var(--muted);
+        font-weight: 400;
+        padding-bottom: 8px;
       }
       ul {
-        margin: 12px 0 20px 20px;
+        margin: 6px 0 8px;
+        padding-left: 19px;
+      }
+      ul ul {
+        margin: 3px 0 4px;
+        padding-left: 19px;
       }
       .compact li {
-        margin: 4px 0;
+        margin: 2px 0;
       }
       .work-list li {
-        margin: 12px 0;
+        margin-bottom: 8px;
       }
-      .two-col {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px 16px;
-      }
-      .badge {
-        color: #333;
-        background: #f3f4f6;
-        border-radius: 6px;
-        padding: 2px 6px;
-        display: inline-block;
-        margin-right: 6px;
-        margin-bottom: 4px;
-        font-size: 12px;
+      .work-list > li > ul {
+        margin-top: 4px;
       }
       .link {
-        color: var(--accent);
+        color: var(--accent-light);
         text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
       }
       .link:hover {
+        color: var(--accent);
         text-decoration: underline;
+      }
+      /* Emphasis helpers */
+      .k {
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .chip {
+        background: var(--accent-bg);
+        color: var(--accent);
+        border-radius: 6px;
+        padding: 2px 8px;
+        display: inline-block;
+        font-weight: 500;
+      }
+      .work-list > li > strong {
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 13.6px;
+      }
+      strong {
+        font-weight: 600;
+        color: var(--fg);
       }
       @page {
         size: A4;
-        margin: 18mm 16mm;
+        margin: 14.5mm 13.5mm;
       }
       p,
       li {
@@ -125,67 +161,106 @@
       </div>
 
       <h2>个人简介</h2>
-      <p>
-        专注前端业务体验与产品交互提效，在 AFFiNE 开源项目中主导多条关键功能重构（累计 570+
-        PR）。关注从产品逻辑、交互一致性到工程质量的全链路改进，致力于让复杂产品的前端实现更流畅、更稳定、更易维护。
-      </p>
-
-      <h2>核心技能</h2>
       <ul class="compact">
         <li>
-          <strong>业务实现与交互优化：</strong
-          >命令面板、分享授权、导航体系、团队计费与配额、编辑器设置中心
+          对前端技术有着广泛了解，熟练掌握
+          <strong>TypeScript</strong>、<strong>React</strong>、<strong>React Router</strong
+          >、<strong>Next.js</strong> 等主流技术栈，热衷于通过设计友好的 API
+          和工程化工具提升研发效率，解决实际业务开发中的痛点难点。
         </li>
-        <li><strong>前端性能与质量提升：</strong>加载优化、错误边界、异步数据校验、体验兜底</li>
         <li>
-          <strong>多端一致性与国际化：</strong>响应式适配、移动端交互统一、i18n 资源管理与脚本化同步
+          熟悉
+          <strong>CI/CD</strong>流程与<strong>Docker</strong>容器化部署，具备
+          <strong>Node.js</strong
+          >、<strong>Nest.JS</strong>、<strong>Python</strong>、<strong>Django</strong>、<strong>PostgreSQL</strong>、<strong
+            >GraphQL</strong
+          >
+          等后端技术开发经验，熟悉
+          <strong>Playwright</strong>
+          端到端测试。能够高效与后端团队协作，并能一定程度承担相对合格的后端开发工作，具备全栈解决问题的能力。
         </li>
-        <li><strong>团队协作与持续交付：</strong>跨端模块治理、埋点闭环、可观测性与前端数据分析</li>
       </ul>
 
       <h2>工作经历</h2>
-      <h3>万有理论科技（杭州）有限公司 ｜ AFFiNE 前端工程师</h3>
-      <p class="muted">2022.06 – 2025.06</p>
-      <p class="muted">AFFiNE 是一款开源笔记与协同编辑产品，负责核心功能重构与用户体验优化：</p>
+      <h3>
+        万有理论科技（杭州）有限公司 ｜ AFFiNE 前端工程师
+        <span style="margin-left: 20px" class="muted"> 2022.06 – 2025.06</span>
+      </h3>
+
+      <p class="muted">AFFiNE 是一款开源笔记与协同编辑产品，负责核心功能添加与用户体验优化：</p>
       <ul class="compact work-list">
         <li>
-          <strong>团队配额与计费流程优化：</strong>以 TypeScript
-          建模配额数据结构，结合表单异步校验与前端文案联动，完善升级引导与异常兜底，减少误操作与支持工单。
+          <strong>自托管与Admin控制台：</strong>
+          <ul class="compact">
+            <li>自托管与企业部署缺乏统一配置和用户管理，权限分散、排障困难。</li>
+            <li>
+              从零搭建配置/用户与运行时管理能力，实现角色的权限控制与 Feature Flag
+              机制。支持团队工作区 License 激活与版本管理。
+            </li>
+            <li>
+              最终提升自部署产品的可运营性与稳定性，支撑团队用户在生产环境稳定使用，增加了企业<strong>付费意愿</strong>。
+            </li>
+          </ul>
         </li>
         <li>
-          <strong>分享与权限体验改进：</strong
-          >统一分享入口与权限逻辑，新增私有锚点、复制链接与无权限提示页，优化移动端响应式布局，使协作路径更直观。
+          <strong>协作与分享链路整理优化：</strong>
+          <ul class="compact">
+            <li>邀请到权限生效的链路冗长且易出错，影响团队扩容与转化。</li>
+            <li>
+              重构邀请与权限流程，明确过期、未登录与异常场景，并统一分享页面的读写状态管理，使协作路径更直观。
+            </li>
+            <li>
+              结果显著提升邀请成功率与<strong>团队工作区激活率</strong>，减少了异常工单与误操作。
+            </li>
+          </ul>
         </li>
         <li>
-          <strong>Admin 管理后台建设：</strong
-          >搭建自托管配置页与用户管理页，统一登录与表单交互逻辑，减少部署与排障成本。
+          <strong>商业化闭环（订阅/配额/权限一致性）：</strong>
+          <ul class="compact">
+            <li>计费与配额逻辑割裂导致权限提示不一致、付费流程易中断，付费墙不清晰。</li>
+            <li>
+              统一计费与配额逻辑，强化前后端数据一致性校验。优化付费链路，并隔离不同环境接口差异。
+            </li>
+            <li>
+              最终让升级与续费链路更顺畅，提升了<strong>付费转化率</strong>，显著减少权限类客诉。
+            </li>
+          </ul>
         </li>
         <li>
-          <strong>编辑器设置中心整合：</strong
-          >集中字体、颜色与模式配置，支持即时预览与默认策略管理，降低用户定制门槛与回归率。
+          <strong>编辑器设置中心整合：</strong>
+          <ul class="compact">
+            <li>编辑器设置项分散、默认值漂移，跨端一致性差、上手复杂。</li>
+            <li>集中管理字体、颜色等配置项，统一多端数据流与默认值策略。支持实时预览。</li>
+            <li>
+              结果实现配置集中化与<strong>一致体验</strong>，提升默认使用体验，降低用户设置成本与回归缺陷率。
+            </li>
+          </ul>
         </li>
         <li>
-          <strong>命令面板与搜索优化：</strong
-          >扩展模糊匹配与高亮逻辑，提升长列表检索性能与跳转体验。
+          <strong>整合快捷键与搜索优化：</strong>
+          <ul class="compact">
+            <li>
+              文档与设置选项分散，新用户难以快速找到所需功能；在编辑过程中需频繁切换弹窗修改配置，打断使用流。
+            </li>
+            <li>基于 cmdk 实现统一命令面板与快捷键系统，集成 Electron 页面查找功能。</li>
+            <li>
+              结果显著提升桌面端内容检索与<strong>操作效率</strong>，降低学习成本，增强整体产品一致性与易用性。
+            </li>
+          </ul>
         </li>
         <li>
-          <strong>导航与多端一致性：</strong>重构侧边栏激活与浮动逻辑，优化 Hover
-          行为与移动端折叠策略，提升跨端一致性。
+          <strong>国际化支持与系统稳定性：</strong>
+          <ul class="compact">
+            <li>
+              多语言资源不一致，首日体验与自然获客受限，UI
+              状态不稳定会出现抖动与消失，无法获取数据导致无限 Loading。
+            </li>
+            <li>
+              通过 i18n 抽包与自动化脚本统一多语言资源，重构 UI 组件，优化 Loading 与首屏加载逻辑。
+            </li>
+            <li>最终实现稳定、可预期的日常体验，提升首日转化与<strong>用户留存</strong>。</li>
+          </ul>
         </li>
-        <li>
-          <strong>国际化覆盖与脚本治理：</strong>编写脚本检测缺失 key
-          并自动补齐，支持多语言记忆与同步，完善全球化体验。
-        </li>
-        <li>
-          <strong>系统稳定性与交互细节：</strong>统一 Toast、滚动条与 Loading
-          逻辑，优化首屏加载与编辑体验，减少异常反馈与流失。
-        </li>
-      </ul>
-
-      <h2>教育背景</h2>
-      <ul class="compact">
-        <li><strong>海口经济学院（非全日制本科）</strong> 财务管理｜2018–2020</li>
-        <li><strong>深圳信息职业技术学院（全日制大专）</strong> 电子商务｜2015–2018</li>
       </ul>
     </main>
   </body>
