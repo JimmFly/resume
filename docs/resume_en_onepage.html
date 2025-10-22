@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume | JimmFly Yang</title>
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --fg: #0f172a;
+        --muted: #475569;
+        --border: #e2e8f0;
+        --accent: #2563eb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font:
+          14px/1.6 'Inter',
+          'Segoe UI',
+          'Helvetica Neue',
+          Arial,
+          'Noto Sans',
+          sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      main {
+        max-width: 820px;
+        width: 100%;
+        background: var(--card);
+        margin: 48px 32px 64px;
+        padding: 48px 56px 60px;
+        border-radius: 18px;
+        box-shadow:
+          0 18px 45px rgba(15, 23, 42, 0.08),
+          0 6px 18px rgba(15, 23, 42, 0.05);
+      }
+      header {
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 20px;
+        margin-bottom: 28px;
+      }
+      h1 {
+        font-size: 28px;
+        letter-spacing: 0.02em;
+        margin: 0 0 4px;
+      }
+      .tagline {
+        font-size: 16px;
+        color: var(--accent);
+        font-weight: 600;
+        margin: 0 0 10px;
+      }
+      .meta {
+        color: var(--muted);
+        font-size: 13.5px;
+      }
+      .meta span {
+        margin-right: 12px;
+      }
+      .meta a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .meta a:hover {
+        text-decoration: underline;
+      }
+      section {
+        margin: 32px 0;
+      }
+      h2 {
+        font-size: 17px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        margin: 0 0 16px;
+      }
+      h3 {
+        font-size: 15px;
+        margin: 0 0 6px;
+        color: var(--fg);
+      }
+      p {
+        margin: 0 0 18px;
+        color: var(--fg);
+      }
+      ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+      ul li {
+        margin: 8px 0;
+      }
+      .grid-two {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 12px 24px;
+        padding: 0;
+        list-style: none;
+      }
+      .grid-two li {
+        margin: 0;
+      }
+      .grid-two strong {
+        display: block;
+        font-weight: 600;
+        color: var(--fg);
+      }
+      .achievements {
+        list-style: disc;
+      }
+      .achievements li {
+        margin: 10px 0;
+      }
+      .experience-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 8px;
+        margin-bottom: 6px;
+      }
+      .experience-header span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .experience-list {
+        list-style: disc;
+      }
+      .experience-list li {
+        margin: 10px 0;
+        line-height: 1.65;
+      }
+      .experience-list li strong {
+        font-weight: 600;
+        color: var(--fg);
+      }
+      .intro {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 13.5px;
+      }
+      .education {
+        list-style: none;
+        padding: 0;
+      }
+      .education li {
+        margin: 10px 0;
+      }
+      .education strong {
+        display: block;
+        font-weight: 600;
+        color: var(--fg);
+      }
+      .note {
+        margin-top: 12px;
+        font-size: 13.5px;
+        color: var(--muted);
+      }
+      @page {
+        size: A4;
+        margin: 14mm 18mm;
+      }
+      @media print {
+        body {
+          background: #fff;
+        }
+        main {
+          margin: 0;
+          box-shadow: none;
+          border-radius: 0;
+        }
+        a {
+          color: var(--accent);
+          text-decoration: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Jinfei Yang</h1>
+        <p class="tagline">Frontend Engineer (React / TypeScript)</p>
+        <p class="meta">
+          <span>Email <a href="mailto:jimmflyyang@gmail.com">jimmflyyang@gmail.com</a></span>
+          <span>GitHub <a href="https://github.com/JimmFly">github.com/JimmFly</a></span>
+          <span>Based in China · Open to global relocation</span>
+        </p>
+      </header>
+
+      <section>
+        <h2>Summary</h2>
+        <p>
+          Frontend engineer passionate about building user-focused, reliable, and high-quality web
+          products. Core contributor to the open-source project <strong>AFFiNE</strong> (570+ merged
+          PRs), leading major feature refactors that improved collaboration flows, cross-platform
+          consistency, and usability for teams worldwide. Comfortable partnering with distributed
+          stakeholders across time zones to ship localized experiences with measurable impact.
+          Beyond coding, I enjoy exploring hardware setups, experimenting with NAS and networking
+          devices, and finding balance through skating, anime, and caring for my cat.
+        </p>
+      </section>
+
+      <section>
+        <h2>Core Skills</h2>
+        <ul class="grid-two">
+          <li>
+            <strong>Business Implementation &amp; UX Optimization</strong>
+            Command panel, sharing &amp; permission, navigation, team quota &amp; billing, editor
+            settings
+          </li>
+          <li>
+            <strong>Performance &amp; Quality</strong>
+            Loading optimization, error boundaries, async validation, user flow fallback handling
+          </li>
+          <li>
+            <strong>Cross-Platform &amp; Internationalization</strong>
+            Responsive design, mobile interaction consistency, automated i18n management
+          </li>
+          <li>
+            <strong>Collaboration &amp; Delivery</strong>
+            Cross-team alignment, observability, telemetry, and data-driven frontend optimization
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <div class="experience-header">
+          <h3>Wan Theory Technology (Hangzhou) Co., Ltd. ｜ Frontend Engineer (AFFiNE)</h3>
+          <span>Hangzhou, China ｜ Jun 2022 – Jun 2025</span>
+        </div>
+        <p class="intro">
+          <strong>AFFiNE</strong> is an open-source note-taking and collaboration platform.
+          Responsible for frontend feature refactors and improving overall product experience.
+        </p>
+        <ul class="experience-list">
+          <li>
+            <strong>Team Quota &amp; Billing Flow:</strong>
+            Modeled quota schema with TypeScript, implemented form validation and error fallback
+            logic to streamline upgrades and prevent user mistakes, reducing support tickets.
+          </li>
+          <li>
+            <strong>Sharing &amp; Permission Experience:</strong>
+            Unified sharing logic across components, added private anchors, clipboard copy, and
+            permission fallback pages. Improved responsive layout and collaboration clarity.
+          </li>
+          <li>
+            <strong>Admin Console:</strong>
+            Built setup and management pages for self-hosted environments, standardized login and
+            form interaction to reduce maintenance and troubleshooting cost.
+          </li>
+          <li>
+            <strong>Editor Settings Center:</strong>
+            Integrated font, color, and theme settings into a centralized provider with live preview
+            and default rules, lowering customization complexity and regression rate.
+          </li>
+          <li>
+            <strong>Command Panel &amp; Search Optimization:</strong>
+            Extended cmdk for fuzzy match and highlighting; improved long-list stability and
+            navigation performance.
+          </li>
+          <li>
+            <strong>Navigation &amp; Cross-Platform Consistency:</strong>
+            Refactored sidebar hover and active logic; optimized mobile default behaviors and member
+            list rendering for consistent multi-device UX.
+          </li>
+          <li>
+            <strong>Internationalization Automation:</strong>
+            Built Node.js scripts to detect and auto-fill missing keys, synchronized language packs,
+            and implemented preferred language memory for better global usability.
+          </li>
+          <li>
+            <strong>System Stability &amp; Interaction Polishing:</strong>
+            Unified toast, scroll, and loading components; optimized first-load feedback and
+            collaborative editing stability.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <ul class="education">
+          <li>
+            <strong>Haikou University of Economics (Part-time Bachelor)</strong>
+            Financial Management ｜ 2018 – 2020
+          </li>
+          <li>
+            <strong>Shenzhen Institute of Information Technology (Full-time Associate)</strong>
+            E-commerce ｜ 2015 – 2018
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Beyond Work</h2>
+        <p>
+          I enjoy skating for relaxation and focus, taking care of my cat, and watching anime and
+          games that inspire creative interaction design.
+        </p>
+        <p>
+          I also like tinkering with PC hardware, routers, and NAS devices — optimizing systems and
+          learning how things work under the hood.
+        </p>
+        <p class="note">
+          Continuing JLPT N2 studies and excited to collaborate with multicultural teams across the
+          global.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
