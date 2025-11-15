@@ -32,6 +32,11 @@ const targets = [
     output: path.join(ROOT, 'public', 'letter.pdf'),
     label: 'Cover Letter (PayPay)',
   },
+  {
+    input: path.join(ROOT, 'docs', 'test_resume.html'),
+    output: path.join(ROOT, 'public', 'test_resume.pdf'),
+    label: '简历（测试开发工程师）',
+  },
 ]
 
 async function main() {
