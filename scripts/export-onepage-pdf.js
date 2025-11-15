@@ -11,15 +11,43 @@ import path from 'path'
 import puppeteer from 'puppeteer'
 
 const ROOT = path.resolve(process.cwd())
-const input = path.join(ROOT, 'docs', 'resume_cn_onepage.html')
-const output = path.join(ROOT, 'docs', 'resume_cn_onepage.pdf')
+const targets = [
+  {
+    input: path.join(ROOT, 'docs', 'resume_cn_onepage.html'),
+    output: path.join(ROOT, 'public', 'resume_cn_onepage.pdf'),
+    label: '简历（中文单页）',
+  },
+  {
+    input: path.join(ROOT, 'docs', 'resume_en_onepage.html'),
+    output: path.join(ROOT, 'public', 'resume_en_onepage.pdf'),
+    label: 'Resume (English one-page)',
+  },
+  {
+    input: path.join(ROOT, 'docs', 'resume_cn_arch_onepage.html'),
+    output: path.join(ROOT, 'public', 'resume_cn_arch_onepage.pdf'),
+    label: '简历（中文架构单页）',
+  },
+  {
+    input: path.join(ROOT, 'docs', 'letter.html'),
+    output: path.join(ROOT, 'public', 'letter.pdf'),
+    label: 'Cover Letter (PayPay)',
+  },
+  {
+    input: path.join(ROOT, 'docs', 'test_resume.html'),
+    output: path.join(ROOT, 'public', 'test_resume.pdf'),
+    label: '简历（测试开发工程师）',
+  },
+]
 
 async function main() {
-  try {
-    await fs.access(input)
-  } catch {
-    console.error(`[error] 找不到输入文件: ${input}`)
-    process.exit(1)
+  for (const { input, label } of targets) {
+    try {
+      await fs.access(input)
+    } catch {
+      console.error(`[error] 找不到输入文件: ${input}`)
+      process.exit(1)
+    }
+    console.log(`[info] ✔️ 已找到 ${label}`)
   }
 
   const browser = await puppeteer.launch({
@@ -28,19 +56,19 @@ async function main() {
   })
   const page = await browser.newPage()
 
-  // Load local file via file:// protocol
-  await page.goto(`file://${input}`, { waitUntil: 'networkidle0' })
-
-  await page.pdf({
-    path: output,
-    format: 'A4',
-    printBackground: true,
-    margin: { top: '12mm', right: '10mm', bottom: '12mm', left: '10mm' },
-    scale: 0.9,
-  })
+  for (const { input, output, label } of targets) {
+    await page.goto(`file://${input}`, { waitUntil: 'networkidle0' })
+    await page.pdf({
+      path: output,
+      format: 'A4',
+      printBackground: true,
+      margin: { top: '16mm', right: '14mm', bottom: '16mm', left: '14mm' },
+      scale: 0.9,
+    })
+    console.log(`[ok] 已导出 PDF: ${output} (${label})`)
+  }
 
   await browser.close()
-  console.log(`[ok] 已导出 PDF: ${output}`)
 }
 
 main().catch(err => {

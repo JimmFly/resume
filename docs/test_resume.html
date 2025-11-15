@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>简历｜杨晋飞</title>
+    <style>
+      :root {
+        --fg: #1a1a1a;
+        --muted: #5f6368;
+        --accent: #1a5490;
+        --accent-light: #2563eb;
+        --accent-bg: rgba(37, 99, 235, 0.08);
+        --border: #e5e7eb;
+        --border-strong: #d1d5db;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        color: var(--fg);
+        font:
+          14px/1.65 -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          'Helvetica Neue',
+          Arial,
+          'Noto Sans SC',
+          'PingFang SC',
+          'Hiragino Sans GB',
+          'Microsoft YaHei',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      main {
+        max-width: 850px;
+        margin: 18px auto 0;
+        padding: 0 42px 32px;
+      }
+      h1 {
+        font-size: 26px;
+        font-weight: 700;
+        margin: 0 0 8px;
+        letter-spacing: -0.3px;
+      }
+      h2 {
+        font-size: 17.5px;
+        font-weight: 700;
+        margin: 18px 0 10px;
+        border-bottom: 2px solid var(--border-strong);
+        padding-bottom: 6px;
+        padding-top: 12px;
+        letter-spacing: -0.2px;
+      }
+      h3 {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 12px 0 4px;
+      }
+      p,
+      li {
+        font-size: 13.2px;
+        line-height: 1.62;
+      }
+      p {
+        margin: 7px 0 9px;
+      }
+      ul {
+        margin: 9px 0;
+        padding-left: 20px;
+      }
+      ul ul {
+        margin: 4px 0 5px;
+        padding-left: 18px;
+      }
+      .meta {
+        color: var(--muted);
+        margin-bottom: 10px;
+        font-size: 13.8px;
+        letter-spacing: 0.2px;
+      }
+      .muted {
+        color: var(--muted);
+        font-weight: 400;
+        padding-bottom: 7px;
+      }
+      .work-list > li {
+        margin-bottom: 9px;
+      }
+      .work-list > li > strong {
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 13.6px;
+      }
+      strong {
+        font-weight: 600;
+        color: var(--fg);
+      }
+      .chip {
+        background: var(--accent-bg);
+        color: var(--accent-light);
+        border-radius: 6px;
+        padding: 2px 8px;
+        display: inline-block;
+        font-weight: 500;
+        font-size: 12px;
+        margin-right: 6px;
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 8px 20px;
+      }
+      .skills-grid p {
+        margin: 0;
+      }
+      @page {
+        size: A4;
+        margin: 14.5mm 13.5mm;
+      }
+      p,
+      li {
+        widows: 2;
+        orphans: 2;
+      }
+      @media print {
+        main {
+          margin: 0;
+        }
+        a {
+          color: #000;
+          text-decoration: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>杨晋飞｜全栈测试开发工程师</h1>
+      <div class="meta">
+        手机 130-0885-7268 ｜ 邮箱 jimmflyyang@gmail.com ｜ GitHub
+        <a class="link" href="https://github.com/JimmFly">github.com/JimmFly</a>
+      </div>
+
+      <h2>个人简介</h2>
+      <p>
+        拥有 3 年 Web 开发与自动化测试经验，能够以全栈视角搭建稳定、可扩展的自动化测试体系。熟练掌握 TypeScript、React、Node.js、PostgreSQL 等技术，可独立承担前后端开发与复杂业务流程的端到端测试。熟悉 CI/CD
+        流水线集成，深度使用 Playwright 进行订阅、配额、权限、Stripe 支付等商业化流程验证，擅长工程化治理、问题快速定位与跨团队协作。
+      </p>
+
+      <h2>技能关键词</h2>
+      <div class="skills-grid">
+        <p><strong>前端：</strong>React、Next.js、TypeScript、Jotai</p>
+        <p><strong>后端：</strong>Node.js、NestJS、Python (Django)、GraphQL、PostgreSQL</p>
+        <p><strong>测试：</strong>Playwright、Vitest、E2E Test、Unit Test、Mock / Stub</p>
+        <p><strong>工具 / 平台：</strong>Docker、CI/CD（GitHub Actions）、Git、Linux、Feature Flag、多环境部署</p>
+      </div>
+
+      <h2>工作经历</h2>
+      <h3>万有理论科技（杭州）有限公司 ｜ 全栈测试开发工程师（AFFiNE 团队）</h3>
+      <p class="muted">2022.06 – 2025.06</p>
+      <p class="muted">AFFiNE 是一款开源的协同笔记 SaaS，负责核心功能开发、商业化流程测试与自动化测试体系建设，提升质量与交付效率。</p>
+      <ul class="work-list">
+        <li>
+          <strong>端到端自动化测试体系：</strong>
+          主导搭建 Playwright 测试框架，覆盖协同编辑、分享、邀请、账户与计费等核心链路；与 CI/CD 集成以 PR 自动回归，显著降低回归缺陷与人工成本。
+        </li>
+        <li>
+          <strong>商业化流程测试：</strong>
+          设计订阅、续费、升级、额度校验、权限一致性等场景的用例，统一前后端计费逻辑并隔离多环境接口差异，保障商业化闭环的稳定性与数据一致性。
+        </li>
+        <li>
+          <strong>多环境与 Feature Flag 策略：</strong>
+          为开发 / 测试 / 生产 / 自托管环境构建标准化测试流程，确保角色权限和 Feature Flag 行为在不同部署方式下的一致性与可控性。
+        </li>
+        <li>
+          <strong>自托管与 Admin 控制台质量保障：</strong>
+          合作构建团队配置、用户管理、运行时管理等能力，并设计覆盖 License 激活、工作区权限、版本管理的自动化回归，确保自托管版本可交付。
+        </li>
+        <li>
+          <strong>协作与分享流程测试：</strong>
+          深度验证公开分享、邀请、权限切换等复杂链路，推动权限状态与异常机制重构，统一内外部用户体验，减少协作链路问题反馈。
+        </li>
+        <li>
+          <strong>编辑器体验与效率功能：</strong>
+          参与编辑器设置中心重构与命令面板实现，补充快捷键、命令搜索、实时预览等效率路径的自动化测试，确保效率场景可稳定回归。
+        </li>
+        <li>
+          <strong>稳定性与可观测性建设：</strong>
+          推动 i18n 资源工程化管理与自动脚本巡检，重构关键 UI 组件加载逻辑并引入埋点监控加载成功率，搭建质量报告系统实现问题可观测与预警。
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

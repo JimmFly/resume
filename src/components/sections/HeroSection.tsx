@@ -1,7 +1,7 @@
 import { OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { motion } from 'framer-motion'
-import React, { Suspense } from 'react'
+import React, { Suspense, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { GLOBE_CONFIG, PARALLAX_CONFIG } from '../../constants'
 import { useAnimation } from '../../hooks/useAnimation'
@@ -30,6 +30,25 @@ const HeroSection = React.memo(() => {
   const contactMe = t('hero.contactMe')
   const github = t('hero.github')
   const download = t('hero.download')
+  const downloadMenuLabel = t('hero.downloadMenuLabel')
+  const downloadEnglish = t('hero.downloadEnglish')
+  const downloadChinese = t('hero.downloadChinese')
+
+  const [isDownloadMenuOpen, setDownloadMenuOpen] = useState(false)
+
+  const toggleDownloadMenu = () => setDownloadMenuOpen(prev => !prev)
+  const closeDownloadMenu = () => setDownloadMenuOpen(false)
+
+  const handleDownload = (lang: 'en' | 'zh') => {
+    const fileName = lang === 'en' ? 'resume_en_onepage.pdf' : 'resume_cn_onepage.pdf'
+    const link = document.createElement('a')
+    link.href = `${import.meta.env.BASE_URL}${fileName}`
+    link.download = fileName
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    closeDownloadMenu()
+  }
 
   return (
     <section className='min-h-screen flex items-center justify-center relative overflow-hidden pt-16 sm:pt-20'>
@@ -110,30 +129,70 @@ const HeroSection = React.memo(() => {
               >
                 {contactMe}
               </motion.a>
-              <motion.a
-                href={`${import.meta.env.BASE_URL}resume_cn_onepage.pdf`}
-                download
-                className='button-modern border-2 border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 flex items-center justify-center gap-2 whitespace-nowrap'
-                variants={fadeInUp}
-              >
-                <svg
-                  className='w-5 h-5'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth={2}
-                  viewBox='0 0 24 24'
-                  xmlns='http://www.w3.org/2000/svg'
-                  aria-hidden='true'
+              <motion.div className='relative' variants={fadeInUp}>
+                <button
+                  type='button'
+                  onClick={toggleDownloadMenu}
+                  className='button-modern border-2 border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 flex items-center justify-center gap-2 whitespace-nowrap'
+                  aria-haspopup='true'
+                  aria-expanded={isDownloadMenuOpen}
+                  aria-label={downloadMenuLabel}
                 >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    d='M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2'
-                  />
-                  <path strokeLinecap='round' strokeLinejoin='round' d='M7 10l5 5m0 0l5-5m-5 5V4' />
-                </svg>
-                {download}
-              </motion.a>
+                  <svg
+                    className='w-5 h-5'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth={2}
+                    viewBox='0 0 24 24'
+                    xmlns='http://www.w3.org/2000/svg'
+                    aria-hidden='true'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2'
+                    />
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M7 10l5 5m0 0l5-5m-5 5V4'
+                    />
+                  </svg>
+                  {download}
+                  <svg
+                    className={`w-4 h-4 transition-transform duration-200 ${isDownloadMenuOpen ? 'rotate-180' : ''}`}
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth={2}
+                    viewBox='0 0 24 24'
+                    xmlns='http://www.w3.org/2000/svg'
+                    aria-hidden='true'
+                  >
+                    <path strokeLinecap='round' strokeLinejoin='round' d='M19 9l-7 7-7-7' />
+                  </svg>
+                </button>
+                {isDownloadMenuOpen ? (
+                  <div className='absolute left-0 mt-2 w-56 rounded-xl border border-cyan-500/20 bg-slate-900/95 backdrop-blur-md shadow-lg shadow-cyan-500/20 z-30'>
+                    <p className='px-4 pt-3 pb-2 text-xs uppercase tracking-wider text-cyan-200/70'>
+                      {downloadMenuLabel}
+                    </p>
+                    <button
+                      type='button'
+                      onClick={() => handleDownload('en')}
+                      className='w-full px-4 py-2 text-left text-sm text-cyan-100 hover:bg-cyan-500/10 transition-colors'
+                    >
+                      {downloadEnglish}
+                    </button>
+                    <button
+                      type='button'
+                      onClick={() => handleDownload('zh')}
+                      className='w-full px-4 py-2 text-left text-sm text-cyan-100 hover:bg-cyan-500/10 transition-colors rounded-b-xl'
+                    >
+                      {downloadChinese}
+                    </button>
+                  </div>
+                ) : null}
+              </motion.div>
               <motion.a
                 href='https://github.com/jimmfly'
                 target='_blank'
