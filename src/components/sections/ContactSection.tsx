@@ -101,13 +101,13 @@ const ContactSection = () => {
           >
             <div className='absolute -inset-1 bg-gradient-to-r from-blue-600 to-gray-700 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200'></div>
             <div className='relative card-modern'>
-              <h3 className='text-2xl font-bold mb-8 text-cyan-400 heading-modern'>
+              <h3 className='text-2xl font-bold mb-8 text-primary heading-modern'>
                 {t('contact.info')}
               </h3>
 
               <div className='space-y-6 mb-10'>
                 <div className='flex items-center group/item hover:scale-105 transition-transform duration-300'>
-                  <div className='w-14 h-14 rounded-2xl bg-gradient-to-r from-cyan-500/20 to-blue-500/20 flex items-center justify-center mr-6 group-hover/item:shadow-glow transition-all duration-300'>
+                  <div className='w-14 h-14 rounded-2xl bg-gradient-to-r from-primary/20 to-blue-500/20 flex items-center justify-center mr-6 group-hover/item:shadow-glow transition-all duration-300'>
                     <svg
                       className='w-7 h-7 text-cyan-400'
                       fill='none'
@@ -205,7 +205,7 @@ const ContactSection = () => {
           >
             <div className='absolute -inset-1 bg-gradient-to-r from-blue-700 to-gray-800 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200'></div>
             <div className='relative card-modern'>
-              <h3 className='text-2xl font-bold mb-8 text-purple-400 heading-modern'>
+              <h3 className='text-2xl font-bold mb-8 text-gray-300 heading-modern'>
                 {t('contact.form.title')}
               </h3>
 

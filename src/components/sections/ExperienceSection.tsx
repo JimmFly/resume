@@ -55,7 +55,7 @@ const ExperienceSection = React.memo(() => {
               <div className='relative card-modern'>
                 {/* Modern timeline decoration */}
                 <div className='absolute left-0 top-8 bottom-8 w-1.5 bg-gradient-to-b from-primary via-blue-500 to-gray-600 rounded-full shadow-glow' />
-                <div className='absolute left-[-6px] top-8 w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full shadow-lg animate-pulse' />
+                <div className='absolute left-[-6px] top-8 w-4 h-4 bg-gradient-to-r from-primary to-blue-500 rounded-full shadow-lg animate-pulse' />
 
                 <div className='ml-12'>
                   {/* Enhanced company and position information */}

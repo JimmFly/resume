@@ -48,7 +48,7 @@ const GlobeDemo: React.FC = () => {
               <span className='text-primary'>✨ 真实地球纹理</span>
             </div>
             <div className='bg-gray-800 px-4 py-2 rounded'>
-              <span className='text-blue-400'>🌍 大气层效果</span>
+              <span className='text-primary'>🌍 大气层效果</span>
             </div>
             <div className='bg-gray-800 px-4 py-2 rounded'>
               <span className='text-green-400'>🔄 自动旋转</span>

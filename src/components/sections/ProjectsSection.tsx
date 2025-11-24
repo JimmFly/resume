@@ -55,11 +55,11 @@ const ProjectsSection = () => {
     <section id='projects' ref={sectionRef} className='section-container relative overflow-hidden'>
       {/* Background decorative elements - Parallax effect */}
       <div
-        className='absolute top-16 right-16 w-40 h-40 bg-purple-500/8 rounded-full blur-2xl'
+        className='absolute top-16 right-16 w-40 h-40 bg-blue-500/8 rounded-full blur-2xl'
         style={{ transform: `translateY(${Number(parallaxY || 0) * 0.3}px)` }}
       />
       <div
-        className='absolute bottom-16 left-16 w-32 h-32 bg-cyan-500/8 rounded-full blur-2xl'
+        className='absolute bottom-16 left-16 w-32 h-32 bg-gray-700/8 rounded-full blur-2xl'
         style={{ transform: `translateY(${Number(parallaxY || 0) * 0.5}px)` }}
       />
       <div
@@ -96,8 +96,8 @@ const ProjectsSection = () => {
                   index % 3 === 0
                     ? 'bg-gradient-to-r from-blue-600 to-gray-700'
                     : index % 3 === 1
-                      ? 'bg-gradient-to-r from-purple-500 to-pink-600'
-                      : 'bg-gradient-to-r from-emerald-500 to-teal-600'
+                      ? 'bg-gradient-to-r from-blue-700 to-gray-800'
+                      : 'bg-gradient-to-r from-gray-700 to-gray-800'
                 }`}
               ></div>
 
@@ -110,7 +110,7 @@ const ProjectsSection = () => {
                         ? 'bg-cyan-500/10'
                         : index % 3 === 1
                           ? 'bg-purple-500/10'
-                          : 'bg-emerald-500/10'
+                          : 'bg-gray-700/10'
                     }`}
                   >
                     {project.image}
@@ -123,7 +123,7 @@ const ProjectsSection = () => {
                       ? 'text-primary'
                       : index % 3 === 1
                         ? 'text-gray-300'
-                        : 'text-emerald-400'
+                        : 'text-gray-300'
                   }`}
                 >
                   {project.title}
@@ -139,10 +139,10 @@ const ProjectsSection = () => {
                       key={tech}
                       className={`px-3 py-1.5 rounded-xl text-sm font-medium transition-all duration-300 ${
                         index % 3 === 0
-                          ? 'bg-cyan-500/10 text-cyan-300 border border-cyan-500/20'
+                          ? 'bg-primary/10 text-white border border-primary/20'
                           : index % 3 === 1
                             ? 'bg-gray-700/10 text-white border border-gray-700/20'
-                            : 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/20'
+                            : 'bg-gray-700/10 text-white border border-gray-700/20'
                       }`}
                       style={{
                         animationDelay: `${techIndex * 0.1}s`,
@@ -160,7 +160,7 @@ const ProjectsSection = () => {
                         ? 'border-primary/50 text-white hover:bg-primary/10'
                         : index % 3 === 1
                           ? 'border-gray-500/50 text-white hover:bg-gray-500/10'
-                          : 'border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10'
+                          : 'border-gray-500/50 text-gray-300 hover:bg-gray-700/10'
                     }`}
                   >
                     {t('projects.viewDetails')}
