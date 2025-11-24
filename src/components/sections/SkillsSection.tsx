@@ -56,9 +56,9 @@ const SkillsSection: React.FC = React.memo(() => {
             whileInView='show'
             viewport={viewport}
           >
-            <div className='absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200'></div>
+            <div className='absolute -inset-1 bg-gradient-to-r from-blue-600 to-gray-700 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200'></div>
             <div className='relative card-modern'>
-              <h3 className='text-2xl font-bold mb-8 text-cyan-400 heading-modern'>
+              <h3 className='text-2xl font-bold mb-8 text-primary heading-modern'>
                 {t('skills.frontend')}
               </h3>
               <motion.div

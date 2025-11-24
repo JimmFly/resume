@@ -54,17 +54,17 @@ const ExperienceSection = React.memo(() => {
 
               <div className='relative card-modern'>
                 {/* Modern timeline decoration */}
-                <div className='absolute left-0 top-8 bottom-8 w-1.5 bg-gradient-to-b from-cyan-400 via-purple-500 to-pink-500 rounded-full shadow-glow' />
-                <div className='absolute left-[-6px] top-8 w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full shadow-lg animate-pulse' />
+                <div className='absolute left-0 top-8 bottom-8 w-1.5 bg-gradient-to-b from-primary via-blue-500 to-gray-600 rounded-full shadow-glow' />
+                <div className='absolute left-[-6px] top-8 w-4 h-4 bg-gradient-to-r from-primary to-blue-500 rounded-full shadow-lg animate-pulse' />
 
                 <div className='ml-12'>
                   {/* Enhanced company and position information */}
                   <div className='flex flex-col md:flex-row md:items-center md:justify-between mb-6'>
                     <div className='group-hover:scale-105 transition-transform duration-300'>
-                      <h3 className='text-3xl font-black text-cyan-400 mb-3 heading-modern'>
+                      <h3 className='text-3xl font-black text-primary mb-3 heading-modern'>
                         {t(experience.company)}
                       </h3>
-                      <h4 className='text-2xl font-bold text-purple-300 mb-2 heading-modern'>
+                      <h4 className='text-2xl font-bold text-gray-300 mb-2 heading-modern'>
                         {t(experience.position)}
                       </h4>
                     </div>
@@ -83,7 +83,7 @@ const ExperienceSection = React.memo(() => {
 
                   {/* Enhanced achievements */}
                   <div className='mb-8'>
-                    <h5 className='text-2xl font-bold text-purple-400 mb-6 heading-modern'>
+                    <h5 className='text-2xl font-bold text-gray-400 mb-6 heading-modern'>
                       {t('experience.achievements')}
                     </h5>
                     <ul className='space-y-4'>
@@ -94,7 +94,7 @@ const ExperienceSection = React.memo(() => {
                           variants={fadeInUp}
                           transition={{ delay: index * 0.2 + achievementIndex * 0.1 }}
                         >
-                          <span className='text-cyan-400 mr-4 mt-1 text-xl group-hover:text-purple-400 transition-colors'>
+                          <span className='text-primary mr-4 mt-1 text-xl group-hover:text-gray-400 transition-colors'>
                             ▸
                           </span>
                           <span className='text-lg leading-relaxed text-modern group-hover:text-white transition-colors'>
@@ -114,7 +114,7 @@ const ExperienceSection = React.memo(() => {
                       {experience.technologies.map((tech, techIndex) => (
                         <motion.span
                           key={techIndex}
-                          className='px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-cyan-300 rounded-xl text-sm font-semibold border border-cyan-500/20 hover:border-purple-500/30 hover:scale-105 transition-all duration-300'
+                          className='px-4 py-2 bg-gradient-to-r from-primary/10 to-gray-700/10 text-white rounded-xl text-sm font-semibold border border-primary/20 hover:border-primary/40 hover:scale-105 transition-all duration-300'
                           variants={fadeInUp}
                           transition={{ delay: index * 0.2 + techIndex * 0.05 }}
                           whileHover={{ scale: 1.05 }}
