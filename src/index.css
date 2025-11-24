@@ -13,11 +13,31 @@
   --color-primary-hover: #0077ed;
   --color-secondary: #86868b;
   --color-accent: #1d1d1f;
-  --color-gradient-primary: linear-gradient(180deg, rgba(0, 113, 227, 0.1) 0%, rgba(0, 113, 227, 0.05) 100%);
-  --color-gradient-secondary: linear-gradient(180deg, rgba(29, 29, 31, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
-  --color-gradient-tertiary: linear-gradient(180deg, rgba(0, 113, 227, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
-  --color-gradient-subtle: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-  --color-gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  --color-gradient-primary: linear-gradient(
+    180deg,
+    rgba(0, 113, 227, 0.1) 0%,
+    rgba(0, 113, 227, 0.05) 100%
+  );
+  --color-gradient-secondary: linear-gradient(
+    180deg,
+    rgba(29, 29, 31, 0.8) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  --color-gradient-tertiary: linear-gradient(
+    180deg,
+    rgba(0, 113, 227, 0.15) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  --color-gradient-subtle: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  --color-gradient-glass: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
 }
 
 @layer base {
