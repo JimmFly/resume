@@ -94,7 +94,7 @@ const ProjectsSection = () => {
               <div
                 className={`absolute -inset-1 rounded-3xl blur opacity-25 group-hover:opacity-60 transition duration-1000 group-hover:duration-200 ${
                   index % 3 === 0
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-600'
+                    ? 'bg-gradient-to-r from-blue-600 to-gray-700'
                     : index % 3 === 1
                       ? 'bg-gradient-to-r from-purple-500 to-pink-600'
                       : 'bg-gradient-to-r from-emerald-500 to-teal-600'
@@ -120,9 +120,9 @@ const ProjectsSection = () => {
                 <h3
                   className={`text-2xl font-bold mb-4 group-hover:scale-105 transition-all duration-300 heading-modern ${
                     index % 3 === 0
-                      ? 'text-cyan-400'
+                      ? 'text-primary'
                       : index % 3 === 1
-                        ? 'text-purple-400'
+                        ? 'text-gray-300'
                         : 'text-emerald-400'
                   }`}
                 >
@@ -141,7 +141,7 @@ const ProjectsSection = () => {
                         index % 3 === 0
                           ? 'bg-cyan-500/10 text-cyan-300 border border-cyan-500/20'
                           : index % 3 === 1
-                            ? 'bg-purple-500/10 text-purple-300 border border-purple-500/20'
+                            ? 'bg-gray-700/10 text-white border border-gray-700/20'
                             : 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/20'
                       }`}
                       style={{
@@ -157,9 +157,9 @@ const ProjectsSection = () => {
                   <button
                     className={`button-modern text-sm font-semibold border-2 transition-all duration-300 ${
                       index % 3 === 0
-                        ? 'border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10'
+                        ? 'border-primary/50 text-white hover:bg-primary/10'
                         : index % 3 === 1
-                          ? 'border-purple-500/50 text-purple-400 hover:bg-purple-500/10'
+                          ? 'border-gray-500/50 text-white hover:bg-gray-500/10'
                           : 'border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10'
                     }`}
                   >

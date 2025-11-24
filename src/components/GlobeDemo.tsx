@@ -45,7 +45,7 @@ const GlobeDemo: React.FC = () => {
           <p className='text-gray-300 mb-4'>使用鼠标拖拽旋转地球，滚轮缩放</p>
           <div className='flex justify-center space-x-4'>
             <div className='bg-gray-800 px-4 py-2 rounded'>
-              <span className='text-cyan-400'>✨ 真实地球纹理</span>
+              <span className='text-primary'>✨ 真实地球纹理</span>
             </div>
             <div className='bg-gray-800 px-4 py-2 rounded'>
               <span className='text-blue-400'>🌍 大气层效果</span>

@@ -70,7 +70,7 @@ const ContactSection = () => {
         style={{ transform: `translateY(${Number(parallaxY || 0) * 0.6}px)` }}
       />
       <div
-        className='absolute top-1/3 left-1/3 w-20 h-20 bg-purple-500/10 rounded-full blur-xl'
+        className='absolute top-1/3 left-1/3 w-20 h-20 bg-primary/10 rounded-full blur-xl'
         style={{ transform: `translateY(${Number(parallaxY || 0) * 0.3}px)` }}
       />
       <div className='relative z-10'>
@@ -99,7 +99,7 @@ const ContactSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.5 }}
           >
-            <div className='absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200'></div>
+            <div className='absolute -inset-1 bg-gradient-to-r from-blue-600 to-gray-700 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200'></div>
             <div className='relative card-modern'>
               <h3 className='text-2xl font-bold mb-8 text-cyan-400 heading-modern'>
                 {t('contact.info')}
@@ -127,7 +127,7 @@ const ContactSection = () => {
                     <p className='text-gray-400 text-base font-medium'>{t('contact.email')}</p>
                     <a
                       href='mailto:jimmflyyang@gmail.com'
-                      className='text-text hover:text-cyan-400 transition-colors text-lg font-semibold'
+                      className='text-text hover:text-primary-hover transition-colors text-lg font-semibold'
                     >
                       jimmflyyang@gmail.com
                     </a>
@@ -203,7 +203,7 @@ const ContactSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className='absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200'></div>
+            <div className='absolute -inset-1 bg-gradient-to-r from-blue-700 to-gray-800 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200'></div>
             <div className='relative card-modern'>
               <h3 className='text-2xl font-bold mb-8 text-purple-400 heading-modern'>
                 {t('contact.form.title')}
@@ -253,7 +253,7 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className='w-full px-6 py-4 rounded-2xl bg-gray-800/50 border-2 border-gray-700/50 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 text-text text-lg transition-all duration-300 group-hover:border-purple-500/50'
+                      className='w-full px-6 py-4 rounded-2xl bg-gray-800/50 border-2 border-gray-700/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 text-text text-lg transition-all duration-300 group-hover:border-primary/50'
                       placeholder='Your Name'
                     />
                   </div>
@@ -272,7 +272,7 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className='w-full px-6 py-4 rounded-2xl bg-gray-800/50 border-2 border-gray-700/50 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 text-text text-lg transition-all duration-300 group-hover:border-purple-500/50'
+                      className='w-full px-6 py-4 rounded-2xl bg-gray-800/50 border-2 border-gray-700/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 text-text text-lg transition-all duration-300 group-hover:border-primary/50'
                       placeholder='your.email@example.com'
                     />
                   </div>
@@ -291,14 +291,14 @@ const ContactSection = () => {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className='w-full px-6 py-4 rounded-2xl bg-gray-800/50 border-2 border-gray-700/50 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 text-text text-lg resize-none transition-all duration-300 group-hover:border-purple-500/50'
+                      className='w-full px-6 py-4 rounded-2xl bg-gray-800/50 border-2 border-gray-700/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 text-text text-lg resize-none transition-all duration-300 group-hover:border-primary/50'
                       placeholder='Your message...'
                     />
                   </div>
 
                   <motion.button
                     type='submit'
-                    className='w-full py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-lg rounded-2xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 flex justify-center items-center shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed'
+                    className='w-full py-4 bg-gradient-to-r from-primary to-primary-hover text-white font-bold text-lg rounded-2xl hover:from-primary-hover hover:to-primary transition-all duration-300 flex justify-center items-center shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed'
                     disabled={isSubmitting}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}

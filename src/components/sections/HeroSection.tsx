@@ -34,20 +34,20 @@ const HeroSection = React.memo(() => {
   return (
     <section className='min-h-screen flex items-center justify-center relative overflow-hidden pt-16 sm:pt-20'>
       {/* Background effect layer - contains gradient background and multi-layer parallax glow effects */}
-      {/* Main background gradient - sophisticated dark gradient */}
-      <div className='absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900' />
+      {/* Main background gradient - Apple-inspired subtle gradient */}
+      <div className='absolute inset-0 bg-gradient-to-br from-black via-gray-900/40 to-black' />
 
-      {/* Enhanced glow effects with modern colors */}
+      {/* Refined glow effects with Apple-style colors */}
       <div
-        className='absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full blur-3xl'
+        className='absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-blue-500/8 to-blue-400/6 rounded-full blur-3xl'
         style={getLayerStyle(0)}
       />
       <div
-        className='absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-r from-cyan-400/10 to-blue-500/10 rounded-full blur-3xl'
+        className='absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-r from-blue-600/6 to-gray-700/8 rounded-full blur-3xl'
         style={getLayerStyle(1)}
       />
       <div
-        className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-indigo-500/8 to-purple-500/8 rounded-full blur-3xl'
+        className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-gray-800/5 to-gray-900/5 rounded-full blur-3xl'
         style={getLayerStyle(2)}
       />
 
@@ -66,7 +66,7 @@ const HeroSection = React.memo(() => {
               className='text-6xl md:text-8xl font-black mb-8 heading-modern tracking-tighter'
               variants={fadeInUp}
             >
-              <span className='bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent'>
+              <span className='bg-gradient-to-r from-white via-gray-100 to-gray-200 bg-clip-text text-transparent'>
                 {name}
               </span>
             </motion.h1>
@@ -98,14 +98,14 @@ const HeroSection = React.memo(() => {
             >
               <motion.a
                 href='#projects'
-                className='button-modern bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:shadow-glow whitespace-nowrap'
+                className='button-modern text-white font-bold hover:shadow-glow whitespace-nowrap'
                 variants={fadeInUp}
               >
                 {cta}
               </motion.a>
               <motion.a
                 href='#contact'
-                className='button-modern border-2 border-purple-500/50 text-purple-400 hover:bg-purple-500/10 whitespace-nowrap'
+                className='button-modern border-2 border-white/20 bg-transparent text-white hover:bg-white/10 whitespace-nowrap'
                 variants={fadeInUp}
               >
                 {contactMe}
@@ -113,7 +113,7 @@ const HeroSection = React.memo(() => {
               <motion.a
                 href={`${import.meta.env.BASE_URL}resume_cn_onepage.pdf`}
                 download
-                className='button-modern border-2 border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 flex items-center justify-center gap-2 whitespace-nowrap'
+                className='button-modern border-2 border-white/20 bg-transparent text-white hover:bg-white/10 flex items-center justify-center gap-2 whitespace-nowrap'
                 variants={fadeInUp}
               >
                 <svg
@@ -163,7 +163,7 @@ const HeroSection = React.memo(() => {
             {/* 3D globe container - enhanced with glow effect */}
             <div className='relative w-96 h-96 md:w-[32rem] md:h-[32rem]'>
               {/* Ambient glow behind globe */}
-              <div className='absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-500/20 rounded-full blur-2xl animate-glow' />
+              <div className='absolute inset-0 bg-gradient-to-r from-blue-500/15 to-gray-700/10 rounded-full blur-2xl animate-glow' />
 
               {/* Three.js Canvas - 3D rendering canvas */}
               <Canvas
@@ -174,8 +174,8 @@ const HeroSection = React.memo(() => {
                 <Suspense fallback={null}>
                   {/* Enhanced lighting setup */}
                   <ambientLight intensity={1.2} />
-                  <pointLight position={[-3, -2, -3]} intensity={0.3} color='#4a90e2' />
-                  <pointLight position={[3, 2, 3]} intensity={0.2} color='#a855f7' />
+                  <pointLight position={[-3, -2, -3]} intensity={0.3} color='#0071e3' />
+                  <pointLight position={[3, 2, 3]} intensity={0.2} color='#86868b' />
 
                   {/* 3D globe model component */}
                   <RealisticGlobe

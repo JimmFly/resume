@@ -78,9 +78,9 @@ const AboutSection = React.memo(() => {
             variants={fadeInUp}
           >
             <div className='relative'>
-              <div className='absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200'></div>
+              <div className='absolute -inset-1 bg-gradient-to-r from-blue-600 to-gray-700 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200'></div>
               <div className='relative bg-background/90 rounded-3xl p-8'>
-                <h3 className='text-2xl font-bold text-cyan-400 mb-4 heading-modern'>
+                <h3 className='text-2xl font-bold text-primary mb-4 heading-modern'>
                   {t('about.cards.experience.title')}
                 </h3>
                 <p className='text-gray-300 font-semibold mb-3 text-lg'>
@@ -97,9 +97,9 @@ const AboutSection = React.memo(() => {
             variants={fadeInUp}
           >
             <div className='relative'>
-              <div className='absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200'></div>
+              <div className='absolute -inset-1 bg-gradient-to-r from-blue-700 to-gray-800 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200'></div>
               <div className='relative bg-background/90 rounded-3xl p-8'>
-                <h3 className='text-2xl font-bold text-purple-400 mb-4 heading-modern'>
+                <h3 className='text-2xl font-bold text-gray-300 mb-4 heading-modern'>
                   {t('about.cards.projects.title')}
                 </h3>
                 <p className='text-gray-300 font-semibold mb-3 text-lg'>
@@ -138,7 +138,7 @@ const AboutSection = React.memo(() => {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6'>
             {Object.entries(advantages).map(([key, value], index) => (
               <motion.div key={key} className='group relative' variants={fadeInUp}>
-                <div className='absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200'></div>
+                <div className='absolute -inset-0.5 bg-gradient-to-r from-gray-700 to-gray-800 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200'></div>
                 <div className='relative flex items-start gap-4 p-6 glass-card hover:scale-[1.02] transition-all duration-300'>
                   <div
                     className={`w-3 h-3 rounded-full mt-2 flex-shrink-0 animate-pulse ${
